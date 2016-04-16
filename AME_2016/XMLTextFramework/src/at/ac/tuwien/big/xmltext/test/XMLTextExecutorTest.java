@@ -87,4 +87,20 @@ public class XMLTextExecutorTest {
 		xmlTextExecutor.executeMwe2Workflow("file:///" + xmlTextExecutor.getWorkspaceLocation() + Settings.LANGUAGE_PROJECT_NAME + "/src/" + Settings.LANGUAGE_PROJECT_NAME.replace('.', '/') + "/Generate" + Settings.LANGUAGE_NAME + ".mwe2");
 	}
 	
+	private void setSettings(String name, String rootElement){
+		String cap = name.substring(0, 1).toUpperCase() + name.substring(1);
+		
+		Settings.GENMODEL_NAME = cap + "-refactored";
+		Settings.GENMODEL_PREFIX = cap;
+		Settings.GENMODEL_FILE_NAME = name+".genmodel";
+		Settings.ECORE_FILE_NAME = name+".ecore";
+		Settings.XSD_FILE_NAME = name+".xsd";
+		Settings.XTEXT_GRAMMAR_FILE_NAME = cap+".xtext";
+		Settings.LANGUAGE_NAME = cap;
+		Settings.LANGUAGE_PROJECT_NAME = "at.ac.tuwien.big.xmltext."+name;
+		Settings.LANGUAGE_FILE_EXTENSION = name+"text";
+		Settings.ROOT_ELEMENT_NAME = rootElement;
+		
+		Settings.XTEXT_OUTPUT_GRAMMAR_FILE_NAME = cap+"-refractored.xtext";
+	}
 }

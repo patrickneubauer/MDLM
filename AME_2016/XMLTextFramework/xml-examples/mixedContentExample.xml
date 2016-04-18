@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library schemaLocation="http://www.tuwien.ac.at C:\Users\syrenio\tuwien\AME\XMLText\AME_2016\XMLTextFramework\mixedContent.xsd">
+	<book>
+		<name>asdf</name>
+		<title>ast</title>
+		<pages>200</pages>
+	</book>
+</library>

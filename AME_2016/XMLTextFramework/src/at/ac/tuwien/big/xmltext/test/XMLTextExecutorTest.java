@@ -103,4 +103,23 @@ public class XMLTextExecutorTest {
 		
 		Settings.XTEXT_OUTPUT_GRAMMAR_FILE_NAME = cap+"-refractored.xtext";
 	}
+	
+	
+
+	@Test
+	public void runMixedContentAME() {
+		setSettings("mixedContent", "LibraryType");
+		
+		Resource ecoreResource = xmlTextExecutor.createEcoreFromXSD(Settings.XSD_FILE_NAME, Settings.ECORE_FILE_NAME);
+		xmlTextExecutor.createGenModelFromEcore(Settings.ECORE_FILE_NAME, Settings.GENMODEL_FILE_NAME);
+		AMEGroupEnhance.refractorEcore(ecoreResource, xmlTextExecutor.getMapper());
+		try {
+			ecoreResource.save(new FileOutputStream(Settings.ECORE_FILE_NAME),null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//xmlTextExecutor.generateJavaCode(Settings.REFACTORED_GENMODEL_FILE_NAME, Settings.REFACTORED_ECORE_FILE_NAME);
+		Ecore2XtextProjectInfo ecore2XtextProjectInfo = xmlTextExecutor.generateXtextGrammarAndWorkflow(Settings.GENMODEL_FILE_NAME, Settings.ECORE_FILE_NAME);
+	}
 }

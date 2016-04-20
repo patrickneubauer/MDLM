@@ -1,8 +1,19 @@
 package at.ac.tuwien.big.xmltext;
 
+import java.util.Collection;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.ENamedElement;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.xsd.XSDComplexTypeDefinition;
 import org.eclipse.xsd.XSDComponent;
 import org.eclipse.xsd.XSDSchema;
+import org.eclipse.xtend.typesystem.emf.EcoreUtil2;
 import org.eclipse.xtext.Grammar;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -17,8 +28,9 @@ public class AMEGroupEnhance {
 	}
 	
 	public static void refractorEcore(Resource ecore, EcoreXSDMapper mapper) {
-		printAllXSD((XSDComponent)mapper.getXSDRoot(), 0);
+		//printAllXSD((XSDComponent)mapper.getXSDRoot(), 0);
 		
+		AMEGroupMixedContent.doMixedContent(ecore, mapper);
 		
 		//AME-Gruppe: Bitte hier die Punkte implementieren
 	}

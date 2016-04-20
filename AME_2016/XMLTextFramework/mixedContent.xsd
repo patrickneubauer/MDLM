@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-targetNamespace="http://www.tuwien.ac.at"
-xmlns="http://www.tuwien.ac.at"
-elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <!-- definition of simple types -->
   <!-- definition of complex types -->
@@ -12,7 +9,7 @@ elementFormDefault="qualified">
   		<xs:element name="book" type="bookType" maxOccurs="unbounded" minOccurs="0"/>
   	</xs:sequence>
   </xs:complexType>
-  <xs:complexType name="bookType"  mixed="true">
+  <xs:complexType name="bookType" mixed="true">
     <xs:sequence>
       <xs:element name="name" type="xs:ID"/>
       <xs:element name="title" type="xs:string"/>

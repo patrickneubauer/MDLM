@@ -102,6 +102,8 @@ public class XMLTextExecutorTest {
 		Settings.ROOT_ELEMENT_NAME = rootElement;
 		
 		Settings.XTEXT_OUTPUT_GRAMMAR_FILE_NAME = cap+"-refractored.xtext";
+		Settings.REFACTORED_ECORE_FILE_NAME = Settings.ECORE_FILE_NAME.substring(0, Settings.ECORE_FILE_NAME.lastIndexOf(".")) + "-refactored.ecore";
+		Settings.REFACTORED_GENMODEL_FILE_NAME = Settings.GENMODEL_FILE_NAME.substring(0, Settings.GENMODEL_FILE_NAME.lastIndexOf(".")) + "-refactored.genmodel";
 	}
 	
 	

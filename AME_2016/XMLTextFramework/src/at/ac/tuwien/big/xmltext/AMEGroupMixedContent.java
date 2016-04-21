@@ -34,20 +34,25 @@ public class AMEGroupMixedContent {
 			if(itm instanceof EClass && !((EClass) itm).getName().equals("DocumentRoot")){
 				EClass eclass = (EClass) itm;
 				System.err.println(eclass.getName());
-				EStructuralFeature foundMixed = null;
 				
-				for(EStructuralFeature esf : eclass.getEAllStructuralFeatures()){
-					System.out.println(esf.getName());
+				
+				
+				if(eclass.getEStructuralFeature("mixed") != null){
+					System.out.println("found mixed");
 					
-					if(esf.getName().equals("mixed")){
-						foundMixed = esf;
-					}
-				}
-				if(foundMixed!=null){
+					//remove mixed feature 
+					EStructuralFeature foundMixed = eclass.getEStructuralFeature("mixed");
 					eclass.getEStructuralFeatures().remove(foundMixed);
 					EAnnotation anno = eclass.getEAnnotation(ExtendedMetaData.ANNOTATION_URI);
-					//anno.getDetails().remove("kind");
 					anno.getDetails().put("kind", "elementOnly");
+				
+					//remove derived, transient, volatile from features (set when type is mixed)
+					for(EStructuralFeature esf : eclass.getEAllStructuralFeatures()){
+						System.out.println(esf.getName());
+						esf.setDerived(false);
+						esf.setTransient(false);
+						esf.setVolatile(false);
+					}
 				}
 				
 			}

@@ -56,8 +56,10 @@ public class AMEGroupMixedContent {
 					// create key value elements
 					EClass clazz = EcoreFactory.eINSTANCE.createEClass();
 					clazz.setName("MixedElement");
+					clazz.setAbstract(true);
+					clazz.setInterface(true);
 					pack.getEClassifiers().add(clazz);
-
+					
 					EClass pair = EcoreFactory.eINSTANCE.createEClass();
 					pair.setName("Pair");
 					EAttribute key = EcoreFactory.eINSTANCE.createEAttribute();
@@ -77,6 +79,7 @@ public class AMEGroupMixedContent {
 					EReference ref = EcoreFactory.eINSTANCE.createEReference();
 					pairs.getEStructuralFeatures().add(ref);
 					ref.setName("elements");
+					ref.setContainment(true);
 					ref.setEType(clazz);
 					ref.setLowerBound(0);
 					ref.setUpperBound(-1);
@@ -87,6 +90,7 @@ public class AMEGroupMixedContent {
 					// always add to container first
 					eclass.getEStructuralFeatures().add(ref);
 					ref.setName("elements");
+					ref.setContainment(true);
 					ref.setEType(clazz);
 					ref.setLowerBound(0);
 					ref.setUpperBound(-1);

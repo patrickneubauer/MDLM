@@ -52,11 +52,15 @@ public class AMEGroupMixedContent {
 						esf.setVolatile(false);
 					}
 
-
 					//createMixedElement(pack, eclass);
 
 					AMEGroupUtil.createAnyGenericStructure(pack);
-					
+					EReference ref = EcoreFactory.eINSTANCE.createEReference();
+					ref.setName("anyGenericElement");
+					ref.setEType(pack.getEClassifier("AnyGenericConstruct"));
+					ref.setLowerBound(0);
+					ref.setUpperBound(-1);
+					eclass.getEStructuralFeatures().add(ref);
 					
 				}
 			}

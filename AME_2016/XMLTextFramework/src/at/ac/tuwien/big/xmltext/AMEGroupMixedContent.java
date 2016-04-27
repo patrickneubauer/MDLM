@@ -53,52 +53,60 @@ public class AMEGroupMixedContent {
 					}
 
 
-					// create key value elements
-					EClass clazz = EcoreFactory.eINSTANCE.createEClass();
-					clazz.setName("MixedElement");
-					clazz.setAbstract(true);
-					clazz.setInterface(true);
-					pack.getEClassifiers().add(clazz);
+					//createMixedElement(pack, eclass);
+
+					AMEGroupUtil.createAnyGenericStructure(pack);
 					
-					EClass pair = EcoreFactory.eINSTANCE.createEClass();
-					pair.setName("Pair");
-					EAttribute key = EcoreFactory.eINSTANCE.createEAttribute();
-					key.setName("key");
-					key.setEType(EcorePackage.Literals.ESTRING);
-					pair.getEStructuralFeatures().add(key);
-					EAttribute value = EcoreFactory.eINSTANCE.createEAttribute();
-					value.setName("value");
-					value.setEType(EcorePackage.Literals.ESTRING);
-					pair.getEStructuralFeatures().add(value);
-					pair.getESuperTypes().add(clazz);
-					pack.getEClassifiers().add(pair);
-
-					EClass pairs = EcoreFactory.eINSTANCE.createEClass();
-					pairs.setName("Pairs");
-
-					EReference ref = EcoreFactory.eINSTANCE.createEReference();
-					pairs.getEStructuralFeatures().add(ref);
-					ref.setName("elements");
-					ref.setContainment(true);
-					ref.setEType(clazz);
-					ref.setLowerBound(0);
-					ref.setUpperBound(-1);
-					pairs.getESuperTypes().add(clazz);
-					pack.getEClassifiers().add(pairs);
 					
-					ref = EcoreFactory.eINSTANCE.createEReference();
-					// always add to container first
-					eclass.getEStructuralFeatures().add(ref);
-					ref.setName("elements");
-					ref.setContainment(true);
-					ref.setEType(clazz);
-					ref.setLowerBound(0);
-					ref.setUpperBound(-1);
-
 				}
 			}
 		});
 
 
+	}
+
+	@Deprecated
+	private static void createMixedElement(EPackage pack, EClass eclass) {
+		// create key value elements
+		EClass clazz = EcoreFactory.eINSTANCE.createEClass();
+		clazz.setName("MixedElement");
+		clazz.setAbstract(true);
+		clazz.setInterface(true);
+		pack.getEClassifiers().add(clazz);
+		
+		EClass pair = EcoreFactory.eINSTANCE.createEClass();
+		pair.setName("Pair");
+		EAttribute key = EcoreFactory.eINSTANCE.createEAttribute();
+		key.setName("key");
+		key.setEType(EcorePackage.Literals.ESTRING);
+		pair.getEStructuralFeatures().add(key);
+		EAttribute value = EcoreFactory.eINSTANCE.createEAttribute();
+		value.setName("value");
+		value.setEType(EcorePackage.Literals.ESTRING);
+		pair.getEStructuralFeatures().add(value);
+		pair.getESuperTypes().add(clazz);
+		pack.getEClassifiers().add(pair);
+
+		EClass pairs = EcoreFactory.eINSTANCE.createEClass();
+		pairs.setName("Pairs");
+
+		EReference ref = EcoreFactory.eINSTANCE.createEReference();
+		pairs.getEStructuralFeatures().add(ref);
+		ref.setName("elements");
+		ref.setContainment(true);
+		ref.setEType(clazz);
+		ref.setLowerBound(0);
+		ref.setUpperBound(-1);
+		pairs.getESuperTypes().add(clazz);
+		pack.getEClassifiers().add(pairs);
+		
+		ref = EcoreFactory.eINSTANCE.createEReference();
+		// always add to container first
+		eclass.getEStructuralFeatures().add(ref);
+		ref.setName("elements");
+		ref.setContainment(true);
+		ref.setEType(clazz);
+		ref.setLowerBound(0);
+		ref.setUpperBound(-1);
 	}
 }

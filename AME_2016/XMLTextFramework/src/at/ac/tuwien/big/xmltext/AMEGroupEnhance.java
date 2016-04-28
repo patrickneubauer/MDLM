@@ -24,10 +24,14 @@ public class AMEGroupEnhance {
 
 	
 	public static void refractorGrammarAME(Grammar g, EcoreXSDMapper mapper) {
+		System.err.println("XTEXT");
 		//AME-Gruppe: Bitte hier die Punkte implementieren
+		
+		AMEGroupMixedContent.doMixedContentXText(g, mapper);
 	}
 	
 	public static void refractorEcore(Resource ecore, EcoreXSDMapper mapper) {
+		System.err.println("ECORE");
 		//printAllXSD((XSDComponent)mapper.getXSDRoot(), 0);
 		
 		AMEGroupMixedContent.doMixedContent(ecore, mapper);

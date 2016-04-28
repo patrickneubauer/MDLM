@@ -2,6 +2,10 @@ package at.ac.tuwien.big.xmltext;
 
 import java.security.interfaces.ECKey;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Optional;
 
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
@@ -16,14 +20,18 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.xtend.typesystem.emf.EcoreUtil2;
+import org.eclipse.xtext.AbstractRule;
+import org.eclipse.xtext.Grammar;
+import org.eclipse.xtext.impl.ParserRuleImpl;
 
 public class AMEGroupMixedContent {
 
+	public static Map<String,EClass> storage = new HashMap<>();
+	
 	/*
 	 * TODO: IDEA 1. First remove the mixed content with the EFeatureMap form
 	 * the Ecore 2. Reinsert as AnyGenericConstruct or Introducte a new PCDATA
 	 * class.
-	 * 
 	 */
 	public static void doMixedContent(Resource ecore, EcoreXSDMapper mapper) {
 		EPackage pack = (EPackage) ecore.getAllContents().next();
@@ -60,8 +68,10 @@ public class AMEGroupMixedContent {
 					ref.setEType(pack.getEClassifier("AnyGenericConstruct"));
 					ref.setLowerBound(0);
 					ref.setUpperBound(-1);
+					ref.setContainment(true);
 					eclass.getEStructuralFeatures().add(ref);
-					
+			
+					storage.put(eclass.getName(), eclass);
 				}
 			}
 		});
@@ -112,5 +122,19 @@ public class AMEGroupMixedContent {
 		ref.setEType(clazz);
 		ref.setLowerBound(0);
 		ref.setUpperBound(-1);
+	}
+
+	public static void doMixedContentXText(Grammar g, EcoreXSDMapper mapper) {
+		// TODO Auto-generated method stub
+		for(Entry<String,EClass> entry: storage.entrySet()){
+			//g.getRules().forEach(x->System.out.println(x.getName()));
+			Optional<AbstractRule> absRule = g.getRules().stream().filter(x->x.getName().equals(entry.getKey())).findFirst();
+			if(absRule.isPresent()){
+				ParserRuleImpl rule = (ParserRuleImpl)absRule.get();
+				System.out.println(rule.eContents());
+			}
+				
+			
+		}
 	}
 }

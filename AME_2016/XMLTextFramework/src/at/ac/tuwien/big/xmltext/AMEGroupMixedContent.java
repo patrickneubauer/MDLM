@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.xtend.typesystem.emf.EcoreUtil2;
 import org.eclipse.xtext.AbstractRule;
 import org.eclipse.xtext.Grammar;
+import org.eclipse.xtext.Group;
+import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.impl.ParserRuleImpl;
 
 public class AMEGroupMixedContent {
@@ -131,6 +133,28 @@ public class AMEGroupMixedContent {
 			Optional<AbstractRule> absRule = g.getRules().stream().filter(x->x.getName().equals(entry.getKey())).findFirst();
 			if(absRule.isPresent()){
 				ParserRuleImpl rule = (ParserRuleImpl)absRule.get();
+				// what is rule.type and rule.alternatives
+				
+				// API XText Grammar or XText Grammar API
+				// XPand Xtend
+				
+				rule.eContents().forEach(x->{
+					if(x instanceof Group){
+						((Group) x).getElements().forEach(itm->{
+							System.out.println(itm);
+							if(itm instanceof Group){
+								((Group) itm).getElements().forEach(System.err::println);
+								((Group) itm).getElements().forEach(e -> {
+									if(e instanceof Keyword && ((Keyword) e).getValue().equals("anyGenericElement")){
+										System.err.println("xxx");
+										((Keyword) e).setValue("xxx");
+									}
+								});
+							}
+						});
+					}
+				});
+				System.out.println("-----");
 				System.out.println(rule.eContents());
 			}
 				

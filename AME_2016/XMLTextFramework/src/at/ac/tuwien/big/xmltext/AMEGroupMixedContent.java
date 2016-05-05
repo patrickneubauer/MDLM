@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -45,6 +47,22 @@ public class AMEGroupMixedContent {
 	public static Map<String,EClass> storage = new HashMap<>();
 	
 	private final static String ANY_GENERIC_ELEMENT = "anyGenericElement";
+	
+	
+	/*
+	 * TODO: IDEA
+	 * BookType returns BookType:
+		'BookType'
+		name=ID0
+		'{'
+			('text' texts+=EString)?
+			'title' title=String0
+			('text' texts+=EString)?
+			'pages' pages=Int0
+			('text' texts+=EString)?
+		'}';
+	 * 
+	 */
 	
 	
 	/*
@@ -188,31 +206,41 @@ public class AMEGroupMixedContent {
 //						}
 //					});
 //				}
-				List<String> featuresInClass = Arrays.asList("title");
-				
+				EClass clz = (EClass) rule.getType().getClassifier();
+				List<String> ignoredFeatures = Arrays.asList("texts","name");
+				List<String> featuresInClass =  clz.getEStructuralFeatures().stream()
+						.filter(x-> {
+							
+							return !ignoredFeatures.contains(x.getName());	
+						})
+						.map(x->x.getName()).collect(Collectors.toList());
+				System.out.println(featuresInClass);
 				
 				rule.eContents().forEach(itm -> {
 					if(itm instanceof Group){
 						Group grp = (Group) itm;
 						System.out.println(grp.getElements());
-						Group insertGroup = null;
-						int x = 0;
+						Map<Integer,Group> map = new TreeMap<Integer, Group>();
+						
 						for (int idx = 0; idx < grp.getElements().size(); idx++) {
 							AbstractElement elm = grp.getElements().get(idx);
 							if(elm instanceof Assignment){
 								if(featuresInClass.contains(((Assignment) elm).getFeature())){
 									
-									insertGroup = createTextGroup(g);
-									x = idx;
+									Group insertGroup = createTextGroup(g);
+									map.put(idx+map.size()-1, insertGroup);
 								}
 							}
 						}
-						Keyword keyword = XtextFactory.eINSTANCE.createKeyword();
-						keyword.setValue("test");
-						grp.getElements().add(keyword);
-						grp.getElements().add(insertGroup);
+						//Keyword keyword = XtextFactory.eINSTANCE.createKeyword();
+						//keyword.setValue("test");
+						//grp.getElements().add(keyword);
+						map.entrySet().forEach(x -> {
+							grp.getElements().add(x.getKey(),x.getValue());
+						});
+						
 
-						System.out.println(insertGroup);
+						//System.out.println(insertGroup);
 					}
 				});
 								

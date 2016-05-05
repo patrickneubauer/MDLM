@@ -30,12 +30,14 @@ import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.Group;
 import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
 import org.eclipse.xtext.XtextFactory;
 import org.eclipse.xtext.XtextPackage;
 import org.eclipse.xtext.common.Terminals;
 import org.eclipse.xtext.impl.GroupImpl;
 import org.eclipse.xtext.impl.ParserRuleImpl;
+import org.eclipse.xtext.impl.TerminalRuleImpl;
 import org.eclipse.xtext.impl.XtextPackageImpl;
 
 public class AMEGroupMixedContent {
@@ -136,15 +138,24 @@ public class AMEGroupMixedContent {
 		return Optional.empty();
 	}
 
-	private static Group createTextGroup(){
+	private static Group createTextGroup(Grammar g){
 		Group group = XtextFactory.eINSTANCE.createGroup();
 		//Assignment ass = XtextFactory.eINSTANCE.createAssignment();
 		Keyword keyword = XtextFactory.eINSTANCE.createKeyword();
 		keyword.setValue("text");
-		Keyword keyword2 = XtextFactory.eINSTANCE.createKeyword();
-		keyword2.setValue("text2");
+		Assignment ass = XtextFactory.eINSTANCE.createAssignment();
+		ass.setFeature("texts");
+		ass.setOperator("+=");
+
+		Grammar terminals = g.getUsedGrammars().get(0);
+		TerminalRule term = (TerminalRule) terminals.getRules().stream().filter(x->x.getName().equals("STRING")).findFirst().get();
+
+		RuleCall ruleCall = XtextFactory.eINSTANCE.createRuleCall();
+		ruleCall.setRule(term);
+		ass.setTerminal(ruleCall);
+		
 		group.getElements().add(keyword);
-		group.getElements().add(keyword2);
+		group.getElements().add(ass);
 		group.setFirstSetPredicated(false);
 		group.setPredicated(false);
 		group.setCardinality("?");
@@ -191,7 +202,7 @@ public class AMEGroupMixedContent {
 							if(elm instanceof Assignment){
 								if(featuresInClass.contains(((Assignment) elm).getFeature())){
 									
-									insertGroup = createTextGroup();
+									insertGroup = createTextGroup(g);
 									x = idx;
 								}
 							}

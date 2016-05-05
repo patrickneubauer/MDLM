@@ -32,6 +32,7 @@ public class AMEGroupEnhance {
 		//AME-Gruppe: Bitte hier die Punkte implementieren
 		
 		AMEGroupMixedContent.doMixedContentXText(g, mapper);
+		AMEGroupDatatypes.implDatatypesXText(g, mapper);
 	}
 	
 	public static void refractorEcore(Resource ecore, EcoreXSDMapper mapper) {

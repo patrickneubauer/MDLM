@@ -22,7 +22,11 @@ import com.google.common.base.Strings;
 
 public class AMEGroupEnhance {
 
-	
+	/*
+	 * Maybe instead of this with Xtend ... because might have limitations
+	 * 
+	 * ECore 2 Xtext Creator
+	 */
 	public static void refractorGrammarAME(Grammar g, EcoreXSDMapper mapper) {
 		System.err.println("XTEXT");
 		//AME-Gruppe: Bitte hier die Punkte implementieren

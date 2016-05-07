@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
+import java.util.TreeMap;
 
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.impl.EStructuralFeatureImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
@@ -39,93 +41,45 @@ import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.impl.ParserRuleImpl;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+import org.eclipse.xsd.util.XSDConstants;
 
 import com.google.common.base.Strings;
 
 public class AMEGroupKey {
 	
+	
+	private final static int ECORE_OCL_NAME = 0;
+	private final static int ECORE_SRC_ELEMENT = 1;
+	private final static int ECORE_DST_ELEMENT = 2;
+	private final static int ECORE_FLD_ELEMENT = 3;
+	
+	private final static String XSD_KEY = "xsd:key";
+	private final static String XSD_SELECTOR = "xsd:selector";
+	private final static String XSD_FIELD = "xsd:field";
+	
+	
+	
 	public static void doKey(Resource ecore, EcoreXSDMapper mapper) {
 		
 		
-		System.out.println("TETETETETT");
-		
 		XSDComponent xsd = (XSDComponent)mapper.getXSDRoot();
-		//XSDPackage xsdP = (XSDPackage)mapper.getXSDRoot();
-		
-	
-		
 		EPackage pack = (EPackage) ecore.getAllContents().next();
-		
-		
-		// EObject test = EcoreUtil.getID(eObject) ???
-	//	EObject test = EcoreUtil.getObjectByType(objects, );
-//		EObject test = EcoreUtil.getObjectByType(objects, type)
-		//EObject test = EcoreUtil2.
-		
-		
-		
 		Collection<EObject> all = EcoreUtil2.allContents(pack);
-		//EObject test = EcoreUtil.getObjectByType(all, (ECLassifier)'passenger');
-
-//		org.eclipse.xtext.EcoreUtil2.getEObject(rootEObject, relativeFragmentPath)
+	
+		printAllXSD(xsd);
 		
-//		org.eclipse.xtext.EcoreUtil2.get
-		
-		all.forEach(itm -> {
-			if (itm instanceof EClass ) { //&& !((EClass) itm).getName().equals("DocumentRoot") 
-				EClass eclass = (EClass) itm;
+//		for (List<String> entry : storage) {
+//		    System.out.println(entry.toString());
+//		}	
+//		
 
-
-				for (EStructuralFeature esf : eclass.getEAllStructuralFeatures()) {
-
-					for(EAnnotation eano : esf.getEAnnotations()){
-						
-						EMap<String, String> eo = eano.getDetails();
-						
-						if ("Passengers".equalsIgnoreCase(eo.get("name"))) {
-							System.err.println("UIUIUI");
-							
-
-							System.out.println(eclass.getName());
-							System.out.println(esf.getName());
-							System.out.println("eoooo - " + eo.get("name"));
-							
-							
-		
-							
-							EAnnotation eaonnew = EcoreFactory.eINSTANCE.createEAnnotation();
-							eaonnew.setSource("http://www.eclipse.org/emf/2002/Ecore");
-							eaonnew.getDetails().put("constraints", "uniqueId");
-							
-							eclass.getEAnnotations().add(eaonnew);
-							eaonnew = EcoreFactory.eINSTANCE.createEAnnotation();
-							
-							eaonnew.setSource("http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot");
-							eaonnew.getDetails().put("uniqueId", "self.passengers.passenger->forAll(c1, c2 | c1 <> c2 implies c1.iD <> c2.iD)");
-							eclass.getEAnnotations().add(eaonnew);
-							
-
-							
-						}						
-					}
-					
-
-
-				}
-				
-
-			}
+		storage.forEach(keyElement-> {
+			List<String> featureNames = new ArrayList<String>();
+			featureNames = getFeatureNames(all, keyElement);
+			addKeyOcl(all, featureNames);
 		});
 		
 
-		printAllXSD(xsd, 1, false);
-		
-		
-		for (Map.Entry<String,Map<String,List<String>>> entry : storage.entrySet()) {
-		    System.out.println(entry.getKey()+" : "+entry.getValue());
-		}
-
-		
 		
 //		key
 //https://msdn.microsoft.com/en-us/library/ms256101%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396
@@ -153,95 +107,181 @@ public class AMEGroupKey {
 		
 	}
 	
-	// TODO bessere struktur
-	public static Map<String,Map<String,List<String>>> storage = new HashMap<>();
-	
-	private static void printAllXSD(XSDComponent obj,  int level, boolean showAttr){
-		String tab = Strings.repeat("  ", level);
-		String attrs = "";
-		
-		
 
-		
-//		if(showAttr && obj.getElement() != null){
-//			NamedNodeMap attributes = obj.getElement().getAttributes();
-//			List<String> details = new ArrayList<String>();
-//			
-//			
-//			if ("xsd:selector".equalsIgnoreCase(obj.getElement().getNodeName())) {
-//				details.add(0, attributes.item(0).getNodeValue());
-//			} else if ("xsd:field".equalsIgnoreCase(obj.getElement().getNodeName())) {
-//				details.add(attributes.item(0).getNodeValue());
-//			}
-//			
-//			attrs += "[";
-//			for (int i = 0; i < attributes.getLength(); i++) {
-//				Node item = attributes.item(i);
-//				attrs += (i==0 ?"":",") + item.getNodeName() + ":" + item.getNodeValue();
-//			}
-//			attrs += "]";
-//			
-//			System.out.println(tab + obj.getClass().getName() + attrs);
-//			
-//			System.out.println(obj.getElement().getNodeName());
-			
-			
-			//storage
-			
-			// xsd:selector -> search in Ecore
-			// xsd:field -> keyattribute over all field-attributes
-			
-//		}
-		
-		if (obj.getClass() == XSDIdentityConstraintDefinitionImpl.class && "xsd:key".equalsIgnoreCase(obj.getElement().getNodeName())) {
-//			System.err.println(tab + obj.getContainer().getElement().getAttribute("name") + obj.getElement().getNodeName());
-//			System.out.println(tab + obj.getClass().getName());
-			
-			Map<String,List<String>> keyElement = new HashMap<>();
-			//storage.put(obj.getContainer().getElement().getAttribute("name"), keyElement);
-			
-			
-			
+	public static List<List<String>> storage = new ArrayList<List<String>>();
+	
+	private static void printAllXSD(XSDComponent obj){
+
+
+		// find all key elements and save selector and field elements
+		if (obj.getClass() == XSDIdentityConstraintDefinitionImpl.class && XSD_KEY.equalsIgnoreCase(obj.getElement().getNodeName())) {
+
 			List<String> elements = new ArrayList<String>();
 			
 			obj.eContents().forEach(c -> {
 				NamedNodeMap attributes = ((XSDComponent)c).getElement().getAttributes();
-				if ("xsd:selector".equalsIgnoreCase(((XSDComponent)c).getElement().getNodeName())) {
-					//System.out.println("xsd:selector" + attributes.item(0).getNodeValue());
+				if (XSD_SELECTOR.equalsIgnoreCase(((XSDComponent)c).getElement().getNodeName())) {
 					
-					elements.add(0, attributes.item(0).getNodeValue());
-				} else if ("xsd:field".equalsIgnoreCase(((XSDComponent)c).getElement().getNodeName())) {
-					//System.out.println("xsd:field" + attributes.item(0).getNodeValue());
-					elements.add(attributes.item(0).getNodeValue());
+					//TODO evaluate XPath
+					
+					String selector = attributes.item(0).getNodeValue();
+					
+					elements.add(0, selector);
+				} else if (XSD_FIELD.equalsIgnoreCase(((XSDComponent)c).getElement().getNodeName())) {
+					
+					//TODO evaluate XPath
+					//TODO multiple fields possible
+					String field = attributes.item(0).getNodeValue();
+					field = field.substring(1);
+					
+					elements.add(field);
 				}
 			});
-			
-			System.out.println("dada" + obj.getElement().getAttribute("name") + elements.toString());
-			keyElement.put(obj.getElement().getAttribute("name"), elements);
-			storage.put(obj.getContainer().getElement().getAttribute("name"), keyElement);
 
+			String container = obj.getContainer().getElement().getAttribute("name");
+			
+			elements.add(0, container);								// container of key-element
+			elements.add(0, obj.getElement().getAttribute("name")); // key-element name
+			storage.add(elements);
 
-			
-			
 		} else {
 			
 			obj.eContents().forEach(c -> {
-				printAllXSD((XSDComponent)c, level + 1, false);
+				printAllXSD((XSDComponent)c);
 			});
 		}
-
-		
-
-		
 	}
 	
 	
-	// get ecore path from key.selector to key.element
-	private static void getKeyContainerPath(){
+	// add invariant constraint (2 EAnnotations)	
+	private static void addKeyOcl(Collection<EObject> all, List<String> featureNames) {
+		EAnnotation eaonnew = EcoreFactory.eINSTANCE.createEAnnotation();					
+		String constraints = "";
 		
-		
+		for(EObject itm : all) {
+			if (itm instanceof EClass ) {
+				EClass eclass = (EClass) itm;
+
+				if (eclass.getEStructuralFeature(featureNames.get(ECORE_SRC_ELEMENT).toString()) != null) {
+				
+					// constraints already exits
+					for(EAnnotation eano : eclass.getEAnnotations()){
+						
+						EMap<String, String> eo = eano.getDetails();
+
+						if (eo.containsKey("constraints")) {
+							constraints = eo.get("constraints");
+							// remove constraints
+							eclass.getEAnnotations().remove(eano);
+						}
+					}
+					
+					if (constraints.isEmpty()) {
+						constraints = featureNames.get(ECORE_OCL_NAME);
+						
+						eaonnew = EcoreFactory.eINSTANCE.createEAnnotation();
+						eaonnew.setSource("http://www.eclipse.org/emf/2002/Ecore");
+						eaonnew.getDetails().put("constraints", constraints);
+						eclass.getEAnnotations().add(eaonnew);
+						
+						eaonnew = EcoreFactory.eINSTANCE.createEAnnotation();
+						eaonnew.setSource("http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot");
+						eaonnew.getDetails().put(featureNames.get(ECORE_OCL_NAME), "self." 
+								+ featureNames.get(ECORE_SRC_ELEMENT) + "." 
+								+ featureNames.get(ECORE_DST_ELEMENT) 
+								+ "->forAll(c1, c2 | c1 <> c2 implies c1." 
+								+ featureNames.get(ECORE_FLD_ELEMENT) + " <> c2." 
+								+ featureNames.get(ECORE_FLD_ELEMENT) + ")");
+						eclass.getEAnnotations().add(eaonnew);
+						
+					} else {
+						// concat constraints annotation
+						constraints = constraints + (" ") + featureNames.get(ECORE_OCL_NAME);
+						
+						eaonnew = EcoreFactory.eINSTANCE.createEAnnotation();
+						eaonnew.setSource("http://www.eclipse.org/emf/2002/Ecore");
+						eaonnew.getDetails().put("constraints", constraints);
+						eclass.getEAnnotations().add(eaonnew);
+						
+						// add new detail for invariant
+						eaonnew = eclass.getEAnnotation("http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot");
+						eaonnew.getDetails().put(featureNames.get(ECORE_OCL_NAME), "self." 
+								+ featureNames.get(ECORE_SRC_ELEMENT) + "." 
+								+ featureNames.get(ECORE_DST_ELEMENT) 
+								+ "->forAll(c1, c2 | c1 <> c2 implies c1." 
+								+ featureNames.get(ECORE_FLD_ELEMENT) + " <> c2." 
+								+ featureNames.get(ECORE_FLD_ELEMENT) + ")");
+
+					}
+				}
+			}
+		}
 	}
 	
-	
+	private static List<String> getFeatureNames(Collection<EObject> all, List<String> keyElement) {
+		List<String> featureNames = new ArrayList<String>();
+		
+		String esfSrc = "";
+		String esfDst = "";
+		String esfFld = "";
+		String oclName = "";
+
+		oclName = keyElement.get(ECORE_OCL_NAME);
+		oclName = oclName.substring(0,1).toLowerCase() + oclName.substring(1);
+		
+		for(EObject itm : all) {
+			if (itm instanceof EClass ) {
+				EClass eclass = (EClass) itm;
+
+
+				for (EStructuralFeature esf : eclass.getEAllStructuralFeatures()) {
+
+					for(EAnnotation eano : esf.getEAnnotations()){
+						
+						EMap<String, String> eo = eano.getDetails();
+						
+						if (keyElement.get(ECORE_DST_ELEMENT).equalsIgnoreCase(eo.get("name"))) {
+//							EObject esfSrc = EcoreFactory.eINSTANCE.createEObject();
+							esfDst = esf.getName();
+
+//							System.out.println(eclass.getName());
+//							System.out.println(esf.getName());
+//							System.out.println("dst - " + eo.get("name"));
+							
+
+							
+						} else if (keyElement.get(ECORE_SRC_ELEMENT).equalsIgnoreCase(eo.get("name"))) {
+							esfSrc = esf.getName();
+						
+
+//							System.out.println(eclass.getName());
+//							System.out.println(esf.getName());
+//							System.out.println("src - " + eo.get("name"));
+														
+							
+						} else if (keyElement.get(ECORE_FLD_ELEMENT).equalsIgnoreCase(eo.get("name"))) {
+							esfFld = esf.getName();
+						
+
+//							System.out.println(eclass.getName());
+//							System.out.println(esf.getName());
+//							System.out.println("src - " + eo.get("name"));
+														
+						}
+					}
+				}
+			}
+		}
+		
+		
+		featureNames.add(oclName);
+		featureNames.add(esfSrc);
+		featureNames.add(esfDst);
+		featureNames.add(esfFld);
+		
+		//System.out.println("+++" + featureNames);
+		
+		return featureNames;
+	}
 	
 }

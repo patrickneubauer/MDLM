@@ -1,6 +1,5 @@
 package at.ac.tuwien.big.xmltext;
 
-import java.security.interfaces.ECKey;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -11,19 +10,15 @@ import java.util.Optional;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.xtend.typesystem.emf.EcoreUtil2;
 import org.eclipse.xtext.AbstractElement;
@@ -35,14 +30,17 @@ import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
 import org.eclipse.xtext.XtextFactory;
-import org.eclipse.xtext.XtextPackage;
-import org.eclipse.xtext.common.Terminals;
-import org.eclipse.xtext.impl.GroupImpl;
 import org.eclipse.xtext.impl.ParserRuleImpl;
-import org.eclipse.xtext.impl.TerminalRuleImpl;
-import org.eclipse.xtext.impl.XtextPackageImpl;
+
+/*
+ * TODO: xsd:sequence and xsd:all reihenfolge im xtext beachten.
+ * TODO: XML Schema genearte xml datei from that --> maybe in plugin/webtools
+ * TODO: check AnyGenericConstruct again in xmltext_experiments 
+ */
 
 public class AMEGroupMixedContent {
+
+	private static final String TEXT_CONTENT = "textContent";
 
 	public static Map<String,EClass> storage = new HashMap<>();
 	
@@ -87,7 +85,7 @@ public class AMEGroupMixedContent {
 					EStructuralFeature foundMixed = eclass.getEStructuralFeature("mixed");
 					eclass.getEStructuralFeatures().remove(foundMixed);
 					EAnnotation anno = eclass.getEAnnotation(ExtendedMetaData.ANNOTATION_URI);
-					anno.getDetails().put("kind", "elementOnly");
+					//anno.getDetails().put("kind", "elementOnly");
 
 					// remove derived, transient, volatile from features (set
 					// when type is mixed)
@@ -117,7 +115,7 @@ public class AMEGroupMixedContent {
 
 					EAttribute attrText = EcoreFactory.eINSTANCE.createEAttribute();
 					eclass.getEStructuralFeatures().add(attrText);
-					attrText.setName("texts");
+					attrText.setName(TEXT_CONTENT);
 					attrText.setEType(EcorePackage.Literals.ESTRING);
 					attrText.setLowerBound(0);
 					attrText.setUpperBound(-1);
@@ -156,24 +154,29 @@ public class AMEGroupMixedContent {
 		return Optional.empty();
 	}
 
-	private static Group createTextGroup(Grammar g){
-		Group group = XtextFactory.eINSTANCE.createGroup();
-		//Assignment ass = XtextFactory.eINSTANCE.createAssignment();
-		Keyword keyword = XtextFactory.eINSTANCE.createKeyword();
-		keyword.setValue("text");
+	private static Assignment createTextAssignment(Grammar g){
 		Assignment ass = XtextFactory.eINSTANCE.createAssignment();
-		ass.setFeature("texts");
+		ass.setFeature(TEXT_CONTENT);
 		ass.setOperator("+=");
+		ass.setCardinality("?");
 
 		Grammar terminals = g.getUsedGrammars().get(0);
 		TerminalRule term = (TerminalRule) terminals.getRules().stream().filter(x->x.getName().equals("STRING")).findFirst().get();
-
 		RuleCall ruleCall = XtextFactory.eINSTANCE.createRuleCall();
 		ruleCall.setRule(term);
 		ass.setTerminal(ruleCall);
 		
-		group.getElements().add(keyword);
-		group.getElements().add(ass);
+		return ass;
+	}
+	
+	private static Group createTextGroup(Grammar g){
+		Group group = XtextFactory.eINSTANCE.createGroup();
+		//Assignment ass = XtextFactory.eINSTANCE.createAssignment();
+		//Keyword keyword = XtextFactory.eINSTANCE.createKeyword();
+		//keyword.setValue("");
+		
+		//group.getElements().add(keyword);
+		group.getElements().add(createTextAssignment(g));
 		group.setFirstSetPredicated(false);
 		group.setPredicated(false);
 		group.setCardinality("?");
@@ -207,7 +210,7 @@ public class AMEGroupMixedContent {
 //					});
 //				}
 				EClass clz = (EClass) rule.getType().getClassifier();
-				List<String> ignoredFeatures = Arrays.asList("texts","name");
+				List<String> ignoredFeatures = Arrays.asList(TEXT_CONTENT,"name");
 				List<String> featuresInClass =  clz.getEStructuralFeatures().stream()
 						.filter(x-> {
 							
@@ -216,20 +219,34 @@ public class AMEGroupMixedContent {
 						.map(x->x.getName()).collect(Collectors.toList());
 				System.out.println(featuresInClass);
 				
+				
+				
 				rule.eContents().forEach(itm -> {
 					if(itm instanceof Group){
 						Group grp = (Group) itm;
 						System.out.println(grp.getElements());
-						Map<Integer,Group> map = new TreeMap<Integer, Group>();
+						Map<Integer,Assignment> map = new TreeMap<Integer, Assignment>();
 						
 						for (int idx = 0; idx < grp.getElements().size(); idx++) {
 							AbstractElement elm = grp.getElements().get(idx);
 							if(elm instanceof Assignment){
 								if(featuresInClass.contains(((Assignment) elm).getFeature())){
 									
-									Group insertGroup = createTextGroup(g);
-									map.put(idx+map.size()-1, insertGroup);
+									//Group insertGroup = createTextGroup(g);
+									//map.put(idx+map.size()-1, insertGroup);
+									Assignment assignment = createTextAssignment(g);
+									map.put(idx+map.size()-1, assignment);
 								}
+							}
+							if(elm instanceof Group){
+								AbstractElement e = ((Group) elm).getElements().get(0);
+								
+								Keyword k = (Keyword) e;
+								if(k.getValue().equals(TEXT_CONTENT)){
+									Assignment ass = createTextAssignment(g);
+									map.put(idx+map.size(), ass);
+								}
+								grp.getElements().remove(idx);
 							}
 						}
 						//Keyword keyword = XtextFactory.eINSTANCE.createKeyword();

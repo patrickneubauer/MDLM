@@ -12,6 +12,12 @@
 			<xs:enumeration value="BMW" />
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="ageType">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="120" />
+		</xs:restriction>
+	</xs:simpleType>
 	<!-- definition of complex types -->
 	<xs:complexType name="rootType">
 		<xs:sequence>
@@ -22,13 +28,7 @@
 
 	<xs:complexType name="myObject">
 		<xs:sequence>
-			<xs:element name="age" minOccurs="0">
-				<xs:simpleType>
-					<xs:restriction base="xs:integer">
-						<xs:minInclusive value="0" />
-						<xs:maxInclusive value="120" />
-					</xs:restriction>
-				</xs:simpleType>
+			<xs:element name="age" type="ageType" minOccurs="0">
 			</xs:element>
 			<xs:element name="car" type="carType" minOccurs="0"></xs:element>
 			<xs:element name="initials" minOccurs="0">

@@ -99,10 +99,10 @@ public class AMEGroupMixedContent {
 					switch (AMEGroupMixedContent.solutionMethod) {
 					case ANY_GENERIC_CONSTRUCT:
 						EReference ref = EcoreFactory.eINSTANCE.createEReference();
-						ref.setName(ANY_GENERIC_ELEMENT);
-						ref.setEType(pack.getEClassifier(AMEGroupUtil.ANY_GENERIC_CONSTRUCT));
+						ref.setName("properties");
+						ref.setEType(pack.getEClassifier(AMEGroupUtil.PROPERTIES));
 						ref.setLowerBound(0);
-						ref.setUpperBound(-1);
+						ref.setUpperBound(1);
 						ref.setContainment(true);
 						eclass.getEStructuralFeatures().add(ref);
 						break;

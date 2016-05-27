@@ -2,8 +2,6 @@ package at.ac.tuwien.big.xmltext;
 
 import java.util.List;
 
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.AbstractRule;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.ParserRule;
@@ -11,9 +9,6 @@ import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
 import org.eclipse.xtext.TypeRef;
 import org.eclipse.xtext.XtextFactory;
-import org.eclipse.xtext.XtextPackage;
-import org.eclipse.xtext.parser.impl.DatatypeRuleToken;
-import org.eclipse.xtext.xbase.typesystem.computation.NumberLiterals;
 
 public class AMEGroupDatatypes {
 

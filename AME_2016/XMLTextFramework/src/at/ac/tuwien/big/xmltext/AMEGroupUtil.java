@@ -2,16 +2,14 @@ package at.ac.tuwien.big.xmltext;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class AMEGroupUtil {
 	
-	
+	public static final String PROPERTIES = "Properties";
 	public static final String ANY_GENERIC_ATTRIBUTE = "AnyGenericAttribute";
 	public static final String ANY_GENERIC_ELEMENT = "AnyGenericElement";
 	public static final String ANY_GENERIC_TEXT = "AnyGenericText";
@@ -41,11 +39,39 @@ public class AMEGroupUtil {
 		
 		// AnyGenericElement
 		createElement(pack, anyGConstruct, anyGAttribute);
+		
+		EClass properties = createProperties(pack, anyGConstruct);
+	}
+
+	private static EClass createProperties(EPackage pack, EClass anyGConstruct) {
+		EClass properties = EcoreFactory.eINSTANCE.createEClass();
+		properties.setName(PROPERTIES);
+		properties.setAbstract(false);
+		properties.setInterface(false);
+		
+		EReference ref = EcoreFactory.eINSTANCE.createEReference();
+		properties.getEStructuralFeatures().add(ref);
+		ref.setName("anyGenericElem");
+		ref.setEType(anyGConstruct);
+		ref.setLowerBound(1);
+		ref.setUpperBound(-1);
+		ref.setContainment(true);
+		
+		pack.getEClassifiers().add(properties);
+		return properties;
 	}
 
 	private static void createElement(EPackage pack, EClass anyGConstruct, EClass anyGAttribute) {
 		EClass anyGElement = EcoreFactory.eINSTANCE.createEClass();
 		anyGElement.setName(ANY_GENERIC_ELEMENT);
+
+		EReference anyGenericAttr = EcoreFactory.eINSTANCE.createEReference();
+		anyGElement.getEStructuralFeatures().add(anyGenericAttr);
+		anyGenericAttr.setName("anyGenericAttr");
+		anyGenericAttr.setContainment(true);
+		anyGenericAttr.setEType(anyGAttribute);
+		anyGenericAttr.setLowerBound(0);
+		anyGenericAttr.setUpperBound(-1);
 		
 		EReference childElem = EcoreFactory.eINSTANCE.createEReference();
 		anyGElement.getEStructuralFeatures().add(childElem);
@@ -54,14 +80,6 @@ public class AMEGroupUtil {
 		childElem.setEType(anyGElement);
 		childElem.setLowerBound(0);
 		childElem.setUpperBound(-1);
-		
-		EReference anyGenericAttr = EcoreFactory.eINSTANCE.createEReference();
-		anyGElement.getEStructuralFeatures().add(anyGenericAttr);
-		anyGenericAttr.setName("anyGenericAttr");
-		anyGenericAttr.setContainment(true);
-		anyGenericAttr.setEType(anyGAttribute);
-		anyGenericAttr.setLowerBound(0);
-		anyGenericAttr.setUpperBound(-1);
 		
 		EAttribute elemName = EcoreFactory.eINSTANCE.createEAttribute();
 		anyGElement.getEStructuralFeatures().add(elemName);

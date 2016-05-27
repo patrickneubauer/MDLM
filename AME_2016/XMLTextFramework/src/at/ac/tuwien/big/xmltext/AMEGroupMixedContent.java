@@ -1,5 +1,6 @@
 package at.ac.tuwien.big.xmltext;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -10,9 +11,11 @@ import java.util.Optional;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -20,16 +23,19 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.xtend.typesystem.emf.EcoreUtil2;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.AbstractRule;
+import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.Group;
 import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
+import org.eclipse.xtext.TypeRef;
 import org.eclipse.xtext.XtextFactory;
 import org.eclipse.xtext.impl.ParserRuleImpl;
 
@@ -47,8 +53,9 @@ public class AMEGroupMixedContent {
 
 	private final static String ANY_GENERIC_ELEMENT = "anyGenericElement";
 
-	//private static MixedContentSolution solutionMethod = MixedContentSolution.ANY_GENERIC_CONSTRUCT;
-	private static MixedContentSolution solutionMethod = MixedContentSolution.INSERTING_TEXTCONTENT;
+	private static MixedContentSolution solutionMethod = MixedContentSolution.ANY_GENERIC_CONSTRUCT;
+	// private static MixedContentSolution solutionMethod =
+	// MixedContentSolution.INSERTING_TEXTCONTENT;
 
 	/*
 	 * TODO: IDEA BookType returns BookType: 'BookType' name=ID0 '{' ('text'
@@ -91,7 +98,7 @@ public class AMEGroupMixedContent {
 						esf.setDerived(false);
 						esf.setTransient(false);
 						esf.setVolatile(false);
-						
+
 						EClass x = esf.eClass();
 						x.getESuperTypes().add((EClass) pack.getEClassifier(AMEGroupUtil.ANY_GENERIC_CONSTRUCT));
 					}
@@ -156,18 +163,23 @@ public class AMEGroupMixedContent {
 		return Optional.empty();
 	}
 
-	private static Assignment createTextAssignment(Grammar g) {
-		Assignment ass = XtextFactory.eINSTANCE.createAssignment();
-		ass.setFeature(TEXT_CONTENT);
-		ass.setOperator("+=");
-		ass.setCardinality("?");
+	private static RuleCall createRuleCall(Grammar g, String name){
 
 		Grammar terminals = g.getUsedGrammars().get(0);
 		TerminalRule term = (TerminalRule) terminals.getRules().stream().filter(x -> x.getName().equals("STRING"))
 				.findFirst().get();
 		RuleCall ruleCall = XtextFactory.eINSTANCE.createRuleCall();
 		ruleCall.setRule(term);
-		ass.setTerminal(ruleCall);
+		return ruleCall;
+	}
+	
+	private static Assignment createTextAssignment(Grammar g) {
+		Assignment ass = XtextFactory.eINSTANCE.createAssignment();
+		ass.setFeature(TEXT_CONTENT);
+		ass.setOperator("+=");
+		ass.setCardinality("?");
+
+		ass.setTerminal(createRuleCall(g, "STRING"));
 
 		return ass;
 	}
@@ -215,6 +227,37 @@ public class AMEGroupMixedContent {
 				// }
 				// });
 				// }
+				if (MixedContentSolution.ANY_GENERIC_CONSTRUCT == AMEGroupMixedContent.solutionMethod) {
+					
+					// change syntax of AnyGenericAttribute
+					Optional<AbstractRule> textRule = g.getRules().stream()
+							.filter(x -> x.getName().equals(AMEGroupUtil.ANY_GENERIC_TEXT)).findFirst();
+					if (textRule.isPresent()) {
+						List<AbstractElement> toRemove = new ArrayList<>();
+
+						Group alt = (Group) textRule.get().getAlternatives();
+					
+						while (alt.getElements().size() > 1) {
+							alt.getElements().remove(1);
+						}
+						
+						Keyword opening = XtextFactory.eINSTANCE.createKeyword();
+						opening.setValue("{");
+						alt.getElements().add(opening);
+						
+						Assignment ass = XtextFactory.eINSTANCE.createAssignment();
+						ass.setFeature("textValue");
+						ass.setOperator("=");
+						ass.setTerminal(createRuleCall(g, "STRING"));
+						ass.setCardinality("?");
+						alt.getElements().add(ass);
+						
+						Keyword closing = XtextFactory.eINSTANCE.createKeyword();
+						closing.setValue("}");
+						alt.getElements().add(closing);
+						
+					}
+				}
 
 				if (MixedContentSolution.INSERTING_TEXTCONTENT == AMEGroupMixedContent.solutionMethod) {
 

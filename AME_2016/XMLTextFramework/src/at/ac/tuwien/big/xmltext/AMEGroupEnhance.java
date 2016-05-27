@@ -14,6 +14,7 @@ import org.eclipse.xsd.XSDComplexTypeDefinition;
 import org.eclipse.xsd.XSDComponent;
 import org.eclipse.xsd.XSDSchema;
 import org.eclipse.xtend.typesystem.emf.EcoreUtil2;
+import org.eclipse.xtext.AbstractRule;
 import org.eclipse.xtext.Grammar;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -33,6 +34,8 @@ public class AMEGroupEnhance {
 		
 		AMEGroupMixedContent.doMixedContentXText(g, mapper);
 		AMEGroupDatatypes.implDatatypesXText(g, mapper);
+		
+		clearDoubleEString(g);
 	}
 	
 	public static void refractorEcore(Resource ecore, EcoreXSDMapper mapper) {
@@ -42,6 +45,17 @@ public class AMEGroupEnhance {
 		AMEGroupMixedContent.doMixedContent(ecore, mapper);
 		
 		//AME-Gruppe: Bitte hier die Punkte implementieren
+	}
+	
+	/*
+	 * clears double EString rule
+	 */
+	private static void clearDoubleEString(Grammar g){
+		long count = g.getRules().stream().filter(x->"EString".equals(x.getName())).count();
+		if(count >= 2){
+			AbstractRule rule = g.getRules().stream().filter(x->"EString".equals(x.getName())).findFirst().get();
+			g.getRules().remove(rule);
+		}
 	}
 	
 	private static void printAllXSD(XSDComponent obj, int level){

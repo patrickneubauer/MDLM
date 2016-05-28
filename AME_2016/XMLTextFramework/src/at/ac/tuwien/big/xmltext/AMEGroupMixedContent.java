@@ -220,8 +220,8 @@ public class AMEGroupMixedContent {
 					// change syntax of AnyGenericAttribute
 					replaceAnyGenericTextRule(g);
 					replaceAnyGenericAttributeRule(g);
+					replaceAnyGenericElementRule(g);
 					replacePropertyRule(g);
-					
 				}
 
 				if (MixedContentSolution.INSERTING_TEXTCONTENT == AMEGroupMixedContent.solutionMethod) {
@@ -284,6 +284,7 @@ public class AMEGroupMixedContent {
 		if (textRule.isPresent()) {
 			Group alt = (Group) textRule.get().getAlternatives();
 		
+			// {AnyGenericText} text should stay
 			while (alt.getElements().size() > 1) {
 				alt.getElements().remove(1);
 			}
@@ -342,11 +343,7 @@ public class AMEGroupMixedContent {
 			alt.getElements().add(createKeyWord(AMEGroupUtil.PROPERTY));
 			alt.getElements().add(createKeyWord("{"));
 			
-			Assignment ass = XtextFactory.eINSTANCE.createAssignment();
-			ass.setFeature("anyGenericElem");
-			ass.setOperator("+=");
-			ass.setTerminal(createRuleCall(g, AMEGroupUtil.ANY_GENERIC_CONSTRUCT));
-			alt.getElements().add(ass);
+			alt.getElements().add(createAssignment(g, "anyGenericElem", "+=", AMEGroupUtil.ANY_GENERIC_CONSTRUCT));
 			
 			Group intGroup = XtextFactory.eINSTANCE.createGroup();
 			alt.getElements().add(intGroup);
@@ -354,13 +351,72 @@ public class AMEGroupMixedContent {
 			
 			intGroup.getElements().add(createKeyWord(","));
 			
-			ass = XtextFactory.eINSTANCE.createAssignment();
-			ass.setFeature("anyGenericElem");
-			ass.setOperator("+=");
-			ass.setTerminal(createRuleCall(g, AMEGroupUtil.ANY_GENERIC_CONSTRUCT));
-			intGroup.getElements().add(ass);
+			intGroup.getElements().add(createAssignment(g, "anyGenericElem", "+=", AMEGroupUtil.ANY_GENERIC_CONSTRUCT));
 			
 			alt.getElements().add(createKeyWord("}"));
+		}
+	}
+	
+	private static void replaceAnyGenericElementRule(Grammar g){
+		Optional<AbstractRule> rule = g.getRules().stream()
+				.filter(x -> x.getName().equals(AMEGroupUtil.ANY_GENERIC_ELEMENT)).findFirst();
+		if (rule.isPresent()) {
+			Group alt = (Group) rule.get().getAlternatives();
+			alt.getElements().clear();
+			
+			/*
+			 *  elemName=STRING
+				(’:’ elemValue=STRING)?
+			 */
+			Assignment ass = XtextFactory.eINSTANCE.createAssignment();
+			ass.setFeature("elemName");
+			ass.setOperator("=");
+			ass.setTerminal(createTerminalRuleCall(g, "STRING"));
+			alt.getElements().add(ass);
+			
+			Group group = XtextFactory.eINSTANCE.createGroup();
+			alt.getElements().add(group);
+			group.setCardinality("?");
+			group.getElements().add(createKeyWord(":"));
+			
+			ass = XtextFactory.eINSTANCE.createAssignment();
+			ass.setFeature("elemValue");
+			ass.setOperator("=");
+			ass.setTerminal(createTerminalRuleCall(g, "STRING"));
+			group.getElements().add(ass);
+			
+			/*
+			 * (anyGenericAttr+=AnyGenericAttribute ("," anyGenericAttr+=AnyGenericAttribute)* )?
+			 */
+			
+			Group group1 = XtextFactory.eINSTANCE.createGroup();
+			alt.getElements().add(group1);
+			group1.setCardinality("?");
+			group1.getElements().add(createAssignment(g, "anyGenericAttr", "+=", AMEGroupUtil.ANY_GENERIC_ATTRIBUTE));
+			
+			Group group2 = XtextFactory.eINSTANCE.createGroup();
+			group1.getElements().add(group2);
+			group2.setCardinality("*");
+			group2.getElements().add(createKeyWord(","));
+			group2.getElements().add(createAssignment(g, "anyGenericAttr", "+=", AMEGroupUtil.ANY_GENERIC_ATTRIBUTE));
+			
+			/*
+			 * ('{' childElem+=AnyGenericElement ("," childElem+=AnyGenericElement)* '}' )?
+			 */
+			
+			Group group3 = XtextFactory.eINSTANCE.createGroup();
+			alt.getElements().add(group3);
+			group3.setCardinality("?");
+			group3.getElements().add(createKeyWord("{"));
+			group3.getElements().add(createAssignment(g, "childElem", "+=", AMEGroupUtil.ANY_GENERIC_ELEMENT));
+			
+			Group group4 = XtextFactory.eINSTANCE.createGroup();
+			group3.getElements().add(group4);
+			group4.setCardinality("*");
+			group4.getElements().add(createKeyWord(","));
+			group4.getElements().add(createAssignment(g, "childElem", "+=", AMEGroupUtil.ANY_GENERIC_ELEMENT));
+			
+			group3.getElements().add(createKeyWord("}"));
 		}
 	}
 	
@@ -368,6 +424,14 @@ public class AMEGroupMixedContent {
 		Keyword word = XtextFactory.eINSTANCE.createKeyword();
 		word.setValue(value);
 		return word;
+	}
+	
+	private static Assignment createAssignment(Grammar g, String featureName, String operator, String ruleName){
+		Assignment ass = XtextFactory.eINSTANCE.createAssignment();
+		ass.setFeature(featureName);
+		ass.setOperator(operator);
+		ass.setTerminal(createRuleCall(g, ruleName));
+		return ass;
 	}
 	
 	private static void removeKeyWordFromGroup(Group group, String keyWordValue){

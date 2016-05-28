@@ -1,6 +1,5 @@
 package at.ac.tuwien.big.xmltext;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -11,11 +10,9 @@ import java.util.Optional;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -23,19 +20,16 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.xtend.typesystem.emf.EcoreUtil2;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.AbstractRule;
-import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.Group;
 import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.TypeRef;
 import org.eclipse.xtext.XtextFactory;
 import org.eclipse.xtext.impl.ParserRuleImpl;
 
@@ -166,7 +160,8 @@ public class AMEGroupMixedContent {
 	private static RuleCall createTerminalRuleCall(Grammar g, String name){
 
 		Grammar terminals = g.getUsedGrammars().get(0);
-		TerminalRule term = (TerminalRule) terminals.getRules().stream().filter(x -> x.getName().equals("STRING"))
+		TerminalRule term = (TerminalRule) terminals.getRules().stream()
+				.filter(x -> x.getName().equals(name))
 				.findFirst().get();
 		RuleCall ruleCall = XtextFactory.eINSTANCE.createRuleCall();
 		ruleCall.setRule(term);
@@ -220,26 +215,13 @@ public class AMEGroupMixedContent {
 
 				// API XText Grammar or XText Grammar API
 				// XPand Xtend
-
-				// Optional<Group> mixedContentGroup =
-				// getMixedContentGroup(rule);
-
-				// if(mixedContentGroup.isPresent()){
-				// (mixedContentGroup.get()).getElements().forEach(e -> {
-				// System.out.println(e);
-				//
-				// if(e instanceof Keyword && ((Keyword)
-				// e).getValue().equals(ANY_GENERIC_ELEMENT)){
-				// ((Keyword) e).setValue("mixed");
-				//
-				// }
-				// });
-				// }
 				if (MixedContentSolution.ANY_GENERIC_CONSTRUCT == AMEGroupMixedContent.solutionMethod) {
 					
 					// change syntax of AnyGenericAttribute
 					replaceAnyGenericTextRule(g);
+					replaceAnyGenericAttributeRule(g);
 					replacePropertyRule(g);
+					
 				}
 
 				if (MixedContentSolution.INSERTING_TEXTCONTENT == AMEGroupMixedContent.solutionMethod) {
@@ -300,8 +282,6 @@ public class AMEGroupMixedContent {
 		Optional<AbstractRule> textRule = g.getRules().stream()
 				.filter(x -> x.getName().equals(AMEGroupUtil.ANY_GENERIC_TEXT)).findFirst();
 		if (textRule.isPresent()) {
-			List<AbstractElement> toRemove = new ArrayList<>();
-
 			Group alt = (Group) textRule.get().getAlternatives();
 		
 			while (alt.getElements().size() > 1) {
@@ -326,13 +306,35 @@ public class AMEGroupMixedContent {
 		}
 	}
 	
+	private static void replaceAnyGenericAttributeRule(Grammar g){
+
+		Optional<AbstractRule> rule = g.getRules().stream()
+				.filter(x -> x.getName().equals(AMEGroupUtil.ANY_GENERIC_ATTRIBUTE)).findFirst();
+		if (rule.isPresent()) {
+			Group alt = (Group) rule.get().getAlternatives();
+			alt.getElements().clear();
+			
+			Assignment ass = XtextFactory.eINSTANCE.createAssignment();
+			ass.setFeature("attrName");
+			ass.setOperator("=");
+			ass.setTerminal(createTerminalRuleCall(g, "STRING"));
+			alt.getElements().add(ass);
+			
+			alt.getElements().add(createKeyWord(":"));
+			
+			ass = XtextFactory.eINSTANCE.createAssignment();
+			ass.setFeature("attrValue");
+			ass.setOperator("=");
+			ass.setTerminal(createTerminalRuleCall(g, "STRING"));
+			alt.getElements().add(ass);
+		}
+	}
+	
 	private static void replacePropertyRule(Grammar g){
 
 		Optional<AbstractRule> rule = g.getRules().stream()
 				.filter(x -> x.getName().equals(AMEGroupUtil.PROPERTY)).findFirst();
 		if (rule.isPresent()) {
-			
-			List<AbstractElement> toRemove = new ArrayList<>();
 			Group alt = (Group) rule.get().getAlternatives();
 			
 			alt.getElements().clear();

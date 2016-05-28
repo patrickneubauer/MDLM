@@ -36,6 +36,9 @@ public class AMEGroupEnhance {
 		AMEGroupDatatypes.implDatatypesXText(g, mapper);
 		
 		clearDoubleEString(g);
+		
+		// Concrete Syntax - Customizing Syntax
+		AMEGroupCustomizeSyntax.customizeSyntax(g);
 	}
 	
 	public static void refractorEcore(Resource ecore, EcoreXSDMapper mapper) {

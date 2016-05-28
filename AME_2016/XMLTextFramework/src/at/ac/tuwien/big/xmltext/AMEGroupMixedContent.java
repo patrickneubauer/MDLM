@@ -315,19 +315,11 @@ public class AMEGroupMixedContent {
 			Group alt = (Group) rule.get().getAlternatives();
 			alt.getElements().clear();
 			
-			Assignment ass = XtextFactory.eINSTANCE.createAssignment();
-			ass.setFeature("attrName");
-			ass.setOperator("=");
-			ass.setTerminal(createTerminalRuleCall(g, "STRING"));
-			alt.getElements().add(ass);
+			alt.getElements().add(createAssignment(g, "attrName", "=", "STRING", true));
 			
 			alt.getElements().add(createKeyWord(":"));
 			
-			ass = XtextFactory.eINSTANCE.createAssignment();
-			ass.setFeature("attrValue");
-			ass.setOperator("=");
-			ass.setTerminal(createTerminalRuleCall(g, "STRING"));
-			alt.getElements().add(ass);
+			alt.getElements().add(createAssignment(g, "attrValue", "=", "STRING",true));
 		}
 	}
 	
@@ -368,22 +360,14 @@ public class AMEGroupMixedContent {
 			 *  elemName=STRING
 				(’:’ elemValue=STRING)?
 			 */
-			Assignment ass = XtextFactory.eINSTANCE.createAssignment();
-			ass.setFeature("elemName");
-			ass.setOperator("=");
-			ass.setTerminal(createTerminalRuleCall(g, "STRING"));
-			alt.getElements().add(ass);
+			alt.getElements().add(createAssignment(g, "elemName", "=", "STRING",true));
 			
 			Group group = XtextFactory.eINSTANCE.createGroup();
 			alt.getElements().add(group);
 			group.setCardinality("?");
 			group.getElements().add(createKeyWord(":"));
 			
-			ass = XtextFactory.eINSTANCE.createAssignment();
-			ass.setFeature("elemValue");
-			ass.setOperator("=");
-			ass.setTerminal(createTerminalRuleCall(g, "STRING"));
-			group.getElements().add(ass);
+			group.getElements().add(createAssignment(g, "elemValue", "=", "STRING",true));
 			
 			/*
 			 * (anyGenericAttr+=AnyGenericAttribute ("," anyGenericAttr+=AnyGenericAttribute)* )?
@@ -427,10 +411,18 @@ public class AMEGroupMixedContent {
 	}
 	
 	private static Assignment createAssignment(Grammar g, String featureName, String operator, String ruleName){
+		return createAssignment(g, featureName, operator, ruleName, false);
+	}
+	
+	private static Assignment createAssignment(Grammar g, String featureName, String operator, String ruleName, boolean terminalRule){
 		Assignment ass = XtextFactory.eINSTANCE.createAssignment();
 		ass.setFeature(featureName);
 		ass.setOperator(operator);
-		ass.setTerminal(createRuleCall(g, ruleName));
+		if(terminalRule){
+			ass.setTerminal(createTerminalRuleCall(g, ruleName));
+		}else{
+			ass.setTerminal(createRuleCall(g, ruleName));	
+		}
 		return ass;
 	}
 	

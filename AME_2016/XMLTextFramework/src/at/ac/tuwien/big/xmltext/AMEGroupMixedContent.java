@@ -107,7 +107,7 @@ public class AMEGroupMixedContent {
 					case ANY_GENERIC_CONSTRUCT:
 						EReference ref = EcoreFactory.eINSTANCE.createEReference();
 						ref.setName("properties");
-						ref.setEType(pack.getEClassifier(AMEGroupUtil.PROPERTIES));
+						ref.setEType(pack.getEClassifier(AMEGroupUtil.PROPERTY));
 						ref.setLowerBound(0);
 						ref.setUpperBound(1);
 						ref.setContainment(true);
@@ -163,7 +163,7 @@ public class AMEGroupMixedContent {
 		return Optional.empty();
 	}
 
-	private static RuleCall createRuleCall(Grammar g, String name){
+	private static RuleCall createTerminalRuleCall(Grammar g, String name){
 
 		Grammar terminals = g.getUsedGrammars().get(0);
 		TerminalRule term = (TerminalRule) terminals.getRules().stream().filter(x -> x.getName().equals("STRING"))
@@ -173,13 +173,21 @@ public class AMEGroupMixedContent {
 		return ruleCall;
 	}
 	
+	private static RuleCall createRuleCall(Grammar g, String name){
+		AbstractRule rule = g.getRules().stream().filter(x -> x.getName().equals(name))
+				.findFirst().get();
+		RuleCall ruleCall = XtextFactory.eINSTANCE.createRuleCall();
+		ruleCall.setRule(rule);
+		return ruleCall;
+	}
+	
 	private static Assignment createTextAssignment(Grammar g) {
 		Assignment ass = XtextFactory.eINSTANCE.createAssignment();
 		ass.setFeature(TEXT_CONTENT);
 		ass.setOperator("+=");
 		ass.setCardinality("?");
 
-		ass.setTerminal(createRuleCall(g, "STRING"));
+		ass.setTerminal(createTerminalRuleCall(g, "STRING"));
 
 		return ass;
 	}
@@ -230,33 +238,8 @@ public class AMEGroupMixedContent {
 				if (MixedContentSolution.ANY_GENERIC_CONSTRUCT == AMEGroupMixedContent.solutionMethod) {
 					
 					// change syntax of AnyGenericAttribute
-					Optional<AbstractRule> textRule = g.getRules().stream()
-							.filter(x -> x.getName().equals(AMEGroupUtil.ANY_GENERIC_TEXT)).findFirst();
-					if (textRule.isPresent()) {
-						List<AbstractElement> toRemove = new ArrayList<>();
-
-						Group alt = (Group) textRule.get().getAlternatives();
-					
-						while (alt.getElements().size() > 1) {
-							alt.getElements().remove(1);
-						}
-						
-						Keyword opening = XtextFactory.eINSTANCE.createKeyword();
-						opening.setValue("{");
-						alt.getElements().add(opening);
-						
-						Assignment ass = XtextFactory.eINSTANCE.createAssignment();
-						ass.setFeature("textValue");
-						ass.setOperator("=");
-						ass.setTerminal(createRuleCall(g, "STRING"));
-						ass.setCardinality("?");
-						alt.getElements().add(ass);
-						
-						Keyword closing = XtextFactory.eINSTANCE.createKeyword();
-						closing.setValue("}");
-						alt.getElements().add(closing);
-						
-					}
+					replaceAnyGenericTextRule(g);
+					replacePropertyRule(g);
 				}
 
 				if (MixedContentSolution.INSERTING_TEXTCONTENT == AMEGroupMixedContent.solutionMethod) {
@@ -311,6 +294,90 @@ public class AMEGroupMixedContent {
 			}
 
 		}
+	}
+
+	private static void replaceAnyGenericTextRule(Grammar g) {
+		Optional<AbstractRule> textRule = g.getRules().stream()
+				.filter(x -> x.getName().equals(AMEGroupUtil.ANY_GENERIC_TEXT)).findFirst();
+		if (textRule.isPresent()) {
+			List<AbstractElement> toRemove = new ArrayList<>();
+
+			Group alt = (Group) textRule.get().getAlternatives();
+		
+			while (alt.getElements().size() > 1) {
+				alt.getElements().remove(1);
+			}
+			
+			Keyword opening = XtextFactory.eINSTANCE.createKeyword();
+			opening.setValue("{");
+			alt.getElements().add(opening);
+			
+			Assignment ass = XtextFactory.eINSTANCE.createAssignment();
+			ass.setFeature("textValue");
+			ass.setOperator("=");
+			ass.setTerminal(createTerminalRuleCall(g, "STRING"));
+			ass.setCardinality("?");
+			alt.getElements().add(ass);
+			
+			Keyword closing = XtextFactory.eINSTANCE.createKeyword();
+			closing.setValue("}");
+			alt.getElements().add(closing);
+			
+		}
+	}
+	
+	private static void replacePropertyRule(Grammar g){
+
+		Optional<AbstractRule> rule = g.getRules().stream()
+				.filter(x -> x.getName().equals(AMEGroupUtil.PROPERTY)).findFirst();
+		if (rule.isPresent()) {
+			
+			List<AbstractElement> toRemove = new ArrayList<>();
+			Group alt = (Group) rule.get().getAlternatives();
+			
+			alt.getElements().clear();
+			
+			alt.getElements().add(createKeyWord(AMEGroupUtil.PROPERTY));
+			alt.getElements().add(createKeyWord("{"));
+			
+			Assignment ass = XtextFactory.eINSTANCE.createAssignment();
+			ass.setFeature("anyGenericElem");
+			ass.setOperator("+=");
+			ass.setTerminal(createRuleCall(g, AMEGroupUtil.ANY_GENERIC_CONSTRUCT));
+			alt.getElements().add(ass);
+			
+			Group intGroup = XtextFactory.eINSTANCE.createGroup();
+			alt.getElements().add(intGroup);
+			intGroup.setCardinality("*");
+			
+			intGroup.getElements().add(createKeyWord(","));
+			
+			ass = XtextFactory.eINSTANCE.createAssignment();
+			ass.setFeature("anyGenericElem");
+			ass.setOperator("+=");
+			ass.setTerminal(createRuleCall(g, AMEGroupUtil.ANY_GENERIC_CONSTRUCT));
+			intGroup.getElements().add(ass);
+			
+			alt.getElements().add(createKeyWord("}"));
+		}
+	}
+	
+	private static Keyword createKeyWord(String value){
+		Keyword word = XtextFactory.eINSTANCE.createKeyword();
+		word.setValue(value);
+		return word;
+	}
+	
+	private static void removeKeyWordFromGroup(Group group, String keyWordValue){
+
+		Optional<Keyword> keyProperty = group.getElements().stream()
+			.filter(x->x instanceof Keyword)
+			.map(Keyword.class::cast)
+			.filter(x->x.getValue().equals(keyWordValue))
+			.findFirst();
+		
+		if(keyProperty.isPresent())
+			group.getElements().remove(keyProperty);
 	}
 
 	private enum MixedContentSolution {

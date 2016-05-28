@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 
 public class AMEGroupUtil {
 	
-	public static final String PROPERTIES = "Properties";
+	public static final String PROPERTY = "Property";
 	public static final String ANY_GENERIC_ATTRIBUTE = "AnyGenericAttribute";
 	public static final String ANY_GENERIC_ELEMENT = "AnyGenericElement";
 	public static final String ANY_GENERIC_TEXT = "AnyGenericText";
@@ -45,7 +45,7 @@ public class AMEGroupUtil {
 
 	private static EClass createProperties(EPackage pack, EClass anyGConstruct) {
 		EClass properties = EcoreFactory.eINSTANCE.createEClass();
-		properties.setName(PROPERTIES);
+		properties.setName(PROPERTY);
 		properties.setAbstract(false);
 		properties.setInterface(false);
 		

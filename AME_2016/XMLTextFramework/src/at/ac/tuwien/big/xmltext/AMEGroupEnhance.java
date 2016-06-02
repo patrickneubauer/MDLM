@@ -46,6 +46,7 @@ public class AMEGroupEnhance {
 		//printAllXSD((XSDComponent)mapper.getXSDRoot(), 0);
 		
 		AMEGroupMixedContent.doMixedContent(ecore, mapper);
+		AMEGroupRestriction.doRestriction(ecore, mapper);
 		
 		//AME-Gruppe: Bitte hier die Punkte implementieren
 	}

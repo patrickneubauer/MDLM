@@ -4,6 +4,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
 
@@ -137,5 +138,26 @@ public class AMEGroupUtil {
 		return anyGConstruct;
 	}
 	
+	public static void copyEStructuralFeature(EStructuralFeature source, EStructuralFeature target) {
+		target.setName(source.getName());
+		target.setChangeable(source.isChangeable());
+		target.setDerived(source.isDerived());
+		target.setEType(source.getEType());
+		target.setLowerBound(source.getLowerBound());
+		target.setUpperBound(source.getUpperBound());
+		target.setOrdered(source.isOrdered());
+		target.setTransient(source.isTransient());
+		target.setUnique(source.isUnique());
+		target.setUnsettable(source.isUnsettable());
+		target.setVolatile(source.isVolatile());
+		target.getEAnnotations().addAll(source.getEAnnotations());
+	}
+	
+	public static void replaceEStructuralFeature(EClass eclass, EStructuralFeature oldEsf, EStructuralFeature newEsf) {
+		eclass.getEStructuralFeatures().remove(oldEsf);
+		eclass.getEStructuralFeatures().add(newEsf);
+	}
+	
+
 	
 }

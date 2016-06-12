@@ -34,6 +34,7 @@ public class AMEGroupEnhance {
 		
 		AMEGroupMixedContent.doMixedContentXText(g, mapper);
 		AMEGroupDatatypes.implDatatypesXText(g, mapper);
+//		AMEGroupIdIdref.implIdIdrefXText(g, mapper);
 		
 		clearDoubleEString(g);
 		
@@ -47,6 +48,7 @@ public class AMEGroupEnhance {
 		
 		AMEGroupMixedContent.doMixedContent(ecore, mapper);
 		AMEGroupRestriction.doRestriction(ecore, mapper);
+//		AMEGroupIdIdref.implIdIdref(ecore, mapper);
 		
 		//AME-Gruppe: Bitte hier die Punkte implementieren
 	}

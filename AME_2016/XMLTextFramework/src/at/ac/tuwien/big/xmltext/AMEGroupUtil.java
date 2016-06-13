@@ -153,11 +153,4 @@ public class AMEGroupUtil {
 		target.getEAnnotations().addAll(source.getEAnnotations());
 	}
 	
-	public static void replaceEStructuralFeature(EClass eclass, EStructuralFeature oldEsf, EStructuralFeature newEsf) {
-		eclass.getEStructuralFeatures().remove(oldEsf);
-		eclass.getEStructuralFeatures().add(newEsf);
-	}
-	
-
-	
 }

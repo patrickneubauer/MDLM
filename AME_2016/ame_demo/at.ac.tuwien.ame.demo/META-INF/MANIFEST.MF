@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: at.ac.tuwien.ame.demo
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: at.ac.tuwien.ame.demo; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ XMLTextFramework,
+ org.eclipse.xtext.util,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+Import-Package: org.apache.log4j,
+ org.eclipse.swt,
+ org.eclipse.swt.graphics,
+ org.eclipse.xtext.ui.editor.syntaxcoloring,
+ org.eclipse.xtext.ui.editor.utils
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: at.ac.tuwien.big.xmltext.idIdref,
+ at.ac.tuwien.big.xmltext.idIdref.services,
+ at.ac.tuwien.big.xmltext.idIdref.serializer,
+ at.ac.tuwien.big.xmltext.idIdref.parser.antlr,
+ at.ac.tuwien.big.xmltext.idIdref.parser.antlr.internal,
+ at.ac.tuwien.big.xmltext.idIdref.validation,
+ at.ac.tuwien.big.xmltext.idIdref.scoping,
+ at.ac.tuwien.big.xmltext.idIdref.generator,
+ at.ac.tuwien.big.xmltext.idIdref.formatting

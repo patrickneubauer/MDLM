@@ -1,0 +1,23 @@
+EmployeeListType [
+	
+	boss [
+		BossType [
+			lastName "stark"
+			superBoss robert
+			bossId eddard
+		],
+		BossType [
+			lastName "baratheon"
+			superBoss robert
+			bossId robert
+		]
+	]
+	
+	employee [
+		EmployeeType [
+			lastName "snow"
+			boss eddard
+			employeeId john
+		]
+	]
+]

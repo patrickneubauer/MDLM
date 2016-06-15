@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!-- definition of simple types -->
+  <xs:simpleType name="password1Type">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="[a-zA-Z0-9]{8}" />
+	</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="password2Type">
+	<xs:restriction base="xs:string">
+		<xs:length value="8"/>
+	</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="password3Type">
+	<xs:restriction base="xs:string">
+		<xs:minLength value="5"/>
+      	<xs:maxLength value="8"/>
+	</xs:restriction>
+</xs:simpleType>
+  <xs:simpleType name="nameType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="32"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="descType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="pagesType">
+   	<xs:restriction base="xs:int"></xs:restriction>
+  </xs:simpleType>
+  <!-- definition of complex types -->
+  <xs:complexType name="libraryType">
+  	<xs:sequence>
+  		<xs:element name="book" type="bookType" maxOccurs="unbounded" minOccurs="0"/>
+  		<xs:element name="customer" type="customerType" maxOccurs="unbounded" minOccurs="0"/>
+  	</xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="bookType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:ID"/>
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="author" type="nameType"/>
+      <xs:element name="pages" type="xs:int"/>
+      <xs:element name="start" type="xs:date"/>
+      <xs:element name="bookInfo" type="bookInfoType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="customerType">
+  	<xs:sequence>
+  		<xs:element name="firstName" type="xs:string"/>
+  		<xs:element name="lastName" type="xs:string"/>
+  		<xs:element name="birthDate" type="xs:date"/>
+  	</xs:sequence>
+  	<xs:attribute name="password1" type="password1Type" use="required"/>
+  	<xs:attribute name="password2" type="password2Type" use="required"/>
+  	<xs:attribute name="password3" type="password3Type" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="bookInfoType">
+  	<xs:sequence>
+		<xs:any namespace="##any" processContents="lax" maxOccurs="unbounded" />
+  	</xs:sequence>
+  </xs:complexType>     
+   <!-- root element -->
+  <xs:element name="library" type="libraryType"></xs:element>  
+
+</xs:schema>

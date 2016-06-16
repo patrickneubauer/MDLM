@@ -3,11 +3,13 @@ EmployeeListType [
 	boss [
 		BossType [
 			lastName "stark"
+			birthDate 1980-10-10
 			superBoss robert
 			bossId eddard
 		],
 		BossType [
 			lastName "baratheon"
+			birthDate 1970-10-10
 			superBoss robert
 			bossId robert
 		]
@@ -16,6 +18,7 @@ EmployeeListType [
 	employee [
 		EmployeeType [
 			lastName "snow"
+			birthDate 2000-10-10
 			boss eddard
 			employeeId john
 		]

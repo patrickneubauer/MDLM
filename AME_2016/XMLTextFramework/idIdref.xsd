@@ -15,6 +15,7 @@
       <xs:element name="lastName" type="xs:string"></xs:element>
       <xs:element name="employeeId" type="xs:ID"></xs:element>
       <xs:element name="boss" type="xs:IDREF"></xs:element>
+      <xs:element name="birthDate" type="xs:date" />
     </xs:sequence>
   </xs:complexType>
 
@@ -24,6 +25,7 @@
       <xs:element name="lastName" type="xs:string"></xs:element>
       <xs:element name="bossId" type="xs:ID"></xs:element>
       <xs:element name="superBoss" type="xs:IDREF"></xs:element>
+      <xs:element name="birthDate" type="xs:date" />
    	</xs:sequence>
   </xs:complexType>
 </xs:schema>

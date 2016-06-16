@@ -19,6 +19,9 @@ public class ExampleHighlightingConfiguration extends DefaultHighlightingConfigu
     public static final String HELLO_ID = "hello";
     public static final String GREEN_ID = "green";
     public static final String PINK_ID = "pink";
+    
+    public static final String BOSS_ID = "boss";
+    public static final String EMPLOYEE_ID = "employee";
 
     @Override
     public void configure(IHighlightingConfigurationAcceptor acceptor) {
@@ -30,6 +33,9 @@ public class ExampleHighlightingConfiguration extends DefaultHighlightingConfigu
         acceptor.acceptDefaultHighlighting(GREEN_ID, "Green", greenTextStyle());
         acceptor.acceptDefaultHighlighting(PINK_ID, "Pink", pinkTextStyle());
         acceptor.acceptDefaultHighlighting(MARKER_ID, "Marker", markerTextStyle());
+        
+        acceptor.acceptDefaultHighlighting(BOSS_ID, "Boss", bossTextStyle());
+        acceptor.acceptDefaultHighlighting(EMPLOYEE_ID, "Employee", employeeTextStyle());
     }
 
     public TextStyle defaultTextStyle() {
@@ -65,7 +71,7 @@ public class ExampleHighlightingConfiguration extends DefaultHighlightingConfigu
     
     public TextStyle keywordTextStyle() {
         TextStyle textStyle = defaultTextStyle().copy();
-        textStyle.setColor(new RGB(255, 0, 0));//127-255-0
+        textStyle.setColor(new RGB(127, 0, 85));//127-255-0
         textStyle.setStyle(SWT.BOLD);
         return textStyle;
     }
@@ -80,6 +86,20 @@ public class ExampleHighlightingConfiguration extends DefaultHighlightingConfigu
     public TextStyle numberTextStyle() {
         TextStyle textStyle = defaultTextStyle().copy();
         textStyle.setColor(new RGB(127, 127, 127));
+        return textStyle;
+    }
+    
+    public TextStyle bossTextStyle() {
+        TextStyle textStyle = defaultTextStyle().copy();
+        textStyle.setColor(new RGB(255,0,0));//127-255-0
+        textStyle.setStyle(SWT.BOLD);
+        return textStyle;
+    }
+    
+    public TextStyle employeeTextStyle() {
+        TextStyle textStyle = defaultTextStyle().copy();
+        textStyle.setColor(new RGB(0,0,255));//127-255-0
+        textStyle.setStyle(SWT.BOLD);
         return textStyle;
     }
 }

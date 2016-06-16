@@ -10,7 +10,7 @@ public class ExampleAntlrTokenToAttributeIdMapper extends AbstractAntlrTokenToAt
 
     @Override
     protected String calculateId(String tokenName, int tokenType) {
-    	System.out.println(tokenName);
+    	System.out.println("tokenName: " + tokenName);
         if(tokenName.equals("RULE_INT")) {
             return ExampleHighlightingConfiguration.NUMBER_ID;
         }
@@ -19,6 +19,12 @@ public class ExampleAntlrTokenToAttributeIdMapper extends AbstractAntlrTokenToAt
         }
         else if(tokenName.contains("!")){
         	return ExampleHighlightingConfiguration.MARKER_ID;
+        }
+        else if(tokenName.toLowerCase().contains("boss")){
+        	return ExampleHighlightingConfiguration.BOSS_ID;
+        }
+        else if(tokenName.toLowerCase().contains("employee")){
+        	return ExampleHighlightingConfiguration.EMPLOYEE_ID;
         }
         else if(QUOTED.matcher(tokenName).matches()) {
             return ExampleHighlightingConfiguration.KEYWORD_ID;

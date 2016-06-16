@@ -19,9 +19,13 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.impl.EDataTypeImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend.typesystem.emf.EDataTypeType;
+import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.AbstractMetamodelDeclaration;
 import org.eclipse.xtext.AbstractRule;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Grammar;
+import org.eclipse.xtext.Group;
+import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
@@ -45,7 +49,7 @@ public class AMEGroupDatatypes {
 			if (instanceTypeName == null) {
 				continue;
 			}
-			
+
 			switch (instanceTypeName) {
 			case "java.math.BigInteger":
 				r.setAlternatives(callTerminal(g, "INT"));
@@ -59,17 +63,40 @@ public class AMEGroupDatatypes {
 				break;
 			}
 			case "javax.xml.datatype.XMLGregorianCalendar": {
-				r.setAlternatives(callTerminal(g, "STRING"));
+				r.setAlternatives(createDateGroup(g));
 				break;
 			}
 			default:
 				System.out.println(instanceTypeName);
 				break;
 			}
+
+			if (r.getName().equals("ID0")) {
+				r.setAlternatives(callTerminal(g, "ID"));
+			}
 		}
+
 	}
 
-	/*smaller example for paper*/
+	private static Group createDateGroup(Grammar g) {
+		Group group = XtextFactory.eINSTANCE.createGroup();
+		List<AbstractElement> groupElements = group.getElements();
+		groupElements.add(callTerminal(g, "INT"));
+		groupElements.add(createKeyword("-"));
+		groupElements.add(callTerminal(g, "INT"));
+		groupElements.add(createKeyword("-"));
+		groupElements.add(callTerminal(g, "INT"));
+		return group;
+	}
+	
+	private static Keyword createKeyword(String s){
+		Keyword keyword = XtextFactory.eINSTANCE.createKeyword();
+		keyword.setValue(s);
+		return keyword;
+	}
+	
+
+	/* smaller example for paper */
 	public static void implDatatypesXText(Grammar g) {
 		List<AbstractRule> rules = g.getRules();
 		for (AbstractRule r : rules) {

@@ -15,6 +15,7 @@ BossType:
 	'BossType'
 	"["
 	'lastName' lastName=String0
+	'birthDate' birthDate=Date
 	'superBoss' superBoss=[IdValues]
 	'bossId' bossId=IdValues
 	"]";
@@ -23,6 +24,7 @@ EmployeeType:
 	'EmployeeType'
 	"["
 	'lastName' lastName=String0
+	'birthDate' birthDate=Date
 	'boss' boss=[IdValues]
 	'employeeId' employeeId=IdValues
 	"]";
@@ -33,6 +35,10 @@ STRING;
 
 IdValues:
 	{IdValues} name=ID0;
+
+Date returns type::Date:
+/* TODO: implement this rule and an appropriate IValueConverter */
+INT "-" INT "-" INT;
 
 ID0 returns type::ID:
 /* TODO: implement this rule and an appropriate IValueConverter */

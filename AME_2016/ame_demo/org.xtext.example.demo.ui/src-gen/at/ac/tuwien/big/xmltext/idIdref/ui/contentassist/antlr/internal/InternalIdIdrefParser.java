@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EmployeeListType'", "'['", "']'", "'boss'", "','", "'employee'", "'BossType'", "'lastName'", "'superBoss'", "'bossId'", "'EmployeeType'", "'employeeId'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EmployeeListType'", "'['", "']'", "'boss'", "','", "'employee'", "'BossType'", "'lastName'", "'birthDate'", "'superBoss'", "'bossId'", "'EmployeeType'", "'employeeId'", "'-'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -42,6 +42,8 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
     public static final int RULE_INT=6;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -457,21 +459,98 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleIdValues"
 
 
+    // $ANTLR start "entryRuleDate"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:200:1: entryRuleDate : ruleDate EOF ;
+    public final void entryRuleDate() throws RecognitionException {
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:201:1: ( ruleDate EOF )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:202:1: ruleDate EOF
+            {
+             before(grammarAccess.getDateRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleDate_in_entryRuleDate360);
+            ruleDate();
+
+            state._fsp--;
+
+             after(grammarAccess.getDateRule()); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDate367); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleDate"
+
+
+    // $ANTLR start "ruleDate"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:209:1: ruleDate : ( ( rule__Date__Group__0 ) ) ;
+    public final void ruleDate() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:213:2: ( ( ( rule__Date__Group__0 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:214:1: ( ( rule__Date__Group__0 ) )
+            {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:214:1: ( ( rule__Date__Group__0 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:215:1: ( rule__Date__Group__0 )
+            {
+             before(grammarAccess.getDateAccess().getGroup()); 
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:216:1: ( rule__Date__Group__0 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:216:2: rule__Date__Group__0
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__0_in_ruleDate393);
+            rule__Date__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDateAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleDate"
+
+
     // $ANTLR start "entryRuleID0"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:200:1: entryRuleID0 : ruleID0 EOF ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:228:1: entryRuleID0 : ruleID0 EOF ;
     public final void entryRuleID0() throws RecognitionException {
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:201:1: ( ruleID0 EOF )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:202:1: ruleID0 EOF
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:229:1: ( ruleID0 EOF )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:230:1: ruleID0 EOF
             {
              before(grammarAccess.getID0Rule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleID0_in_entryRuleID0360);
+            pushFollow(FollowSets000.FOLLOW_ruleID0_in_entryRuleID0420);
             ruleID0();
 
             state._fsp--;
 
              after(grammarAccess.getID0Rule()); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleID0367); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleID0427); 
 
             }
 
@@ -488,20 +567,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleID0"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:209:1: ruleID0 : ( RULE_ID ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:237:1: ruleID0 : ( RULE_ID ) ;
     public final void ruleID0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:213:2: ( ( RULE_ID ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:214:1: ( RULE_ID )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:241:2: ( ( RULE_ID ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:242:1: ( RULE_ID )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:214:1: ( RULE_ID )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:215:1: RULE_ID
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:242:1: ( RULE_ID )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:243:1: RULE_ID
             {
              before(grammarAccess.getID0Access().getIDTerminalRuleCall()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleID0393); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleID0453); 
              after(grammarAccess.getID0Access().getIDTerminalRuleCall()); 
 
             }
@@ -525,21 +604,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group__0"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:232:1: rule__EmployeeListType__Group__0 : rule__EmployeeListType__Group__0__Impl rule__EmployeeListType__Group__1 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:260:1: rule__EmployeeListType__Group__0 : rule__EmployeeListType__Group__0__Impl rule__EmployeeListType__Group__1 ;
     public final void rule__EmployeeListType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:236:1: ( rule__EmployeeListType__Group__0__Impl rule__EmployeeListType__Group__1 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:237:2: rule__EmployeeListType__Group__0__Impl rule__EmployeeListType__Group__1
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:264:1: ( rule__EmployeeListType__Group__0__Impl rule__EmployeeListType__Group__1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:265:2: rule__EmployeeListType__Group__0__Impl rule__EmployeeListType__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__0__Impl_in_rule__EmployeeListType__Group__0428);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__0__Impl_in_rule__EmployeeListType__Group__0488);
             rule__EmployeeListType__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__1_in_rule__EmployeeListType__Group__0431);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__1_in_rule__EmployeeListType__Group__0491);
             rule__EmployeeListType__Group__1();
 
             state._fsp--;
@@ -563,21 +642,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group__0__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:244:1: rule__EmployeeListType__Group__0__Impl : ( () ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:272:1: rule__EmployeeListType__Group__0__Impl : ( () ) ;
     public final void rule__EmployeeListType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:248:1: ( ( () ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:249:1: ( () )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:276:1: ( ( () ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:277:1: ( () )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:249:1: ( () )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:250:1: ()
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:277:1: ( () )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:278:1: ()
             {
              before(grammarAccess.getEmployeeListTypeAccess().getEmployeeListTypeAction_0()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:251:1: ()
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:253:1: 
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:279:1: ()
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:281:1: 
             {
             }
 
@@ -600,21 +679,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group__1"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:263:1: rule__EmployeeListType__Group__1 : rule__EmployeeListType__Group__1__Impl rule__EmployeeListType__Group__2 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:291:1: rule__EmployeeListType__Group__1 : rule__EmployeeListType__Group__1__Impl rule__EmployeeListType__Group__2 ;
     public final void rule__EmployeeListType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:267:1: ( rule__EmployeeListType__Group__1__Impl rule__EmployeeListType__Group__2 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:268:2: rule__EmployeeListType__Group__1__Impl rule__EmployeeListType__Group__2
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:295:1: ( rule__EmployeeListType__Group__1__Impl rule__EmployeeListType__Group__2 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:296:2: rule__EmployeeListType__Group__1__Impl rule__EmployeeListType__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__1__Impl_in_rule__EmployeeListType__Group__1489);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__1__Impl_in_rule__EmployeeListType__Group__1549);
             rule__EmployeeListType__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__2_in_rule__EmployeeListType__Group__1492);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__2_in_rule__EmployeeListType__Group__1552);
             rule__EmployeeListType__Group__2();
 
             state._fsp--;
@@ -638,20 +717,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group__1__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:275:1: rule__EmployeeListType__Group__1__Impl : ( 'EmployeeListType' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:303:1: rule__EmployeeListType__Group__1__Impl : ( 'EmployeeListType' ) ;
     public final void rule__EmployeeListType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:279:1: ( ( 'EmployeeListType' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:280:1: ( 'EmployeeListType' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:307:1: ( ( 'EmployeeListType' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:308:1: ( 'EmployeeListType' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:280:1: ( 'EmployeeListType' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:281:1: 'EmployeeListType'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:308:1: ( 'EmployeeListType' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:309:1: 'EmployeeListType'
             {
              before(grammarAccess.getEmployeeListTypeAccess().getEmployeeListTypeKeyword_1()); 
-            match(input,11,FollowSets000.FOLLOW_11_in_rule__EmployeeListType__Group__1__Impl520); 
+            match(input,11,FollowSets000.FOLLOW_11_in_rule__EmployeeListType__Group__1__Impl580); 
              after(grammarAccess.getEmployeeListTypeAccess().getEmployeeListTypeKeyword_1()); 
 
             }
@@ -675,21 +754,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group__2"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:294:1: rule__EmployeeListType__Group__2 : rule__EmployeeListType__Group__2__Impl rule__EmployeeListType__Group__3 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:322:1: rule__EmployeeListType__Group__2 : rule__EmployeeListType__Group__2__Impl rule__EmployeeListType__Group__3 ;
     public final void rule__EmployeeListType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:298:1: ( rule__EmployeeListType__Group__2__Impl rule__EmployeeListType__Group__3 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:299:2: rule__EmployeeListType__Group__2__Impl rule__EmployeeListType__Group__3
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:326:1: ( rule__EmployeeListType__Group__2__Impl rule__EmployeeListType__Group__3 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:327:2: rule__EmployeeListType__Group__2__Impl rule__EmployeeListType__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__2__Impl_in_rule__EmployeeListType__Group__2551);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__2__Impl_in_rule__EmployeeListType__Group__2611);
             rule__EmployeeListType__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__3_in_rule__EmployeeListType__Group__2554);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__3_in_rule__EmployeeListType__Group__2614);
             rule__EmployeeListType__Group__3();
 
             state._fsp--;
@@ -713,20 +792,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group__2__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:306:1: rule__EmployeeListType__Group__2__Impl : ( '[' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:334:1: rule__EmployeeListType__Group__2__Impl : ( '[' ) ;
     public final void rule__EmployeeListType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:310:1: ( ( '[' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:311:1: ( '[' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:338:1: ( ( '[' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:339:1: ( '[' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:311:1: ( '[' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:312:1: '['
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:339:1: ( '[' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:340:1: '['
             {
              before(grammarAccess.getEmployeeListTypeAccess().getLeftSquareBracketKeyword_2()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__EmployeeListType__Group__2__Impl582); 
+            match(input,12,FollowSets000.FOLLOW_12_in_rule__EmployeeListType__Group__2__Impl642); 
              after(grammarAccess.getEmployeeListTypeAccess().getLeftSquareBracketKeyword_2()); 
 
             }
@@ -750,21 +829,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group__3"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:325:1: rule__EmployeeListType__Group__3 : rule__EmployeeListType__Group__3__Impl rule__EmployeeListType__Group__4 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:353:1: rule__EmployeeListType__Group__3 : rule__EmployeeListType__Group__3__Impl rule__EmployeeListType__Group__4 ;
     public final void rule__EmployeeListType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:329:1: ( rule__EmployeeListType__Group__3__Impl rule__EmployeeListType__Group__4 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:330:2: rule__EmployeeListType__Group__3__Impl rule__EmployeeListType__Group__4
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:357:1: ( rule__EmployeeListType__Group__3__Impl rule__EmployeeListType__Group__4 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:358:2: rule__EmployeeListType__Group__3__Impl rule__EmployeeListType__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__3__Impl_in_rule__EmployeeListType__Group__3613);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__3__Impl_in_rule__EmployeeListType__Group__3673);
             rule__EmployeeListType__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__4_in_rule__EmployeeListType__Group__3616);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__4_in_rule__EmployeeListType__Group__3676);
             rule__EmployeeListType__Group__4();
 
             state._fsp--;
@@ -788,20 +867,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group__3__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:337:1: rule__EmployeeListType__Group__3__Impl : ( ( rule__EmployeeListType__Group_3__0 )? ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:365:1: rule__EmployeeListType__Group__3__Impl : ( ( rule__EmployeeListType__Group_3__0 )? ) ;
     public final void rule__EmployeeListType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:341:1: ( ( ( rule__EmployeeListType__Group_3__0 )? ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:342:1: ( ( rule__EmployeeListType__Group_3__0 )? )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:369:1: ( ( ( rule__EmployeeListType__Group_3__0 )? ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:370:1: ( ( rule__EmployeeListType__Group_3__0 )? )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:342:1: ( ( rule__EmployeeListType__Group_3__0 )? )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:343:1: ( rule__EmployeeListType__Group_3__0 )?
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:370:1: ( ( rule__EmployeeListType__Group_3__0 )? )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:371:1: ( rule__EmployeeListType__Group_3__0 )?
             {
              before(grammarAccess.getEmployeeListTypeAccess().getGroup_3()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:344:1: ( rule__EmployeeListType__Group_3__0 )?
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:372:1: ( rule__EmployeeListType__Group_3__0 )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -810,9 +889,9 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:344:2: rule__EmployeeListType__Group_3__0
+                    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:372:2: rule__EmployeeListType__Group_3__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__0_in_rule__EmployeeListType__Group__3__Impl643);
+                    pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__0_in_rule__EmployeeListType__Group__3__Impl703);
                     rule__EmployeeListType__Group_3__0();
 
                     state._fsp--;
@@ -846,21 +925,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group__4"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:354:1: rule__EmployeeListType__Group__4 : rule__EmployeeListType__Group__4__Impl rule__EmployeeListType__Group__5 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:382:1: rule__EmployeeListType__Group__4 : rule__EmployeeListType__Group__4__Impl rule__EmployeeListType__Group__5 ;
     public final void rule__EmployeeListType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:358:1: ( rule__EmployeeListType__Group__4__Impl rule__EmployeeListType__Group__5 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:359:2: rule__EmployeeListType__Group__4__Impl rule__EmployeeListType__Group__5
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:386:1: ( rule__EmployeeListType__Group__4__Impl rule__EmployeeListType__Group__5 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:387:2: rule__EmployeeListType__Group__4__Impl rule__EmployeeListType__Group__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__4__Impl_in_rule__EmployeeListType__Group__4674);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__4__Impl_in_rule__EmployeeListType__Group__4734);
             rule__EmployeeListType__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__5_in_rule__EmployeeListType__Group__4677);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__5_in_rule__EmployeeListType__Group__4737);
             rule__EmployeeListType__Group__5();
 
             state._fsp--;
@@ -884,20 +963,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group__4__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:366:1: rule__EmployeeListType__Group__4__Impl : ( ( rule__EmployeeListType__Group_4__0 )? ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:394:1: rule__EmployeeListType__Group__4__Impl : ( ( rule__EmployeeListType__Group_4__0 )? ) ;
     public final void rule__EmployeeListType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:370:1: ( ( ( rule__EmployeeListType__Group_4__0 )? ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:371:1: ( ( rule__EmployeeListType__Group_4__0 )? )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:398:1: ( ( ( rule__EmployeeListType__Group_4__0 )? ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:399:1: ( ( rule__EmployeeListType__Group_4__0 )? )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:371:1: ( ( rule__EmployeeListType__Group_4__0 )? )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:372:1: ( rule__EmployeeListType__Group_4__0 )?
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:399:1: ( ( rule__EmployeeListType__Group_4__0 )? )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:400:1: ( rule__EmployeeListType__Group_4__0 )?
             {
              before(grammarAccess.getEmployeeListTypeAccess().getGroup_4()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:373:1: ( rule__EmployeeListType__Group_4__0 )?
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:401:1: ( rule__EmployeeListType__Group_4__0 )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -906,9 +985,9 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
             }
             switch (alt2) {
                 case 1 :
-                    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:373:2: rule__EmployeeListType__Group_4__0
+                    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:401:2: rule__EmployeeListType__Group_4__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__0_in_rule__EmployeeListType__Group__4__Impl704);
+                    pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__0_in_rule__EmployeeListType__Group__4__Impl764);
                     rule__EmployeeListType__Group_4__0();
 
                     state._fsp--;
@@ -942,16 +1021,16 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group__5"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:383:1: rule__EmployeeListType__Group__5 : rule__EmployeeListType__Group__5__Impl ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:411:1: rule__EmployeeListType__Group__5 : rule__EmployeeListType__Group__5__Impl ;
     public final void rule__EmployeeListType__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:387:1: ( rule__EmployeeListType__Group__5__Impl )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:388:2: rule__EmployeeListType__Group__5__Impl
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:415:1: ( rule__EmployeeListType__Group__5__Impl )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:416:2: rule__EmployeeListType__Group__5__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__5__Impl_in_rule__EmployeeListType__Group__5735);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group__5__Impl_in_rule__EmployeeListType__Group__5795);
             rule__EmployeeListType__Group__5__Impl();
 
             state._fsp--;
@@ -975,20 +1054,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group__5__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:394:1: rule__EmployeeListType__Group__5__Impl : ( ']' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:422:1: rule__EmployeeListType__Group__5__Impl : ( ']' ) ;
     public final void rule__EmployeeListType__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:398:1: ( ( ']' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:399:1: ( ']' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:426:1: ( ( ']' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:427:1: ( ']' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:399:1: ( ']' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:400:1: ']'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:427:1: ( ']' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:428:1: ']'
             {
              before(grammarAccess.getEmployeeListTypeAccess().getRightSquareBracketKeyword_5()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__EmployeeListType__Group__5__Impl763); 
+            match(input,13,FollowSets000.FOLLOW_13_in_rule__EmployeeListType__Group__5__Impl823); 
              after(grammarAccess.getEmployeeListTypeAccess().getRightSquareBracketKeyword_5()); 
 
             }
@@ -1012,21 +1091,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3__0"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:425:1: rule__EmployeeListType__Group_3__0 : rule__EmployeeListType__Group_3__0__Impl rule__EmployeeListType__Group_3__1 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:453:1: rule__EmployeeListType__Group_3__0 : rule__EmployeeListType__Group_3__0__Impl rule__EmployeeListType__Group_3__1 ;
     public final void rule__EmployeeListType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:429:1: ( rule__EmployeeListType__Group_3__0__Impl rule__EmployeeListType__Group_3__1 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:430:2: rule__EmployeeListType__Group_3__0__Impl rule__EmployeeListType__Group_3__1
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:457:1: ( rule__EmployeeListType__Group_3__0__Impl rule__EmployeeListType__Group_3__1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:458:2: rule__EmployeeListType__Group_3__0__Impl rule__EmployeeListType__Group_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__0__Impl_in_rule__EmployeeListType__Group_3__0806);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__0__Impl_in_rule__EmployeeListType__Group_3__0866);
             rule__EmployeeListType__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__1_in_rule__EmployeeListType__Group_3__0809);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__1_in_rule__EmployeeListType__Group_3__0869);
             rule__EmployeeListType__Group_3__1();
 
             state._fsp--;
@@ -1050,20 +1129,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3__0__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:437:1: rule__EmployeeListType__Group_3__0__Impl : ( 'boss' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:465:1: rule__EmployeeListType__Group_3__0__Impl : ( 'boss' ) ;
     public final void rule__EmployeeListType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:441:1: ( ( 'boss' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:442:1: ( 'boss' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:469:1: ( ( 'boss' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:470:1: ( 'boss' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:442:1: ( 'boss' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:443:1: 'boss'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:470:1: ( 'boss' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:471:1: 'boss'
             {
              before(grammarAccess.getEmployeeListTypeAccess().getBossKeyword_3_0()); 
-            match(input,14,FollowSets000.FOLLOW_14_in_rule__EmployeeListType__Group_3__0__Impl837); 
+            match(input,14,FollowSets000.FOLLOW_14_in_rule__EmployeeListType__Group_3__0__Impl897); 
              after(grammarAccess.getEmployeeListTypeAccess().getBossKeyword_3_0()); 
 
             }
@@ -1087,21 +1166,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3__1"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:456:1: rule__EmployeeListType__Group_3__1 : rule__EmployeeListType__Group_3__1__Impl rule__EmployeeListType__Group_3__2 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:484:1: rule__EmployeeListType__Group_3__1 : rule__EmployeeListType__Group_3__1__Impl rule__EmployeeListType__Group_3__2 ;
     public final void rule__EmployeeListType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:460:1: ( rule__EmployeeListType__Group_3__1__Impl rule__EmployeeListType__Group_3__2 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:461:2: rule__EmployeeListType__Group_3__1__Impl rule__EmployeeListType__Group_3__2
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:488:1: ( rule__EmployeeListType__Group_3__1__Impl rule__EmployeeListType__Group_3__2 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:489:2: rule__EmployeeListType__Group_3__1__Impl rule__EmployeeListType__Group_3__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__1__Impl_in_rule__EmployeeListType__Group_3__1868);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__1__Impl_in_rule__EmployeeListType__Group_3__1928);
             rule__EmployeeListType__Group_3__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__2_in_rule__EmployeeListType__Group_3__1871);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__2_in_rule__EmployeeListType__Group_3__1931);
             rule__EmployeeListType__Group_3__2();
 
             state._fsp--;
@@ -1125,20 +1204,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3__1__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:468:1: rule__EmployeeListType__Group_3__1__Impl : ( '[' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:496:1: rule__EmployeeListType__Group_3__1__Impl : ( '[' ) ;
     public final void rule__EmployeeListType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:472:1: ( ( '[' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:473:1: ( '[' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:500:1: ( ( '[' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:501:1: ( '[' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:473:1: ( '[' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:474:1: '['
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:501:1: ( '[' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:502:1: '['
             {
              before(grammarAccess.getEmployeeListTypeAccess().getLeftSquareBracketKeyword_3_1()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__EmployeeListType__Group_3__1__Impl899); 
+            match(input,12,FollowSets000.FOLLOW_12_in_rule__EmployeeListType__Group_3__1__Impl959); 
              after(grammarAccess.getEmployeeListTypeAccess().getLeftSquareBracketKeyword_3_1()); 
 
             }
@@ -1162,21 +1241,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3__2"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:487:1: rule__EmployeeListType__Group_3__2 : rule__EmployeeListType__Group_3__2__Impl rule__EmployeeListType__Group_3__3 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:515:1: rule__EmployeeListType__Group_3__2 : rule__EmployeeListType__Group_3__2__Impl rule__EmployeeListType__Group_3__3 ;
     public final void rule__EmployeeListType__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:491:1: ( rule__EmployeeListType__Group_3__2__Impl rule__EmployeeListType__Group_3__3 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:492:2: rule__EmployeeListType__Group_3__2__Impl rule__EmployeeListType__Group_3__3
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:519:1: ( rule__EmployeeListType__Group_3__2__Impl rule__EmployeeListType__Group_3__3 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:520:2: rule__EmployeeListType__Group_3__2__Impl rule__EmployeeListType__Group_3__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__2__Impl_in_rule__EmployeeListType__Group_3__2930);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__2__Impl_in_rule__EmployeeListType__Group_3__2990);
             rule__EmployeeListType__Group_3__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__3_in_rule__EmployeeListType__Group_3__2933);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__3_in_rule__EmployeeListType__Group_3__2993);
             rule__EmployeeListType__Group_3__3();
 
             state._fsp--;
@@ -1200,23 +1279,23 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3__2__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:499:1: rule__EmployeeListType__Group_3__2__Impl : ( ( rule__EmployeeListType__BossAssignment_3_2 ) ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:527:1: rule__EmployeeListType__Group_3__2__Impl : ( ( rule__EmployeeListType__BossAssignment_3_2 ) ) ;
     public final void rule__EmployeeListType__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:503:1: ( ( ( rule__EmployeeListType__BossAssignment_3_2 ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:504:1: ( ( rule__EmployeeListType__BossAssignment_3_2 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:531:1: ( ( ( rule__EmployeeListType__BossAssignment_3_2 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:532:1: ( ( rule__EmployeeListType__BossAssignment_3_2 ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:504:1: ( ( rule__EmployeeListType__BossAssignment_3_2 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:505:1: ( rule__EmployeeListType__BossAssignment_3_2 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:532:1: ( ( rule__EmployeeListType__BossAssignment_3_2 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:533:1: ( rule__EmployeeListType__BossAssignment_3_2 )
             {
              before(grammarAccess.getEmployeeListTypeAccess().getBossAssignment_3_2()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:506:1: ( rule__EmployeeListType__BossAssignment_3_2 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:506:2: rule__EmployeeListType__BossAssignment_3_2
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:534:1: ( rule__EmployeeListType__BossAssignment_3_2 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:534:2: rule__EmployeeListType__BossAssignment_3_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__BossAssignment_3_2_in_rule__EmployeeListType__Group_3__2__Impl960);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__BossAssignment_3_2_in_rule__EmployeeListType__Group_3__2__Impl1020);
             rule__EmployeeListType__BossAssignment_3_2();
 
             state._fsp--;
@@ -1247,21 +1326,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3__3"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:516:1: rule__EmployeeListType__Group_3__3 : rule__EmployeeListType__Group_3__3__Impl rule__EmployeeListType__Group_3__4 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:544:1: rule__EmployeeListType__Group_3__3 : rule__EmployeeListType__Group_3__3__Impl rule__EmployeeListType__Group_3__4 ;
     public final void rule__EmployeeListType__Group_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:520:1: ( rule__EmployeeListType__Group_3__3__Impl rule__EmployeeListType__Group_3__4 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:521:2: rule__EmployeeListType__Group_3__3__Impl rule__EmployeeListType__Group_3__4
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:548:1: ( rule__EmployeeListType__Group_3__3__Impl rule__EmployeeListType__Group_3__4 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:549:2: rule__EmployeeListType__Group_3__3__Impl rule__EmployeeListType__Group_3__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__3__Impl_in_rule__EmployeeListType__Group_3__3990);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__3__Impl_in_rule__EmployeeListType__Group_3__31050);
             rule__EmployeeListType__Group_3__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__4_in_rule__EmployeeListType__Group_3__3993);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__4_in_rule__EmployeeListType__Group_3__31053);
             rule__EmployeeListType__Group_3__4();
 
             state._fsp--;
@@ -1285,20 +1364,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3__3__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:528:1: rule__EmployeeListType__Group_3__3__Impl : ( ( rule__EmployeeListType__Group_3_3__0 )* ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:556:1: rule__EmployeeListType__Group_3__3__Impl : ( ( rule__EmployeeListType__Group_3_3__0 )* ) ;
     public final void rule__EmployeeListType__Group_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:532:1: ( ( ( rule__EmployeeListType__Group_3_3__0 )* ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:533:1: ( ( rule__EmployeeListType__Group_3_3__0 )* )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:560:1: ( ( ( rule__EmployeeListType__Group_3_3__0 )* ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:561:1: ( ( rule__EmployeeListType__Group_3_3__0 )* )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:533:1: ( ( rule__EmployeeListType__Group_3_3__0 )* )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:534:1: ( rule__EmployeeListType__Group_3_3__0 )*
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:561:1: ( ( rule__EmployeeListType__Group_3_3__0 )* )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:562:1: ( rule__EmployeeListType__Group_3_3__0 )*
             {
              before(grammarAccess.getEmployeeListTypeAccess().getGroup_3_3()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:535:1: ( rule__EmployeeListType__Group_3_3__0 )*
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:563:1: ( rule__EmployeeListType__Group_3_3__0 )*
             loop3:
             do {
                 int alt3=2;
@@ -1311,9 +1390,9 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:535:2: rule__EmployeeListType__Group_3_3__0
+            	    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:563:2: rule__EmployeeListType__Group_3_3__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3_3__0_in_rule__EmployeeListType__Group_3__3__Impl1020);
+            	    pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3_3__0_in_rule__EmployeeListType__Group_3__3__Impl1080);
             	    rule__EmployeeListType__Group_3_3__0();
 
             	    state._fsp--;
@@ -1350,16 +1429,16 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3__4"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:545:1: rule__EmployeeListType__Group_3__4 : rule__EmployeeListType__Group_3__4__Impl ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:573:1: rule__EmployeeListType__Group_3__4 : rule__EmployeeListType__Group_3__4__Impl ;
     public final void rule__EmployeeListType__Group_3__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:549:1: ( rule__EmployeeListType__Group_3__4__Impl )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:550:2: rule__EmployeeListType__Group_3__4__Impl
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:577:1: ( rule__EmployeeListType__Group_3__4__Impl )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:578:2: rule__EmployeeListType__Group_3__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__4__Impl_in_rule__EmployeeListType__Group_3__41051);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3__4__Impl_in_rule__EmployeeListType__Group_3__41111);
             rule__EmployeeListType__Group_3__4__Impl();
 
             state._fsp--;
@@ -1383,20 +1462,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3__4__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:556:1: rule__EmployeeListType__Group_3__4__Impl : ( ']' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:584:1: rule__EmployeeListType__Group_3__4__Impl : ( ']' ) ;
     public final void rule__EmployeeListType__Group_3__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:560:1: ( ( ']' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:561:1: ( ']' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:588:1: ( ( ']' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:589:1: ( ']' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:561:1: ( ']' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:562:1: ']'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:589:1: ( ']' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:590:1: ']'
             {
              before(grammarAccess.getEmployeeListTypeAccess().getRightSquareBracketKeyword_3_4()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__EmployeeListType__Group_3__4__Impl1079); 
+            match(input,13,FollowSets000.FOLLOW_13_in_rule__EmployeeListType__Group_3__4__Impl1139); 
              after(grammarAccess.getEmployeeListTypeAccess().getRightSquareBracketKeyword_3_4()); 
 
             }
@@ -1420,21 +1499,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3_3__0"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:585:1: rule__EmployeeListType__Group_3_3__0 : rule__EmployeeListType__Group_3_3__0__Impl rule__EmployeeListType__Group_3_3__1 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:613:1: rule__EmployeeListType__Group_3_3__0 : rule__EmployeeListType__Group_3_3__0__Impl rule__EmployeeListType__Group_3_3__1 ;
     public final void rule__EmployeeListType__Group_3_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:589:1: ( rule__EmployeeListType__Group_3_3__0__Impl rule__EmployeeListType__Group_3_3__1 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:590:2: rule__EmployeeListType__Group_3_3__0__Impl rule__EmployeeListType__Group_3_3__1
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:617:1: ( rule__EmployeeListType__Group_3_3__0__Impl rule__EmployeeListType__Group_3_3__1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:618:2: rule__EmployeeListType__Group_3_3__0__Impl rule__EmployeeListType__Group_3_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3_3__0__Impl_in_rule__EmployeeListType__Group_3_3__01120);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3_3__0__Impl_in_rule__EmployeeListType__Group_3_3__01180);
             rule__EmployeeListType__Group_3_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3_3__1_in_rule__EmployeeListType__Group_3_3__01123);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3_3__1_in_rule__EmployeeListType__Group_3_3__01183);
             rule__EmployeeListType__Group_3_3__1();
 
             state._fsp--;
@@ -1458,20 +1537,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3_3__0__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:597:1: rule__EmployeeListType__Group_3_3__0__Impl : ( ',' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:625:1: rule__EmployeeListType__Group_3_3__0__Impl : ( ',' ) ;
     public final void rule__EmployeeListType__Group_3_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:601:1: ( ( ',' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:602:1: ( ',' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:629:1: ( ( ',' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:630:1: ( ',' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:602:1: ( ',' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:603:1: ','
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:630:1: ( ',' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:631:1: ','
             {
              before(grammarAccess.getEmployeeListTypeAccess().getCommaKeyword_3_3_0()); 
-            match(input,15,FollowSets000.FOLLOW_15_in_rule__EmployeeListType__Group_3_3__0__Impl1151); 
+            match(input,15,FollowSets000.FOLLOW_15_in_rule__EmployeeListType__Group_3_3__0__Impl1211); 
              after(grammarAccess.getEmployeeListTypeAccess().getCommaKeyword_3_3_0()); 
 
             }
@@ -1495,16 +1574,16 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3_3__1"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:616:1: rule__EmployeeListType__Group_3_3__1 : rule__EmployeeListType__Group_3_3__1__Impl ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:644:1: rule__EmployeeListType__Group_3_3__1 : rule__EmployeeListType__Group_3_3__1__Impl ;
     public final void rule__EmployeeListType__Group_3_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:620:1: ( rule__EmployeeListType__Group_3_3__1__Impl )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:621:2: rule__EmployeeListType__Group_3_3__1__Impl
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:648:1: ( rule__EmployeeListType__Group_3_3__1__Impl )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:649:2: rule__EmployeeListType__Group_3_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3_3__1__Impl_in_rule__EmployeeListType__Group_3_3__11182);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_3_3__1__Impl_in_rule__EmployeeListType__Group_3_3__11242);
             rule__EmployeeListType__Group_3_3__1__Impl();
 
             state._fsp--;
@@ -1528,23 +1607,23 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_3_3__1__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:627:1: rule__EmployeeListType__Group_3_3__1__Impl : ( ( rule__EmployeeListType__BossAssignment_3_3_1 ) ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:655:1: rule__EmployeeListType__Group_3_3__1__Impl : ( ( rule__EmployeeListType__BossAssignment_3_3_1 ) ) ;
     public final void rule__EmployeeListType__Group_3_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:631:1: ( ( ( rule__EmployeeListType__BossAssignment_3_3_1 ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:632:1: ( ( rule__EmployeeListType__BossAssignment_3_3_1 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:659:1: ( ( ( rule__EmployeeListType__BossAssignment_3_3_1 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:660:1: ( ( rule__EmployeeListType__BossAssignment_3_3_1 ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:632:1: ( ( rule__EmployeeListType__BossAssignment_3_3_1 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:633:1: ( rule__EmployeeListType__BossAssignment_3_3_1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:660:1: ( ( rule__EmployeeListType__BossAssignment_3_3_1 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:661:1: ( rule__EmployeeListType__BossAssignment_3_3_1 )
             {
              before(grammarAccess.getEmployeeListTypeAccess().getBossAssignment_3_3_1()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:634:1: ( rule__EmployeeListType__BossAssignment_3_3_1 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:634:2: rule__EmployeeListType__BossAssignment_3_3_1
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:662:1: ( rule__EmployeeListType__BossAssignment_3_3_1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:662:2: rule__EmployeeListType__BossAssignment_3_3_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__BossAssignment_3_3_1_in_rule__EmployeeListType__Group_3_3__1__Impl1209);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__BossAssignment_3_3_1_in_rule__EmployeeListType__Group_3_3__1__Impl1269);
             rule__EmployeeListType__BossAssignment_3_3_1();
 
             state._fsp--;
@@ -1575,21 +1654,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4__0"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:648:1: rule__EmployeeListType__Group_4__0 : rule__EmployeeListType__Group_4__0__Impl rule__EmployeeListType__Group_4__1 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:676:1: rule__EmployeeListType__Group_4__0 : rule__EmployeeListType__Group_4__0__Impl rule__EmployeeListType__Group_4__1 ;
     public final void rule__EmployeeListType__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:652:1: ( rule__EmployeeListType__Group_4__0__Impl rule__EmployeeListType__Group_4__1 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:653:2: rule__EmployeeListType__Group_4__0__Impl rule__EmployeeListType__Group_4__1
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:680:1: ( rule__EmployeeListType__Group_4__0__Impl rule__EmployeeListType__Group_4__1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:681:2: rule__EmployeeListType__Group_4__0__Impl rule__EmployeeListType__Group_4__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__0__Impl_in_rule__EmployeeListType__Group_4__01243);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__0__Impl_in_rule__EmployeeListType__Group_4__01303);
             rule__EmployeeListType__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__1_in_rule__EmployeeListType__Group_4__01246);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__1_in_rule__EmployeeListType__Group_4__01306);
             rule__EmployeeListType__Group_4__1();
 
             state._fsp--;
@@ -1613,20 +1692,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4__0__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:660:1: rule__EmployeeListType__Group_4__0__Impl : ( 'employee' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:688:1: rule__EmployeeListType__Group_4__0__Impl : ( 'employee' ) ;
     public final void rule__EmployeeListType__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:664:1: ( ( 'employee' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:665:1: ( 'employee' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:692:1: ( ( 'employee' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:693:1: ( 'employee' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:665:1: ( 'employee' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:666:1: 'employee'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:693:1: ( 'employee' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:694:1: 'employee'
             {
              before(grammarAccess.getEmployeeListTypeAccess().getEmployeeKeyword_4_0()); 
-            match(input,16,FollowSets000.FOLLOW_16_in_rule__EmployeeListType__Group_4__0__Impl1274); 
+            match(input,16,FollowSets000.FOLLOW_16_in_rule__EmployeeListType__Group_4__0__Impl1334); 
              after(grammarAccess.getEmployeeListTypeAccess().getEmployeeKeyword_4_0()); 
 
             }
@@ -1650,21 +1729,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4__1"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:679:1: rule__EmployeeListType__Group_4__1 : rule__EmployeeListType__Group_4__1__Impl rule__EmployeeListType__Group_4__2 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:707:1: rule__EmployeeListType__Group_4__1 : rule__EmployeeListType__Group_4__1__Impl rule__EmployeeListType__Group_4__2 ;
     public final void rule__EmployeeListType__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:683:1: ( rule__EmployeeListType__Group_4__1__Impl rule__EmployeeListType__Group_4__2 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:684:2: rule__EmployeeListType__Group_4__1__Impl rule__EmployeeListType__Group_4__2
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:711:1: ( rule__EmployeeListType__Group_4__1__Impl rule__EmployeeListType__Group_4__2 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:712:2: rule__EmployeeListType__Group_4__1__Impl rule__EmployeeListType__Group_4__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__1__Impl_in_rule__EmployeeListType__Group_4__11305);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__1__Impl_in_rule__EmployeeListType__Group_4__11365);
             rule__EmployeeListType__Group_4__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__2_in_rule__EmployeeListType__Group_4__11308);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__2_in_rule__EmployeeListType__Group_4__11368);
             rule__EmployeeListType__Group_4__2();
 
             state._fsp--;
@@ -1688,20 +1767,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4__1__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:691:1: rule__EmployeeListType__Group_4__1__Impl : ( '[' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:719:1: rule__EmployeeListType__Group_4__1__Impl : ( '[' ) ;
     public final void rule__EmployeeListType__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:695:1: ( ( '[' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:696:1: ( '[' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:723:1: ( ( '[' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:724:1: ( '[' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:696:1: ( '[' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:697:1: '['
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:724:1: ( '[' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:725:1: '['
             {
              before(grammarAccess.getEmployeeListTypeAccess().getLeftSquareBracketKeyword_4_1()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__EmployeeListType__Group_4__1__Impl1336); 
+            match(input,12,FollowSets000.FOLLOW_12_in_rule__EmployeeListType__Group_4__1__Impl1396); 
              after(grammarAccess.getEmployeeListTypeAccess().getLeftSquareBracketKeyword_4_1()); 
 
             }
@@ -1725,21 +1804,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4__2"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:710:1: rule__EmployeeListType__Group_4__2 : rule__EmployeeListType__Group_4__2__Impl rule__EmployeeListType__Group_4__3 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:738:1: rule__EmployeeListType__Group_4__2 : rule__EmployeeListType__Group_4__2__Impl rule__EmployeeListType__Group_4__3 ;
     public final void rule__EmployeeListType__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:714:1: ( rule__EmployeeListType__Group_4__2__Impl rule__EmployeeListType__Group_4__3 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:715:2: rule__EmployeeListType__Group_4__2__Impl rule__EmployeeListType__Group_4__3
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:742:1: ( rule__EmployeeListType__Group_4__2__Impl rule__EmployeeListType__Group_4__3 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:743:2: rule__EmployeeListType__Group_4__2__Impl rule__EmployeeListType__Group_4__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__2__Impl_in_rule__EmployeeListType__Group_4__21367);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__2__Impl_in_rule__EmployeeListType__Group_4__21427);
             rule__EmployeeListType__Group_4__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__3_in_rule__EmployeeListType__Group_4__21370);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__3_in_rule__EmployeeListType__Group_4__21430);
             rule__EmployeeListType__Group_4__3();
 
             state._fsp--;
@@ -1763,23 +1842,23 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4__2__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:722:1: rule__EmployeeListType__Group_4__2__Impl : ( ( rule__EmployeeListType__EmployeeAssignment_4_2 ) ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:750:1: rule__EmployeeListType__Group_4__2__Impl : ( ( rule__EmployeeListType__EmployeeAssignment_4_2 ) ) ;
     public final void rule__EmployeeListType__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:726:1: ( ( ( rule__EmployeeListType__EmployeeAssignment_4_2 ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:727:1: ( ( rule__EmployeeListType__EmployeeAssignment_4_2 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:754:1: ( ( ( rule__EmployeeListType__EmployeeAssignment_4_2 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:755:1: ( ( rule__EmployeeListType__EmployeeAssignment_4_2 ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:727:1: ( ( rule__EmployeeListType__EmployeeAssignment_4_2 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:728:1: ( rule__EmployeeListType__EmployeeAssignment_4_2 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:755:1: ( ( rule__EmployeeListType__EmployeeAssignment_4_2 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:756:1: ( rule__EmployeeListType__EmployeeAssignment_4_2 )
             {
              before(grammarAccess.getEmployeeListTypeAccess().getEmployeeAssignment_4_2()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:729:1: ( rule__EmployeeListType__EmployeeAssignment_4_2 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:729:2: rule__EmployeeListType__EmployeeAssignment_4_2
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:757:1: ( rule__EmployeeListType__EmployeeAssignment_4_2 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:757:2: rule__EmployeeListType__EmployeeAssignment_4_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__EmployeeAssignment_4_2_in_rule__EmployeeListType__Group_4__2__Impl1397);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__EmployeeAssignment_4_2_in_rule__EmployeeListType__Group_4__2__Impl1457);
             rule__EmployeeListType__EmployeeAssignment_4_2();
 
             state._fsp--;
@@ -1810,21 +1889,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4__3"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:739:1: rule__EmployeeListType__Group_4__3 : rule__EmployeeListType__Group_4__3__Impl rule__EmployeeListType__Group_4__4 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:767:1: rule__EmployeeListType__Group_4__3 : rule__EmployeeListType__Group_4__3__Impl rule__EmployeeListType__Group_4__4 ;
     public final void rule__EmployeeListType__Group_4__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:743:1: ( rule__EmployeeListType__Group_4__3__Impl rule__EmployeeListType__Group_4__4 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:744:2: rule__EmployeeListType__Group_4__3__Impl rule__EmployeeListType__Group_4__4
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:771:1: ( rule__EmployeeListType__Group_4__3__Impl rule__EmployeeListType__Group_4__4 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:772:2: rule__EmployeeListType__Group_4__3__Impl rule__EmployeeListType__Group_4__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__3__Impl_in_rule__EmployeeListType__Group_4__31427);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__3__Impl_in_rule__EmployeeListType__Group_4__31487);
             rule__EmployeeListType__Group_4__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__4_in_rule__EmployeeListType__Group_4__31430);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__4_in_rule__EmployeeListType__Group_4__31490);
             rule__EmployeeListType__Group_4__4();
 
             state._fsp--;
@@ -1848,20 +1927,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4__3__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:751:1: rule__EmployeeListType__Group_4__3__Impl : ( ( rule__EmployeeListType__Group_4_3__0 )* ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:779:1: rule__EmployeeListType__Group_4__3__Impl : ( ( rule__EmployeeListType__Group_4_3__0 )* ) ;
     public final void rule__EmployeeListType__Group_4__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:755:1: ( ( ( rule__EmployeeListType__Group_4_3__0 )* ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:756:1: ( ( rule__EmployeeListType__Group_4_3__0 )* )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:783:1: ( ( ( rule__EmployeeListType__Group_4_3__0 )* ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:784:1: ( ( rule__EmployeeListType__Group_4_3__0 )* )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:756:1: ( ( rule__EmployeeListType__Group_4_3__0 )* )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:757:1: ( rule__EmployeeListType__Group_4_3__0 )*
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:784:1: ( ( rule__EmployeeListType__Group_4_3__0 )* )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:785:1: ( rule__EmployeeListType__Group_4_3__0 )*
             {
              before(grammarAccess.getEmployeeListTypeAccess().getGroup_4_3()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:758:1: ( rule__EmployeeListType__Group_4_3__0 )*
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:786:1: ( rule__EmployeeListType__Group_4_3__0 )*
             loop4:
             do {
                 int alt4=2;
@@ -1874,9 +1953,9 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:758:2: rule__EmployeeListType__Group_4_3__0
+            	    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:786:2: rule__EmployeeListType__Group_4_3__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4_3__0_in_rule__EmployeeListType__Group_4__3__Impl1457);
+            	    pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4_3__0_in_rule__EmployeeListType__Group_4__3__Impl1517);
             	    rule__EmployeeListType__Group_4_3__0();
 
             	    state._fsp--;
@@ -1913,16 +1992,16 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4__4"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:768:1: rule__EmployeeListType__Group_4__4 : rule__EmployeeListType__Group_4__4__Impl ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:796:1: rule__EmployeeListType__Group_4__4 : rule__EmployeeListType__Group_4__4__Impl ;
     public final void rule__EmployeeListType__Group_4__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:772:1: ( rule__EmployeeListType__Group_4__4__Impl )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:773:2: rule__EmployeeListType__Group_4__4__Impl
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:800:1: ( rule__EmployeeListType__Group_4__4__Impl )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:801:2: rule__EmployeeListType__Group_4__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__4__Impl_in_rule__EmployeeListType__Group_4__41488);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4__4__Impl_in_rule__EmployeeListType__Group_4__41548);
             rule__EmployeeListType__Group_4__4__Impl();
 
             state._fsp--;
@@ -1946,20 +2025,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4__4__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:779:1: rule__EmployeeListType__Group_4__4__Impl : ( ']' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:807:1: rule__EmployeeListType__Group_4__4__Impl : ( ']' ) ;
     public final void rule__EmployeeListType__Group_4__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:783:1: ( ( ']' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:784:1: ( ']' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:811:1: ( ( ']' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:812:1: ( ']' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:784:1: ( ']' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:785:1: ']'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:812:1: ( ']' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:813:1: ']'
             {
              before(grammarAccess.getEmployeeListTypeAccess().getRightSquareBracketKeyword_4_4()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__EmployeeListType__Group_4__4__Impl1516); 
+            match(input,13,FollowSets000.FOLLOW_13_in_rule__EmployeeListType__Group_4__4__Impl1576); 
              after(grammarAccess.getEmployeeListTypeAccess().getRightSquareBracketKeyword_4_4()); 
 
             }
@@ -1983,21 +2062,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4_3__0"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:808:1: rule__EmployeeListType__Group_4_3__0 : rule__EmployeeListType__Group_4_3__0__Impl rule__EmployeeListType__Group_4_3__1 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:836:1: rule__EmployeeListType__Group_4_3__0 : rule__EmployeeListType__Group_4_3__0__Impl rule__EmployeeListType__Group_4_3__1 ;
     public final void rule__EmployeeListType__Group_4_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:812:1: ( rule__EmployeeListType__Group_4_3__0__Impl rule__EmployeeListType__Group_4_3__1 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:813:2: rule__EmployeeListType__Group_4_3__0__Impl rule__EmployeeListType__Group_4_3__1
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:840:1: ( rule__EmployeeListType__Group_4_3__0__Impl rule__EmployeeListType__Group_4_3__1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:841:2: rule__EmployeeListType__Group_4_3__0__Impl rule__EmployeeListType__Group_4_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4_3__0__Impl_in_rule__EmployeeListType__Group_4_3__01557);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4_3__0__Impl_in_rule__EmployeeListType__Group_4_3__01617);
             rule__EmployeeListType__Group_4_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4_3__1_in_rule__EmployeeListType__Group_4_3__01560);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4_3__1_in_rule__EmployeeListType__Group_4_3__01620);
             rule__EmployeeListType__Group_4_3__1();
 
             state._fsp--;
@@ -2021,20 +2100,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4_3__0__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:820:1: rule__EmployeeListType__Group_4_3__0__Impl : ( ',' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:848:1: rule__EmployeeListType__Group_4_3__0__Impl : ( ',' ) ;
     public final void rule__EmployeeListType__Group_4_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:824:1: ( ( ',' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:825:1: ( ',' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:852:1: ( ( ',' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:853:1: ( ',' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:825:1: ( ',' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:826:1: ','
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:853:1: ( ',' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:854:1: ','
             {
              before(grammarAccess.getEmployeeListTypeAccess().getCommaKeyword_4_3_0()); 
-            match(input,15,FollowSets000.FOLLOW_15_in_rule__EmployeeListType__Group_4_3__0__Impl1588); 
+            match(input,15,FollowSets000.FOLLOW_15_in_rule__EmployeeListType__Group_4_3__0__Impl1648); 
              after(grammarAccess.getEmployeeListTypeAccess().getCommaKeyword_4_3_0()); 
 
             }
@@ -2058,16 +2137,16 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4_3__1"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:839:1: rule__EmployeeListType__Group_4_3__1 : rule__EmployeeListType__Group_4_3__1__Impl ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:867:1: rule__EmployeeListType__Group_4_3__1 : rule__EmployeeListType__Group_4_3__1__Impl ;
     public final void rule__EmployeeListType__Group_4_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:843:1: ( rule__EmployeeListType__Group_4_3__1__Impl )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:844:2: rule__EmployeeListType__Group_4_3__1__Impl
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:871:1: ( rule__EmployeeListType__Group_4_3__1__Impl )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:872:2: rule__EmployeeListType__Group_4_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4_3__1__Impl_in_rule__EmployeeListType__Group_4_3__11619);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__Group_4_3__1__Impl_in_rule__EmployeeListType__Group_4_3__11679);
             rule__EmployeeListType__Group_4_3__1__Impl();
 
             state._fsp--;
@@ -2091,23 +2170,23 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__Group_4_3__1__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:850:1: rule__EmployeeListType__Group_4_3__1__Impl : ( ( rule__EmployeeListType__EmployeeAssignment_4_3_1 ) ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:878:1: rule__EmployeeListType__Group_4_3__1__Impl : ( ( rule__EmployeeListType__EmployeeAssignment_4_3_1 ) ) ;
     public final void rule__EmployeeListType__Group_4_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:854:1: ( ( ( rule__EmployeeListType__EmployeeAssignment_4_3_1 ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:855:1: ( ( rule__EmployeeListType__EmployeeAssignment_4_3_1 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:882:1: ( ( ( rule__EmployeeListType__EmployeeAssignment_4_3_1 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:883:1: ( ( rule__EmployeeListType__EmployeeAssignment_4_3_1 ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:855:1: ( ( rule__EmployeeListType__EmployeeAssignment_4_3_1 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:856:1: ( rule__EmployeeListType__EmployeeAssignment_4_3_1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:883:1: ( ( rule__EmployeeListType__EmployeeAssignment_4_3_1 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:884:1: ( rule__EmployeeListType__EmployeeAssignment_4_3_1 )
             {
              before(grammarAccess.getEmployeeListTypeAccess().getEmployeeAssignment_4_3_1()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:857:1: ( rule__EmployeeListType__EmployeeAssignment_4_3_1 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:857:2: rule__EmployeeListType__EmployeeAssignment_4_3_1
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:885:1: ( rule__EmployeeListType__EmployeeAssignment_4_3_1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:885:2: rule__EmployeeListType__EmployeeAssignment_4_3_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__EmployeeAssignment_4_3_1_in_rule__EmployeeListType__Group_4_3__1__Impl1646);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeListType__EmployeeAssignment_4_3_1_in_rule__EmployeeListType__Group_4_3__1__Impl1706);
             rule__EmployeeListType__EmployeeAssignment_4_3_1();
 
             state._fsp--;
@@ -2138,21 +2217,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__0"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:871:1: rule__BossType__Group__0 : rule__BossType__Group__0__Impl rule__BossType__Group__1 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:899:1: rule__BossType__Group__0 : rule__BossType__Group__0__Impl rule__BossType__Group__1 ;
     public final void rule__BossType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:875:1: ( rule__BossType__Group__0__Impl rule__BossType__Group__1 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:876:2: rule__BossType__Group__0__Impl rule__BossType__Group__1
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:903:1: ( rule__BossType__Group__0__Impl rule__BossType__Group__1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:904:2: rule__BossType__Group__0__Impl rule__BossType__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__0__Impl_in_rule__BossType__Group__01680);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__0__Impl_in_rule__BossType__Group__01740);
             rule__BossType__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__1_in_rule__BossType__Group__01683);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__1_in_rule__BossType__Group__01743);
             rule__BossType__Group__1();
 
             state._fsp--;
@@ -2176,20 +2255,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__0__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:883:1: rule__BossType__Group__0__Impl : ( 'BossType' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:911:1: rule__BossType__Group__0__Impl : ( 'BossType' ) ;
     public final void rule__BossType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:887:1: ( ( 'BossType' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:888:1: ( 'BossType' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:915:1: ( ( 'BossType' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:916:1: ( 'BossType' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:888:1: ( 'BossType' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:889:1: 'BossType'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:916:1: ( 'BossType' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:917:1: 'BossType'
             {
              before(grammarAccess.getBossTypeAccess().getBossTypeKeyword_0()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__BossType__Group__0__Impl1711); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__BossType__Group__0__Impl1771); 
              after(grammarAccess.getBossTypeAccess().getBossTypeKeyword_0()); 
 
             }
@@ -2213,21 +2292,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__1"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:902:1: rule__BossType__Group__1 : rule__BossType__Group__1__Impl rule__BossType__Group__2 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:930:1: rule__BossType__Group__1 : rule__BossType__Group__1__Impl rule__BossType__Group__2 ;
     public final void rule__BossType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:906:1: ( rule__BossType__Group__1__Impl rule__BossType__Group__2 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:907:2: rule__BossType__Group__1__Impl rule__BossType__Group__2
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:934:1: ( rule__BossType__Group__1__Impl rule__BossType__Group__2 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:935:2: rule__BossType__Group__1__Impl rule__BossType__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__1__Impl_in_rule__BossType__Group__11742);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__1__Impl_in_rule__BossType__Group__11802);
             rule__BossType__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__2_in_rule__BossType__Group__11745);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__2_in_rule__BossType__Group__11805);
             rule__BossType__Group__2();
 
             state._fsp--;
@@ -2251,20 +2330,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__1__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:914:1: rule__BossType__Group__1__Impl : ( '[' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:942:1: rule__BossType__Group__1__Impl : ( '[' ) ;
     public final void rule__BossType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:918:1: ( ( '[' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:919:1: ( '[' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:946:1: ( ( '[' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:947:1: ( '[' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:919:1: ( '[' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:920:1: '['
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:947:1: ( '[' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:948:1: '['
             {
              before(grammarAccess.getBossTypeAccess().getLeftSquareBracketKeyword_1()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__BossType__Group__1__Impl1773); 
+            match(input,12,FollowSets000.FOLLOW_12_in_rule__BossType__Group__1__Impl1833); 
              after(grammarAccess.getBossTypeAccess().getLeftSquareBracketKeyword_1()); 
 
             }
@@ -2288,21 +2367,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__2"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:933:1: rule__BossType__Group__2 : rule__BossType__Group__2__Impl rule__BossType__Group__3 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:961:1: rule__BossType__Group__2 : rule__BossType__Group__2__Impl rule__BossType__Group__3 ;
     public final void rule__BossType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:937:1: ( rule__BossType__Group__2__Impl rule__BossType__Group__3 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:938:2: rule__BossType__Group__2__Impl rule__BossType__Group__3
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:965:1: ( rule__BossType__Group__2__Impl rule__BossType__Group__3 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:966:2: rule__BossType__Group__2__Impl rule__BossType__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__2__Impl_in_rule__BossType__Group__21804);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__2__Impl_in_rule__BossType__Group__21864);
             rule__BossType__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__3_in_rule__BossType__Group__21807);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__3_in_rule__BossType__Group__21867);
             rule__BossType__Group__3();
 
             state._fsp--;
@@ -2326,20 +2405,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__2__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:945:1: rule__BossType__Group__2__Impl : ( 'lastName' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:973:1: rule__BossType__Group__2__Impl : ( 'lastName' ) ;
     public final void rule__BossType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:949:1: ( ( 'lastName' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:950:1: ( 'lastName' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:977:1: ( ( 'lastName' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:978:1: ( 'lastName' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:950:1: ( 'lastName' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:951:1: 'lastName'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:978:1: ( 'lastName' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:979:1: 'lastName'
             {
              before(grammarAccess.getBossTypeAccess().getLastNameKeyword_2()); 
-            match(input,18,FollowSets000.FOLLOW_18_in_rule__BossType__Group__2__Impl1835); 
+            match(input,18,FollowSets000.FOLLOW_18_in_rule__BossType__Group__2__Impl1895); 
              after(grammarAccess.getBossTypeAccess().getLastNameKeyword_2()); 
 
             }
@@ -2363,21 +2442,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__3"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:964:1: rule__BossType__Group__3 : rule__BossType__Group__3__Impl rule__BossType__Group__4 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:992:1: rule__BossType__Group__3 : rule__BossType__Group__3__Impl rule__BossType__Group__4 ;
     public final void rule__BossType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:968:1: ( rule__BossType__Group__3__Impl rule__BossType__Group__4 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:969:2: rule__BossType__Group__3__Impl rule__BossType__Group__4
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:996:1: ( rule__BossType__Group__3__Impl rule__BossType__Group__4 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:997:2: rule__BossType__Group__3__Impl rule__BossType__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__3__Impl_in_rule__BossType__Group__31866);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__3__Impl_in_rule__BossType__Group__31926);
             rule__BossType__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__4_in_rule__BossType__Group__31869);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__4_in_rule__BossType__Group__31929);
             rule__BossType__Group__4();
 
             state._fsp--;
@@ -2401,23 +2480,23 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__3__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:976:1: rule__BossType__Group__3__Impl : ( ( rule__BossType__LastNameAssignment_3 ) ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1004:1: rule__BossType__Group__3__Impl : ( ( rule__BossType__LastNameAssignment_3 ) ) ;
     public final void rule__BossType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:980:1: ( ( ( rule__BossType__LastNameAssignment_3 ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:981:1: ( ( rule__BossType__LastNameAssignment_3 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1008:1: ( ( ( rule__BossType__LastNameAssignment_3 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1009:1: ( ( rule__BossType__LastNameAssignment_3 ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:981:1: ( ( rule__BossType__LastNameAssignment_3 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:982:1: ( rule__BossType__LastNameAssignment_3 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1009:1: ( ( rule__BossType__LastNameAssignment_3 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1010:1: ( rule__BossType__LastNameAssignment_3 )
             {
              before(grammarAccess.getBossTypeAccess().getLastNameAssignment_3()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:983:1: ( rule__BossType__LastNameAssignment_3 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:983:2: rule__BossType__LastNameAssignment_3
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1011:1: ( rule__BossType__LastNameAssignment_3 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1011:2: rule__BossType__LastNameAssignment_3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__LastNameAssignment_3_in_rule__BossType__Group__3__Impl1896);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__LastNameAssignment_3_in_rule__BossType__Group__3__Impl1956);
             rule__BossType__LastNameAssignment_3();
 
             state._fsp--;
@@ -2448,21 +2527,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__4"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:993:1: rule__BossType__Group__4 : rule__BossType__Group__4__Impl rule__BossType__Group__5 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1021:1: rule__BossType__Group__4 : rule__BossType__Group__4__Impl rule__BossType__Group__5 ;
     public final void rule__BossType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:997:1: ( rule__BossType__Group__4__Impl rule__BossType__Group__5 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:998:2: rule__BossType__Group__4__Impl rule__BossType__Group__5
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1025:1: ( rule__BossType__Group__4__Impl rule__BossType__Group__5 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1026:2: rule__BossType__Group__4__Impl rule__BossType__Group__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__4__Impl_in_rule__BossType__Group__41926);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__4__Impl_in_rule__BossType__Group__41986);
             rule__BossType__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__5_in_rule__BossType__Group__41929);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__5_in_rule__BossType__Group__41989);
             rule__BossType__Group__5();
 
             state._fsp--;
@@ -2486,21 +2565,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__4__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1005:1: rule__BossType__Group__4__Impl : ( 'superBoss' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1033:1: rule__BossType__Group__4__Impl : ( 'birthDate' ) ;
     public final void rule__BossType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1009:1: ( ( 'superBoss' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1010:1: ( 'superBoss' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1037:1: ( ( 'birthDate' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1038:1: ( 'birthDate' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1010:1: ( 'superBoss' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1011:1: 'superBoss'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1038:1: ( 'birthDate' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1039:1: 'birthDate'
             {
-             before(grammarAccess.getBossTypeAccess().getSuperBossKeyword_4()); 
-            match(input,19,FollowSets000.FOLLOW_19_in_rule__BossType__Group__4__Impl1957); 
-             after(grammarAccess.getBossTypeAccess().getSuperBossKeyword_4()); 
+             before(grammarAccess.getBossTypeAccess().getBirthDateKeyword_4()); 
+            match(input,19,FollowSets000.FOLLOW_19_in_rule__BossType__Group__4__Impl2017); 
+             after(grammarAccess.getBossTypeAccess().getBirthDateKeyword_4()); 
 
             }
 
@@ -2523,21 +2602,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__5"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1024:1: rule__BossType__Group__5 : rule__BossType__Group__5__Impl rule__BossType__Group__6 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1052:1: rule__BossType__Group__5 : rule__BossType__Group__5__Impl rule__BossType__Group__6 ;
     public final void rule__BossType__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1028:1: ( rule__BossType__Group__5__Impl rule__BossType__Group__6 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1029:2: rule__BossType__Group__5__Impl rule__BossType__Group__6
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1056:1: ( rule__BossType__Group__5__Impl rule__BossType__Group__6 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1057:2: rule__BossType__Group__5__Impl rule__BossType__Group__6
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__5__Impl_in_rule__BossType__Group__51988);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__5__Impl_in_rule__BossType__Group__52048);
             rule__BossType__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__6_in_rule__BossType__Group__51991);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__6_in_rule__BossType__Group__52051);
             rule__BossType__Group__6();
 
             state._fsp--;
@@ -2561,31 +2640,31 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__5__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1036:1: rule__BossType__Group__5__Impl : ( ( rule__BossType__SuperBossAssignment_5 ) ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1064:1: rule__BossType__Group__5__Impl : ( ( rule__BossType__BirthDateAssignment_5 ) ) ;
     public final void rule__BossType__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1040:1: ( ( ( rule__BossType__SuperBossAssignment_5 ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1041:1: ( ( rule__BossType__SuperBossAssignment_5 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1068:1: ( ( ( rule__BossType__BirthDateAssignment_5 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1069:1: ( ( rule__BossType__BirthDateAssignment_5 ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1041:1: ( ( rule__BossType__SuperBossAssignment_5 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1042:1: ( rule__BossType__SuperBossAssignment_5 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1069:1: ( ( rule__BossType__BirthDateAssignment_5 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1070:1: ( rule__BossType__BirthDateAssignment_5 )
             {
-             before(grammarAccess.getBossTypeAccess().getSuperBossAssignment_5()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1043:1: ( rule__BossType__SuperBossAssignment_5 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1043:2: rule__BossType__SuperBossAssignment_5
+             before(grammarAccess.getBossTypeAccess().getBirthDateAssignment_5()); 
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1071:1: ( rule__BossType__BirthDateAssignment_5 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1071:2: rule__BossType__BirthDateAssignment_5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__SuperBossAssignment_5_in_rule__BossType__Group__5__Impl2018);
-            rule__BossType__SuperBossAssignment_5();
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__BirthDateAssignment_5_in_rule__BossType__Group__5__Impl2078);
+            rule__BossType__BirthDateAssignment_5();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBossTypeAccess().getSuperBossAssignment_5()); 
+             after(grammarAccess.getBossTypeAccess().getBirthDateAssignment_5()); 
 
             }
 
@@ -2608,21 +2687,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__6"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1053:1: rule__BossType__Group__6 : rule__BossType__Group__6__Impl rule__BossType__Group__7 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1081:1: rule__BossType__Group__6 : rule__BossType__Group__6__Impl rule__BossType__Group__7 ;
     public final void rule__BossType__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1057:1: ( rule__BossType__Group__6__Impl rule__BossType__Group__7 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1058:2: rule__BossType__Group__6__Impl rule__BossType__Group__7
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1085:1: ( rule__BossType__Group__6__Impl rule__BossType__Group__7 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1086:2: rule__BossType__Group__6__Impl rule__BossType__Group__7
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__6__Impl_in_rule__BossType__Group__62048);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__6__Impl_in_rule__BossType__Group__62108);
             rule__BossType__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__7_in_rule__BossType__Group__62051);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__7_in_rule__BossType__Group__62111);
             rule__BossType__Group__7();
 
             state._fsp--;
@@ -2646,21 +2725,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__6__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1065:1: rule__BossType__Group__6__Impl : ( 'bossId' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1093:1: rule__BossType__Group__6__Impl : ( 'superBoss' ) ;
     public final void rule__BossType__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1069:1: ( ( 'bossId' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1070:1: ( 'bossId' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1097:1: ( ( 'superBoss' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1098:1: ( 'superBoss' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1070:1: ( 'bossId' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1071:1: 'bossId'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1098:1: ( 'superBoss' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1099:1: 'superBoss'
             {
-             before(grammarAccess.getBossTypeAccess().getBossIdKeyword_6()); 
-            match(input,20,FollowSets000.FOLLOW_20_in_rule__BossType__Group__6__Impl2079); 
-             after(grammarAccess.getBossTypeAccess().getBossIdKeyword_6()); 
+             before(grammarAccess.getBossTypeAccess().getSuperBossKeyword_6()); 
+            match(input,20,FollowSets000.FOLLOW_20_in_rule__BossType__Group__6__Impl2139); 
+             after(grammarAccess.getBossTypeAccess().getSuperBossKeyword_6()); 
 
             }
 
@@ -2683,21 +2762,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__7"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1084:1: rule__BossType__Group__7 : rule__BossType__Group__7__Impl rule__BossType__Group__8 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1112:1: rule__BossType__Group__7 : rule__BossType__Group__7__Impl rule__BossType__Group__8 ;
     public final void rule__BossType__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1088:1: ( rule__BossType__Group__7__Impl rule__BossType__Group__8 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1089:2: rule__BossType__Group__7__Impl rule__BossType__Group__8
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1116:1: ( rule__BossType__Group__7__Impl rule__BossType__Group__8 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1117:2: rule__BossType__Group__7__Impl rule__BossType__Group__8
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__7__Impl_in_rule__BossType__Group__72110);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__7__Impl_in_rule__BossType__Group__72170);
             rule__BossType__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__8_in_rule__BossType__Group__72113);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__8_in_rule__BossType__Group__72173);
             rule__BossType__Group__8();
 
             state._fsp--;
@@ -2721,31 +2800,31 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__7__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1096:1: rule__BossType__Group__7__Impl : ( ( rule__BossType__BossIdAssignment_7 ) ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1124:1: rule__BossType__Group__7__Impl : ( ( rule__BossType__SuperBossAssignment_7 ) ) ;
     public final void rule__BossType__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1100:1: ( ( ( rule__BossType__BossIdAssignment_7 ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1101:1: ( ( rule__BossType__BossIdAssignment_7 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1128:1: ( ( ( rule__BossType__SuperBossAssignment_7 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1129:1: ( ( rule__BossType__SuperBossAssignment_7 ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1101:1: ( ( rule__BossType__BossIdAssignment_7 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1102:1: ( rule__BossType__BossIdAssignment_7 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1129:1: ( ( rule__BossType__SuperBossAssignment_7 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1130:1: ( rule__BossType__SuperBossAssignment_7 )
             {
-             before(grammarAccess.getBossTypeAccess().getBossIdAssignment_7()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1103:1: ( rule__BossType__BossIdAssignment_7 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1103:2: rule__BossType__BossIdAssignment_7
+             before(grammarAccess.getBossTypeAccess().getSuperBossAssignment_7()); 
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1131:1: ( rule__BossType__SuperBossAssignment_7 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1131:2: rule__BossType__SuperBossAssignment_7
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__BossIdAssignment_7_in_rule__BossType__Group__7__Impl2140);
-            rule__BossType__BossIdAssignment_7();
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__SuperBossAssignment_7_in_rule__BossType__Group__7__Impl2200);
+            rule__BossType__SuperBossAssignment_7();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBossTypeAccess().getBossIdAssignment_7()); 
+             after(grammarAccess.getBossTypeAccess().getSuperBossAssignment_7()); 
 
             }
 
@@ -2768,17 +2847,22 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__8"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1113:1: rule__BossType__Group__8 : rule__BossType__Group__8__Impl ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1141:1: rule__BossType__Group__8 : rule__BossType__Group__8__Impl rule__BossType__Group__9 ;
     public final void rule__BossType__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1117:1: ( rule__BossType__Group__8__Impl )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1118:2: rule__BossType__Group__8__Impl
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1145:1: ( rule__BossType__Group__8__Impl rule__BossType__Group__9 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1146:2: rule__BossType__Group__8__Impl rule__BossType__Group__9
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__8__Impl_in_rule__BossType__Group__82170);
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__8__Impl_in_rule__BossType__Group__82230);
             rule__BossType__Group__8__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__9_in_rule__BossType__Group__82233);
+            rule__BossType__Group__9();
 
             state._fsp--;
 
@@ -2801,21 +2885,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__Group__8__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1124:1: rule__BossType__Group__8__Impl : ( ']' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1153:1: rule__BossType__Group__8__Impl : ( 'bossId' ) ;
     public final void rule__BossType__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1128:1: ( ( ']' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1129:1: ( ']' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1157:1: ( ( 'bossId' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1158:1: ( 'bossId' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1129:1: ( ']' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1130:1: ']'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1158:1: ( 'bossId' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1159:1: 'bossId'
             {
-             before(grammarAccess.getBossTypeAccess().getRightSquareBracketKeyword_8()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__BossType__Group__8__Impl2198); 
-             after(grammarAccess.getBossTypeAccess().getRightSquareBracketKeyword_8()); 
+             before(grammarAccess.getBossTypeAccess().getBossIdKeyword_8()); 
+            match(input,21,FollowSets000.FOLLOW_21_in_rule__BossType__Group__8__Impl2261); 
+             after(grammarAccess.getBossTypeAccess().getBossIdKeyword_8()); 
 
             }
 
@@ -2837,22 +2921,177 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__BossType__Group__8__Impl"
 
 
+    // $ANTLR start "rule__BossType__Group__9"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1172:1: rule__BossType__Group__9 : rule__BossType__Group__9__Impl rule__BossType__Group__10 ;
+    public final void rule__BossType__Group__9() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1176:1: ( rule__BossType__Group__9__Impl rule__BossType__Group__10 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1177:2: rule__BossType__Group__9__Impl rule__BossType__Group__10
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__9__Impl_in_rule__BossType__Group__92292);
+            rule__BossType__Group__9__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__10_in_rule__BossType__Group__92295);
+            rule__BossType__Group__10();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BossType__Group__9"
+
+
+    // $ANTLR start "rule__BossType__Group__9__Impl"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1184:1: rule__BossType__Group__9__Impl : ( ( rule__BossType__BossIdAssignment_9 ) ) ;
+    public final void rule__BossType__Group__9__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1188:1: ( ( ( rule__BossType__BossIdAssignment_9 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1189:1: ( ( rule__BossType__BossIdAssignment_9 ) )
+            {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1189:1: ( ( rule__BossType__BossIdAssignment_9 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1190:1: ( rule__BossType__BossIdAssignment_9 )
+            {
+             before(grammarAccess.getBossTypeAccess().getBossIdAssignment_9()); 
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1191:1: ( rule__BossType__BossIdAssignment_9 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1191:2: rule__BossType__BossIdAssignment_9
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__BossIdAssignment_9_in_rule__BossType__Group__9__Impl2322);
+            rule__BossType__BossIdAssignment_9();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getBossTypeAccess().getBossIdAssignment_9()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BossType__Group__9__Impl"
+
+
+    // $ANTLR start "rule__BossType__Group__10"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1201:1: rule__BossType__Group__10 : rule__BossType__Group__10__Impl ;
+    public final void rule__BossType__Group__10() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1205:1: ( rule__BossType__Group__10__Impl )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1206:2: rule__BossType__Group__10__Impl
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__BossType__Group__10__Impl_in_rule__BossType__Group__102352);
+            rule__BossType__Group__10__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BossType__Group__10"
+
+
+    // $ANTLR start "rule__BossType__Group__10__Impl"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1212:1: rule__BossType__Group__10__Impl : ( ']' ) ;
+    public final void rule__BossType__Group__10__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1216:1: ( ( ']' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1217:1: ( ']' )
+            {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1217:1: ( ']' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1218:1: ']'
+            {
+             before(grammarAccess.getBossTypeAccess().getRightSquareBracketKeyword_10()); 
+            match(input,13,FollowSets000.FOLLOW_13_in_rule__BossType__Group__10__Impl2380); 
+             after(grammarAccess.getBossTypeAccess().getRightSquareBracketKeyword_10()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BossType__Group__10__Impl"
+
+
     // $ANTLR start "rule__EmployeeType__Group__0"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1161:1: rule__EmployeeType__Group__0 : rule__EmployeeType__Group__0__Impl rule__EmployeeType__Group__1 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1253:1: rule__EmployeeType__Group__0 : rule__EmployeeType__Group__0__Impl rule__EmployeeType__Group__1 ;
     public final void rule__EmployeeType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1165:1: ( rule__EmployeeType__Group__0__Impl rule__EmployeeType__Group__1 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1166:2: rule__EmployeeType__Group__0__Impl rule__EmployeeType__Group__1
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1257:1: ( rule__EmployeeType__Group__0__Impl rule__EmployeeType__Group__1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1258:2: rule__EmployeeType__Group__0__Impl rule__EmployeeType__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__0__Impl_in_rule__EmployeeType__Group__02247);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__0__Impl_in_rule__EmployeeType__Group__02433);
             rule__EmployeeType__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__1_in_rule__EmployeeType__Group__02250);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__1_in_rule__EmployeeType__Group__02436);
             rule__EmployeeType__Group__1();
 
             state._fsp--;
@@ -2876,20 +3115,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__0__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1173:1: rule__EmployeeType__Group__0__Impl : ( 'EmployeeType' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1265:1: rule__EmployeeType__Group__0__Impl : ( 'EmployeeType' ) ;
     public final void rule__EmployeeType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1177:1: ( ( 'EmployeeType' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1178:1: ( 'EmployeeType' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1269:1: ( ( 'EmployeeType' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1270:1: ( 'EmployeeType' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1178:1: ( 'EmployeeType' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1179:1: 'EmployeeType'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1270:1: ( 'EmployeeType' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1271:1: 'EmployeeType'
             {
              before(grammarAccess.getEmployeeTypeAccess().getEmployeeTypeKeyword_0()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__EmployeeType__Group__0__Impl2278); 
+            match(input,22,FollowSets000.FOLLOW_22_in_rule__EmployeeType__Group__0__Impl2464); 
              after(grammarAccess.getEmployeeTypeAccess().getEmployeeTypeKeyword_0()); 
 
             }
@@ -2913,21 +3152,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__1"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1192:1: rule__EmployeeType__Group__1 : rule__EmployeeType__Group__1__Impl rule__EmployeeType__Group__2 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1284:1: rule__EmployeeType__Group__1 : rule__EmployeeType__Group__1__Impl rule__EmployeeType__Group__2 ;
     public final void rule__EmployeeType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1196:1: ( rule__EmployeeType__Group__1__Impl rule__EmployeeType__Group__2 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1197:2: rule__EmployeeType__Group__1__Impl rule__EmployeeType__Group__2
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1288:1: ( rule__EmployeeType__Group__1__Impl rule__EmployeeType__Group__2 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1289:2: rule__EmployeeType__Group__1__Impl rule__EmployeeType__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__1__Impl_in_rule__EmployeeType__Group__12309);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__1__Impl_in_rule__EmployeeType__Group__12495);
             rule__EmployeeType__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__2_in_rule__EmployeeType__Group__12312);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__2_in_rule__EmployeeType__Group__12498);
             rule__EmployeeType__Group__2();
 
             state._fsp--;
@@ -2951,20 +3190,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__1__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1204:1: rule__EmployeeType__Group__1__Impl : ( '[' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1296:1: rule__EmployeeType__Group__1__Impl : ( '[' ) ;
     public final void rule__EmployeeType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1208:1: ( ( '[' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1209:1: ( '[' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1300:1: ( ( '[' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1301:1: ( '[' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1209:1: ( '[' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1210:1: '['
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1301:1: ( '[' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1302:1: '['
             {
              before(grammarAccess.getEmployeeTypeAccess().getLeftSquareBracketKeyword_1()); 
-            match(input,12,FollowSets000.FOLLOW_12_in_rule__EmployeeType__Group__1__Impl2340); 
+            match(input,12,FollowSets000.FOLLOW_12_in_rule__EmployeeType__Group__1__Impl2526); 
              after(grammarAccess.getEmployeeTypeAccess().getLeftSquareBracketKeyword_1()); 
 
             }
@@ -2988,21 +3227,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__2"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1223:1: rule__EmployeeType__Group__2 : rule__EmployeeType__Group__2__Impl rule__EmployeeType__Group__3 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1315:1: rule__EmployeeType__Group__2 : rule__EmployeeType__Group__2__Impl rule__EmployeeType__Group__3 ;
     public final void rule__EmployeeType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1227:1: ( rule__EmployeeType__Group__2__Impl rule__EmployeeType__Group__3 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1228:2: rule__EmployeeType__Group__2__Impl rule__EmployeeType__Group__3
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1319:1: ( rule__EmployeeType__Group__2__Impl rule__EmployeeType__Group__3 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1320:2: rule__EmployeeType__Group__2__Impl rule__EmployeeType__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__2__Impl_in_rule__EmployeeType__Group__22371);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__2__Impl_in_rule__EmployeeType__Group__22557);
             rule__EmployeeType__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__3_in_rule__EmployeeType__Group__22374);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__3_in_rule__EmployeeType__Group__22560);
             rule__EmployeeType__Group__3();
 
             state._fsp--;
@@ -3026,20 +3265,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__2__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1235:1: rule__EmployeeType__Group__2__Impl : ( 'lastName' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1327:1: rule__EmployeeType__Group__2__Impl : ( 'lastName' ) ;
     public final void rule__EmployeeType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1239:1: ( ( 'lastName' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1240:1: ( 'lastName' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1331:1: ( ( 'lastName' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1332:1: ( 'lastName' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1240:1: ( 'lastName' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1241:1: 'lastName'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1332:1: ( 'lastName' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1333:1: 'lastName'
             {
              before(grammarAccess.getEmployeeTypeAccess().getLastNameKeyword_2()); 
-            match(input,18,FollowSets000.FOLLOW_18_in_rule__EmployeeType__Group__2__Impl2402); 
+            match(input,18,FollowSets000.FOLLOW_18_in_rule__EmployeeType__Group__2__Impl2588); 
              after(grammarAccess.getEmployeeTypeAccess().getLastNameKeyword_2()); 
 
             }
@@ -3063,21 +3302,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__3"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1254:1: rule__EmployeeType__Group__3 : rule__EmployeeType__Group__3__Impl rule__EmployeeType__Group__4 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1346:1: rule__EmployeeType__Group__3 : rule__EmployeeType__Group__3__Impl rule__EmployeeType__Group__4 ;
     public final void rule__EmployeeType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1258:1: ( rule__EmployeeType__Group__3__Impl rule__EmployeeType__Group__4 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1259:2: rule__EmployeeType__Group__3__Impl rule__EmployeeType__Group__4
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1350:1: ( rule__EmployeeType__Group__3__Impl rule__EmployeeType__Group__4 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1351:2: rule__EmployeeType__Group__3__Impl rule__EmployeeType__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__3__Impl_in_rule__EmployeeType__Group__32433);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__3__Impl_in_rule__EmployeeType__Group__32619);
             rule__EmployeeType__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__4_in_rule__EmployeeType__Group__32436);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__4_in_rule__EmployeeType__Group__32622);
             rule__EmployeeType__Group__4();
 
             state._fsp--;
@@ -3101,23 +3340,23 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__3__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1266:1: rule__EmployeeType__Group__3__Impl : ( ( rule__EmployeeType__LastNameAssignment_3 ) ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1358:1: rule__EmployeeType__Group__3__Impl : ( ( rule__EmployeeType__LastNameAssignment_3 ) ) ;
     public final void rule__EmployeeType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1270:1: ( ( ( rule__EmployeeType__LastNameAssignment_3 ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1271:1: ( ( rule__EmployeeType__LastNameAssignment_3 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1362:1: ( ( ( rule__EmployeeType__LastNameAssignment_3 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1363:1: ( ( rule__EmployeeType__LastNameAssignment_3 ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1271:1: ( ( rule__EmployeeType__LastNameAssignment_3 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1272:1: ( rule__EmployeeType__LastNameAssignment_3 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1363:1: ( ( rule__EmployeeType__LastNameAssignment_3 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1364:1: ( rule__EmployeeType__LastNameAssignment_3 )
             {
              before(grammarAccess.getEmployeeTypeAccess().getLastNameAssignment_3()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1273:1: ( rule__EmployeeType__LastNameAssignment_3 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1273:2: rule__EmployeeType__LastNameAssignment_3
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1365:1: ( rule__EmployeeType__LastNameAssignment_3 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1365:2: rule__EmployeeType__LastNameAssignment_3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__LastNameAssignment_3_in_rule__EmployeeType__Group__3__Impl2463);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__LastNameAssignment_3_in_rule__EmployeeType__Group__3__Impl2649);
             rule__EmployeeType__LastNameAssignment_3();
 
             state._fsp--;
@@ -3148,21 +3387,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__4"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1283:1: rule__EmployeeType__Group__4 : rule__EmployeeType__Group__4__Impl rule__EmployeeType__Group__5 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1375:1: rule__EmployeeType__Group__4 : rule__EmployeeType__Group__4__Impl rule__EmployeeType__Group__5 ;
     public final void rule__EmployeeType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1287:1: ( rule__EmployeeType__Group__4__Impl rule__EmployeeType__Group__5 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1288:2: rule__EmployeeType__Group__4__Impl rule__EmployeeType__Group__5
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1379:1: ( rule__EmployeeType__Group__4__Impl rule__EmployeeType__Group__5 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1380:2: rule__EmployeeType__Group__4__Impl rule__EmployeeType__Group__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__4__Impl_in_rule__EmployeeType__Group__42493);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__4__Impl_in_rule__EmployeeType__Group__42679);
             rule__EmployeeType__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__5_in_rule__EmployeeType__Group__42496);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__5_in_rule__EmployeeType__Group__42682);
             rule__EmployeeType__Group__5();
 
             state._fsp--;
@@ -3186,21 +3425,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__4__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1295:1: rule__EmployeeType__Group__4__Impl : ( 'boss' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1387:1: rule__EmployeeType__Group__4__Impl : ( 'birthDate' ) ;
     public final void rule__EmployeeType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1299:1: ( ( 'boss' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1300:1: ( 'boss' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1391:1: ( ( 'birthDate' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1392:1: ( 'birthDate' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1300:1: ( 'boss' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1301:1: 'boss'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1392:1: ( 'birthDate' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1393:1: 'birthDate'
             {
-             before(grammarAccess.getEmployeeTypeAccess().getBossKeyword_4()); 
-            match(input,14,FollowSets000.FOLLOW_14_in_rule__EmployeeType__Group__4__Impl2524); 
-             after(grammarAccess.getEmployeeTypeAccess().getBossKeyword_4()); 
+             before(grammarAccess.getEmployeeTypeAccess().getBirthDateKeyword_4()); 
+            match(input,19,FollowSets000.FOLLOW_19_in_rule__EmployeeType__Group__4__Impl2710); 
+             after(grammarAccess.getEmployeeTypeAccess().getBirthDateKeyword_4()); 
 
             }
 
@@ -3223,21 +3462,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__5"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1314:1: rule__EmployeeType__Group__5 : rule__EmployeeType__Group__5__Impl rule__EmployeeType__Group__6 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1406:1: rule__EmployeeType__Group__5 : rule__EmployeeType__Group__5__Impl rule__EmployeeType__Group__6 ;
     public final void rule__EmployeeType__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1318:1: ( rule__EmployeeType__Group__5__Impl rule__EmployeeType__Group__6 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1319:2: rule__EmployeeType__Group__5__Impl rule__EmployeeType__Group__6
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1410:1: ( rule__EmployeeType__Group__5__Impl rule__EmployeeType__Group__6 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1411:2: rule__EmployeeType__Group__5__Impl rule__EmployeeType__Group__6
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__5__Impl_in_rule__EmployeeType__Group__52555);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__5__Impl_in_rule__EmployeeType__Group__52741);
             rule__EmployeeType__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__6_in_rule__EmployeeType__Group__52558);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__6_in_rule__EmployeeType__Group__52744);
             rule__EmployeeType__Group__6();
 
             state._fsp--;
@@ -3261,31 +3500,31 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__5__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1326:1: rule__EmployeeType__Group__5__Impl : ( ( rule__EmployeeType__BossAssignment_5 ) ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1418:1: rule__EmployeeType__Group__5__Impl : ( ( rule__EmployeeType__BirthDateAssignment_5 ) ) ;
     public final void rule__EmployeeType__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1330:1: ( ( ( rule__EmployeeType__BossAssignment_5 ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1331:1: ( ( rule__EmployeeType__BossAssignment_5 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1422:1: ( ( ( rule__EmployeeType__BirthDateAssignment_5 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1423:1: ( ( rule__EmployeeType__BirthDateAssignment_5 ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1331:1: ( ( rule__EmployeeType__BossAssignment_5 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1332:1: ( rule__EmployeeType__BossAssignment_5 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1423:1: ( ( rule__EmployeeType__BirthDateAssignment_5 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1424:1: ( rule__EmployeeType__BirthDateAssignment_5 )
             {
-             before(grammarAccess.getEmployeeTypeAccess().getBossAssignment_5()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1333:1: ( rule__EmployeeType__BossAssignment_5 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1333:2: rule__EmployeeType__BossAssignment_5
+             before(grammarAccess.getEmployeeTypeAccess().getBirthDateAssignment_5()); 
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1425:1: ( rule__EmployeeType__BirthDateAssignment_5 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1425:2: rule__EmployeeType__BirthDateAssignment_5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__BossAssignment_5_in_rule__EmployeeType__Group__5__Impl2585);
-            rule__EmployeeType__BossAssignment_5();
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__BirthDateAssignment_5_in_rule__EmployeeType__Group__5__Impl2771);
+            rule__EmployeeType__BirthDateAssignment_5();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEmployeeTypeAccess().getBossAssignment_5()); 
+             after(grammarAccess.getEmployeeTypeAccess().getBirthDateAssignment_5()); 
 
             }
 
@@ -3308,21 +3547,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__6"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1343:1: rule__EmployeeType__Group__6 : rule__EmployeeType__Group__6__Impl rule__EmployeeType__Group__7 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1435:1: rule__EmployeeType__Group__6 : rule__EmployeeType__Group__6__Impl rule__EmployeeType__Group__7 ;
     public final void rule__EmployeeType__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1347:1: ( rule__EmployeeType__Group__6__Impl rule__EmployeeType__Group__7 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1348:2: rule__EmployeeType__Group__6__Impl rule__EmployeeType__Group__7
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1439:1: ( rule__EmployeeType__Group__6__Impl rule__EmployeeType__Group__7 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1440:2: rule__EmployeeType__Group__6__Impl rule__EmployeeType__Group__7
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__6__Impl_in_rule__EmployeeType__Group__62615);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__6__Impl_in_rule__EmployeeType__Group__62801);
             rule__EmployeeType__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__7_in_rule__EmployeeType__Group__62618);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__7_in_rule__EmployeeType__Group__62804);
             rule__EmployeeType__Group__7();
 
             state._fsp--;
@@ -3346,21 +3585,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__6__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1355:1: rule__EmployeeType__Group__6__Impl : ( 'employeeId' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1447:1: rule__EmployeeType__Group__6__Impl : ( 'boss' ) ;
     public final void rule__EmployeeType__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1359:1: ( ( 'employeeId' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1360:1: ( 'employeeId' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1451:1: ( ( 'boss' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1452:1: ( 'boss' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1360:1: ( 'employeeId' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1361:1: 'employeeId'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1452:1: ( 'boss' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1453:1: 'boss'
             {
-             before(grammarAccess.getEmployeeTypeAccess().getEmployeeIdKeyword_6()); 
-            match(input,22,FollowSets000.FOLLOW_22_in_rule__EmployeeType__Group__6__Impl2646); 
-             after(grammarAccess.getEmployeeTypeAccess().getEmployeeIdKeyword_6()); 
+             before(grammarAccess.getEmployeeTypeAccess().getBossKeyword_6()); 
+            match(input,14,FollowSets000.FOLLOW_14_in_rule__EmployeeType__Group__6__Impl2832); 
+             after(grammarAccess.getEmployeeTypeAccess().getBossKeyword_6()); 
 
             }
 
@@ -3383,21 +3622,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__7"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1374:1: rule__EmployeeType__Group__7 : rule__EmployeeType__Group__7__Impl rule__EmployeeType__Group__8 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1466:1: rule__EmployeeType__Group__7 : rule__EmployeeType__Group__7__Impl rule__EmployeeType__Group__8 ;
     public final void rule__EmployeeType__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1378:1: ( rule__EmployeeType__Group__7__Impl rule__EmployeeType__Group__8 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1379:2: rule__EmployeeType__Group__7__Impl rule__EmployeeType__Group__8
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1470:1: ( rule__EmployeeType__Group__7__Impl rule__EmployeeType__Group__8 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1471:2: rule__EmployeeType__Group__7__Impl rule__EmployeeType__Group__8
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__7__Impl_in_rule__EmployeeType__Group__72677);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__7__Impl_in_rule__EmployeeType__Group__72863);
             rule__EmployeeType__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__8_in_rule__EmployeeType__Group__72680);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__8_in_rule__EmployeeType__Group__72866);
             rule__EmployeeType__Group__8();
 
             state._fsp--;
@@ -3421,31 +3660,31 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__7__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1386:1: rule__EmployeeType__Group__7__Impl : ( ( rule__EmployeeType__EmployeeIdAssignment_7 ) ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1478:1: rule__EmployeeType__Group__7__Impl : ( ( rule__EmployeeType__BossAssignment_7 ) ) ;
     public final void rule__EmployeeType__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1390:1: ( ( ( rule__EmployeeType__EmployeeIdAssignment_7 ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1391:1: ( ( rule__EmployeeType__EmployeeIdAssignment_7 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1482:1: ( ( ( rule__EmployeeType__BossAssignment_7 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1483:1: ( ( rule__EmployeeType__BossAssignment_7 ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1391:1: ( ( rule__EmployeeType__EmployeeIdAssignment_7 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1392:1: ( rule__EmployeeType__EmployeeIdAssignment_7 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1483:1: ( ( rule__EmployeeType__BossAssignment_7 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1484:1: ( rule__EmployeeType__BossAssignment_7 )
             {
-             before(grammarAccess.getEmployeeTypeAccess().getEmployeeIdAssignment_7()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1393:1: ( rule__EmployeeType__EmployeeIdAssignment_7 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1393:2: rule__EmployeeType__EmployeeIdAssignment_7
+             before(grammarAccess.getEmployeeTypeAccess().getBossAssignment_7()); 
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1485:1: ( rule__EmployeeType__BossAssignment_7 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1485:2: rule__EmployeeType__BossAssignment_7
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__EmployeeIdAssignment_7_in_rule__EmployeeType__Group__7__Impl2707);
-            rule__EmployeeType__EmployeeIdAssignment_7();
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__BossAssignment_7_in_rule__EmployeeType__Group__7__Impl2893);
+            rule__EmployeeType__BossAssignment_7();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEmployeeTypeAccess().getEmployeeIdAssignment_7()); 
+             after(grammarAccess.getEmployeeTypeAccess().getBossAssignment_7()); 
 
             }
 
@@ -3468,17 +3707,22 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__8"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1403:1: rule__EmployeeType__Group__8 : rule__EmployeeType__Group__8__Impl ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1495:1: rule__EmployeeType__Group__8 : rule__EmployeeType__Group__8__Impl rule__EmployeeType__Group__9 ;
     public final void rule__EmployeeType__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1407:1: ( rule__EmployeeType__Group__8__Impl )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1408:2: rule__EmployeeType__Group__8__Impl
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1499:1: ( rule__EmployeeType__Group__8__Impl rule__EmployeeType__Group__9 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1500:2: rule__EmployeeType__Group__8__Impl rule__EmployeeType__Group__9
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__8__Impl_in_rule__EmployeeType__Group__82737);
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__8__Impl_in_rule__EmployeeType__Group__82923);
             rule__EmployeeType__Group__8__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__9_in_rule__EmployeeType__Group__82926);
+            rule__EmployeeType__Group__9();
 
             state._fsp--;
 
@@ -3501,21 +3745,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeType__Group__8__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1414:1: rule__EmployeeType__Group__8__Impl : ( ']' ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1507:1: rule__EmployeeType__Group__8__Impl : ( 'employeeId' ) ;
     public final void rule__EmployeeType__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1418:1: ( ( ']' ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1419:1: ( ']' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1511:1: ( ( 'employeeId' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1512:1: ( 'employeeId' )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1419:1: ( ']' )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1420:1: ']'
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1512:1: ( 'employeeId' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1513:1: 'employeeId'
             {
-             before(grammarAccess.getEmployeeTypeAccess().getRightSquareBracketKeyword_8()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__EmployeeType__Group__8__Impl2765); 
-             after(grammarAccess.getEmployeeTypeAccess().getRightSquareBracketKeyword_8()); 
+             before(grammarAccess.getEmployeeTypeAccess().getEmployeeIdKeyword_8()); 
+            match(input,23,FollowSets000.FOLLOW_23_in_rule__EmployeeType__Group__8__Impl2954); 
+             after(grammarAccess.getEmployeeTypeAccess().getEmployeeIdKeyword_8()); 
 
             }
 
@@ -3537,22 +3781,177 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__EmployeeType__Group__8__Impl"
 
 
+    // $ANTLR start "rule__EmployeeType__Group__9"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1526:1: rule__EmployeeType__Group__9 : rule__EmployeeType__Group__9__Impl rule__EmployeeType__Group__10 ;
+    public final void rule__EmployeeType__Group__9() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1530:1: ( rule__EmployeeType__Group__9__Impl rule__EmployeeType__Group__10 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1531:2: rule__EmployeeType__Group__9__Impl rule__EmployeeType__Group__10
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__9__Impl_in_rule__EmployeeType__Group__92985);
+            rule__EmployeeType__Group__9__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__10_in_rule__EmployeeType__Group__92988);
+            rule__EmployeeType__Group__10();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EmployeeType__Group__9"
+
+
+    // $ANTLR start "rule__EmployeeType__Group__9__Impl"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1538:1: rule__EmployeeType__Group__9__Impl : ( ( rule__EmployeeType__EmployeeIdAssignment_9 ) ) ;
+    public final void rule__EmployeeType__Group__9__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1542:1: ( ( ( rule__EmployeeType__EmployeeIdAssignment_9 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1543:1: ( ( rule__EmployeeType__EmployeeIdAssignment_9 ) )
+            {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1543:1: ( ( rule__EmployeeType__EmployeeIdAssignment_9 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1544:1: ( rule__EmployeeType__EmployeeIdAssignment_9 )
+            {
+             before(grammarAccess.getEmployeeTypeAccess().getEmployeeIdAssignment_9()); 
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1545:1: ( rule__EmployeeType__EmployeeIdAssignment_9 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1545:2: rule__EmployeeType__EmployeeIdAssignment_9
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__EmployeeIdAssignment_9_in_rule__EmployeeType__Group__9__Impl3015);
+            rule__EmployeeType__EmployeeIdAssignment_9();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEmployeeTypeAccess().getEmployeeIdAssignment_9()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EmployeeType__Group__9__Impl"
+
+
+    // $ANTLR start "rule__EmployeeType__Group__10"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1555:1: rule__EmployeeType__Group__10 : rule__EmployeeType__Group__10__Impl ;
+    public final void rule__EmployeeType__Group__10() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1559:1: ( rule__EmployeeType__Group__10__Impl )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1560:2: rule__EmployeeType__Group__10__Impl
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__EmployeeType__Group__10__Impl_in_rule__EmployeeType__Group__103045);
+            rule__EmployeeType__Group__10__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EmployeeType__Group__10"
+
+
+    // $ANTLR start "rule__EmployeeType__Group__10__Impl"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1566:1: rule__EmployeeType__Group__10__Impl : ( ']' ) ;
+    public final void rule__EmployeeType__Group__10__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1570:1: ( ( ']' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1571:1: ( ']' )
+            {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1571:1: ( ']' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1572:1: ']'
+            {
+             before(grammarAccess.getEmployeeTypeAccess().getRightSquareBracketKeyword_10()); 
+            match(input,13,FollowSets000.FOLLOW_13_in_rule__EmployeeType__Group__10__Impl3073); 
+             after(grammarAccess.getEmployeeTypeAccess().getRightSquareBracketKeyword_10()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EmployeeType__Group__10__Impl"
+
+
     // $ANTLR start "rule__IdValues__Group__0"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1451:1: rule__IdValues__Group__0 : rule__IdValues__Group__0__Impl rule__IdValues__Group__1 ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1607:1: rule__IdValues__Group__0 : rule__IdValues__Group__0__Impl rule__IdValues__Group__1 ;
     public final void rule__IdValues__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1455:1: ( rule__IdValues__Group__0__Impl rule__IdValues__Group__1 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1456:2: rule__IdValues__Group__0__Impl rule__IdValues__Group__1
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1611:1: ( rule__IdValues__Group__0__Impl rule__IdValues__Group__1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1612:2: rule__IdValues__Group__0__Impl rule__IdValues__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__IdValues__Group__0__Impl_in_rule__IdValues__Group__02814);
+            pushFollow(FollowSets000.FOLLOW_rule__IdValues__Group__0__Impl_in_rule__IdValues__Group__03126);
             rule__IdValues__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__IdValues__Group__1_in_rule__IdValues__Group__02817);
+            pushFollow(FollowSets000.FOLLOW_rule__IdValues__Group__1_in_rule__IdValues__Group__03129);
             rule__IdValues__Group__1();
 
             state._fsp--;
@@ -3576,21 +3975,21 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IdValues__Group__0__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1463:1: rule__IdValues__Group__0__Impl : ( () ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1619:1: rule__IdValues__Group__0__Impl : ( () ) ;
     public final void rule__IdValues__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1467:1: ( ( () ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1468:1: ( () )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1623:1: ( ( () ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1624:1: ( () )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1468:1: ( () )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1469:1: ()
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1624:1: ( () )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1625:1: ()
             {
              before(grammarAccess.getIdValuesAccess().getIdValuesAction_0()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1470:1: ()
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1472:1: 
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1626:1: ()
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1628:1: 
             {
             }
 
@@ -3613,16 +4012,16 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IdValues__Group__1"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1482:1: rule__IdValues__Group__1 : rule__IdValues__Group__1__Impl ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1638:1: rule__IdValues__Group__1 : rule__IdValues__Group__1__Impl ;
     public final void rule__IdValues__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1486:1: ( rule__IdValues__Group__1__Impl )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1487:2: rule__IdValues__Group__1__Impl
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1642:1: ( rule__IdValues__Group__1__Impl )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1643:2: rule__IdValues__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__IdValues__Group__1__Impl_in_rule__IdValues__Group__12875);
+            pushFollow(FollowSets000.FOLLOW_rule__IdValues__Group__1__Impl_in_rule__IdValues__Group__13187);
             rule__IdValues__Group__1__Impl();
 
             state._fsp--;
@@ -3646,23 +4045,23 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IdValues__Group__1__Impl"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1493:1: rule__IdValues__Group__1__Impl : ( ( rule__IdValues__NameAssignment_1 ) ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1649:1: rule__IdValues__Group__1__Impl : ( ( rule__IdValues__NameAssignment_1 ) ) ;
     public final void rule__IdValues__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1497:1: ( ( ( rule__IdValues__NameAssignment_1 ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1498:1: ( ( rule__IdValues__NameAssignment_1 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1653:1: ( ( ( rule__IdValues__NameAssignment_1 ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1654:1: ( ( rule__IdValues__NameAssignment_1 ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1498:1: ( ( rule__IdValues__NameAssignment_1 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1499:1: ( rule__IdValues__NameAssignment_1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1654:1: ( ( rule__IdValues__NameAssignment_1 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1655:1: ( rule__IdValues__NameAssignment_1 )
             {
              before(grammarAccess.getIdValuesAccess().getNameAssignment_1()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1500:1: ( rule__IdValues__NameAssignment_1 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1500:2: rule__IdValues__NameAssignment_1
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1656:1: ( rule__IdValues__NameAssignment_1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1656:2: rule__IdValues__NameAssignment_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__IdValues__NameAssignment_1_in_rule__IdValues__Group__1__Impl2902);
+            pushFollow(FollowSets000.FOLLOW_rule__IdValues__NameAssignment_1_in_rule__IdValues__Group__1__Impl3214);
             rule__IdValues__NameAssignment_1();
 
             state._fsp--;
@@ -3692,21 +4091,391 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__IdValues__Group__1__Impl"
 
 
+    // $ANTLR start "rule__Date__Group__0"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1670:1: rule__Date__Group__0 : rule__Date__Group__0__Impl rule__Date__Group__1 ;
+    public final void rule__Date__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1674:1: ( rule__Date__Group__0__Impl rule__Date__Group__1 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1675:2: rule__Date__Group__0__Impl rule__Date__Group__1
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__0__Impl_in_rule__Date__Group__03248);
+            rule__Date__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__1_in_rule__Date__Group__03251);
+            rule__Date__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Date__Group__0"
+
+
+    // $ANTLR start "rule__Date__Group__0__Impl"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1682:1: rule__Date__Group__0__Impl : ( RULE_INT ) ;
+    public final void rule__Date__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1686:1: ( ( RULE_INT ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1687:1: ( RULE_INT )
+            {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1687:1: ( RULE_INT )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1688:1: RULE_INT
+            {
+             before(grammarAccess.getDateAccess().getINTTerminalRuleCall_0()); 
+            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__Date__Group__0__Impl3278); 
+             after(grammarAccess.getDateAccess().getINTTerminalRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Date__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Date__Group__1"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1699:1: rule__Date__Group__1 : rule__Date__Group__1__Impl rule__Date__Group__2 ;
+    public final void rule__Date__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1703:1: ( rule__Date__Group__1__Impl rule__Date__Group__2 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1704:2: rule__Date__Group__1__Impl rule__Date__Group__2
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__1__Impl_in_rule__Date__Group__13307);
+            rule__Date__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__2_in_rule__Date__Group__13310);
+            rule__Date__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Date__Group__1"
+
+
+    // $ANTLR start "rule__Date__Group__1__Impl"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1711:1: rule__Date__Group__1__Impl : ( '-' ) ;
+    public final void rule__Date__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1715:1: ( ( '-' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1716:1: ( '-' )
+            {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1716:1: ( '-' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1717:1: '-'
+            {
+             before(grammarAccess.getDateAccess().getHyphenMinusKeyword_1()); 
+            match(input,24,FollowSets000.FOLLOW_24_in_rule__Date__Group__1__Impl3338); 
+             after(grammarAccess.getDateAccess().getHyphenMinusKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Date__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Date__Group__2"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1730:1: rule__Date__Group__2 : rule__Date__Group__2__Impl rule__Date__Group__3 ;
+    public final void rule__Date__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1734:1: ( rule__Date__Group__2__Impl rule__Date__Group__3 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1735:2: rule__Date__Group__2__Impl rule__Date__Group__3
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__2__Impl_in_rule__Date__Group__23369);
+            rule__Date__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__3_in_rule__Date__Group__23372);
+            rule__Date__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Date__Group__2"
+
+
+    // $ANTLR start "rule__Date__Group__2__Impl"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1742:1: rule__Date__Group__2__Impl : ( RULE_INT ) ;
+    public final void rule__Date__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1746:1: ( ( RULE_INT ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1747:1: ( RULE_INT )
+            {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1747:1: ( RULE_INT )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1748:1: RULE_INT
+            {
+             before(grammarAccess.getDateAccess().getINTTerminalRuleCall_2()); 
+            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__Date__Group__2__Impl3399); 
+             after(grammarAccess.getDateAccess().getINTTerminalRuleCall_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Date__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Date__Group__3"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1759:1: rule__Date__Group__3 : rule__Date__Group__3__Impl rule__Date__Group__4 ;
+    public final void rule__Date__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1763:1: ( rule__Date__Group__3__Impl rule__Date__Group__4 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1764:2: rule__Date__Group__3__Impl rule__Date__Group__4
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__3__Impl_in_rule__Date__Group__33428);
+            rule__Date__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__4_in_rule__Date__Group__33431);
+            rule__Date__Group__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Date__Group__3"
+
+
+    // $ANTLR start "rule__Date__Group__3__Impl"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1771:1: rule__Date__Group__3__Impl : ( '-' ) ;
+    public final void rule__Date__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1775:1: ( ( '-' ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1776:1: ( '-' )
+            {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1776:1: ( '-' )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1777:1: '-'
+            {
+             before(grammarAccess.getDateAccess().getHyphenMinusKeyword_3()); 
+            match(input,24,FollowSets000.FOLLOW_24_in_rule__Date__Group__3__Impl3459); 
+             after(grammarAccess.getDateAccess().getHyphenMinusKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Date__Group__3__Impl"
+
+
+    // $ANTLR start "rule__Date__Group__4"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1790:1: rule__Date__Group__4 : rule__Date__Group__4__Impl ;
+    public final void rule__Date__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1794:1: ( rule__Date__Group__4__Impl )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1795:2: rule__Date__Group__4__Impl
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__4__Impl_in_rule__Date__Group__43490);
+            rule__Date__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Date__Group__4"
+
+
+    // $ANTLR start "rule__Date__Group__4__Impl"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1801:1: rule__Date__Group__4__Impl : ( RULE_INT ) ;
+    public final void rule__Date__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1805:1: ( ( RULE_INT ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1806:1: ( RULE_INT )
+            {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1806:1: ( RULE_INT )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1807:1: RULE_INT
+            {
+             before(grammarAccess.getDateAccess().getINTTerminalRuleCall_4()); 
+            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__Date__Group__4__Impl3517); 
+             after(grammarAccess.getDateAccess().getINTTerminalRuleCall_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Date__Group__4__Impl"
+
+
     // $ANTLR start "rule__EmployeeListType__BossAssignment_3_2"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1515:1: rule__EmployeeListType__BossAssignment_3_2 : ( ruleBossType ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1829:1: rule__EmployeeListType__BossAssignment_3_2 : ( ruleBossType ) ;
     public final void rule__EmployeeListType__BossAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1519:1: ( ( ruleBossType ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1520:1: ( ruleBossType )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1833:1: ( ( ruleBossType ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1834:1: ( ruleBossType )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1520:1: ( ruleBossType )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1521:1: ruleBossType
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1834:1: ( ruleBossType )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1835:1: ruleBossType
             {
              before(grammarAccess.getEmployeeListTypeAccess().getBossBossTypeParserRuleCall_3_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleBossType_in_rule__EmployeeListType__BossAssignment_3_22941);
+            pushFollow(FollowSets000.FOLLOW_ruleBossType_in_rule__EmployeeListType__BossAssignment_3_23561);
             ruleBossType();
 
             state._fsp--;
@@ -3734,20 +4503,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__BossAssignment_3_3_1"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1530:1: rule__EmployeeListType__BossAssignment_3_3_1 : ( ruleBossType ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1844:1: rule__EmployeeListType__BossAssignment_3_3_1 : ( ruleBossType ) ;
     public final void rule__EmployeeListType__BossAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1534:1: ( ( ruleBossType ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1535:1: ( ruleBossType )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1848:1: ( ( ruleBossType ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1849:1: ( ruleBossType )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1535:1: ( ruleBossType )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1536:1: ruleBossType
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1849:1: ( ruleBossType )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1850:1: ruleBossType
             {
              before(grammarAccess.getEmployeeListTypeAccess().getBossBossTypeParserRuleCall_3_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleBossType_in_rule__EmployeeListType__BossAssignment_3_3_12972);
+            pushFollow(FollowSets000.FOLLOW_ruleBossType_in_rule__EmployeeListType__BossAssignment_3_3_13592);
             ruleBossType();
 
             state._fsp--;
@@ -3775,20 +4544,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__EmployeeAssignment_4_2"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1545:1: rule__EmployeeListType__EmployeeAssignment_4_2 : ( ruleEmployeeType ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1859:1: rule__EmployeeListType__EmployeeAssignment_4_2 : ( ruleEmployeeType ) ;
     public final void rule__EmployeeListType__EmployeeAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1549:1: ( ( ruleEmployeeType ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1550:1: ( ruleEmployeeType )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1863:1: ( ( ruleEmployeeType ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1864:1: ( ruleEmployeeType )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1550:1: ( ruleEmployeeType )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1551:1: ruleEmployeeType
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1864:1: ( ruleEmployeeType )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1865:1: ruleEmployeeType
             {
              before(grammarAccess.getEmployeeListTypeAccess().getEmployeeEmployeeTypeParserRuleCall_4_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEmployeeType_in_rule__EmployeeListType__EmployeeAssignment_4_23003);
+            pushFollow(FollowSets000.FOLLOW_ruleEmployeeType_in_rule__EmployeeListType__EmployeeAssignment_4_23623);
             ruleEmployeeType();
 
             state._fsp--;
@@ -3816,20 +4585,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmployeeListType__EmployeeAssignment_4_3_1"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1560:1: rule__EmployeeListType__EmployeeAssignment_4_3_1 : ( ruleEmployeeType ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1874:1: rule__EmployeeListType__EmployeeAssignment_4_3_1 : ( ruleEmployeeType ) ;
     public final void rule__EmployeeListType__EmployeeAssignment_4_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1564:1: ( ( ruleEmployeeType ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1565:1: ( ruleEmployeeType )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1878:1: ( ( ruleEmployeeType ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1879:1: ( ruleEmployeeType )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1565:1: ( ruleEmployeeType )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1566:1: ruleEmployeeType
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1879:1: ( ruleEmployeeType )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1880:1: ruleEmployeeType
             {
              before(grammarAccess.getEmployeeListTypeAccess().getEmployeeEmployeeTypeParserRuleCall_4_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEmployeeType_in_rule__EmployeeListType__EmployeeAssignment_4_3_13034);
+            pushFollow(FollowSets000.FOLLOW_ruleEmployeeType_in_rule__EmployeeListType__EmployeeAssignment_4_3_13654);
             ruleEmployeeType();
 
             state._fsp--;
@@ -3857,20 +4626,20 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BossType__LastNameAssignment_3"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1575:1: rule__BossType__LastNameAssignment_3 : ( ruleString0 ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1889:1: rule__BossType__LastNameAssignment_3 : ( ruleString0 ) ;
     public final void rule__BossType__LastNameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1579:1: ( ( ruleString0 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1580:1: ( ruleString0 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1893:1: ( ( ruleString0 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1894:1: ( ruleString0 )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1580:1: ( ruleString0 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1581:1: ruleString0
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1894:1: ( ruleString0 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1895:1: ruleString0
             {
              before(grammarAccess.getBossTypeAccess().getLastNameString0ParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleString0_in_rule__BossType__LastNameAssignment_33065);
+            pushFollow(FollowSets000.FOLLOW_ruleString0_in_rule__BossType__LastNameAssignment_33685);
             ruleString0();
 
             state._fsp--;
@@ -3897,30 +4666,26 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__BossType__LastNameAssignment_3"
 
 
-    // $ANTLR start "rule__BossType__SuperBossAssignment_5"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1590:1: rule__BossType__SuperBossAssignment_5 : ( ( RULE_ID ) ) ;
-    public final void rule__BossType__SuperBossAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__BossType__BirthDateAssignment_5"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1904:1: rule__BossType__BirthDateAssignment_5 : ( ruleDate ) ;
+    public final void rule__BossType__BirthDateAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1594:1: ( ( ( RULE_ID ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1595:1: ( ( RULE_ID ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1908:1: ( ( ruleDate ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1909:1: ( ruleDate )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1595:1: ( ( RULE_ID ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1596:1: ( RULE_ID )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1909:1: ( ruleDate )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1910:1: ruleDate
             {
-             before(grammarAccess.getBossTypeAccess().getSuperBossIdValuesCrossReference_5_0()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1597:1: ( RULE_ID )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1598:1: RULE_ID
-            {
-             before(grammarAccess.getBossTypeAccess().getSuperBossIdValuesIDTerminalRuleCall_5_0_1()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__BossType__SuperBossAssignment_53100); 
-             after(grammarAccess.getBossTypeAccess().getSuperBossIdValuesIDTerminalRuleCall_5_0_1()); 
+             before(grammarAccess.getBossTypeAccess().getBirthDateDateParserRuleCall_5_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleDate_in_rule__BossType__BirthDateAssignment_53716);
+            ruleDate();
 
-            }
+            state._fsp--;
 
-             after(grammarAccess.getBossTypeAccess().getSuperBossIdValuesCrossReference_5_0()); 
+             after(grammarAccess.getBossTypeAccess().getBirthDateDateParserRuleCall_5_0()); 
 
             }
 
@@ -3939,29 +4704,74 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BossType__SuperBossAssignment_5"
+    // $ANTLR end "rule__BossType__BirthDateAssignment_5"
 
 
-    // $ANTLR start "rule__BossType__BossIdAssignment_7"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1609:1: rule__BossType__BossIdAssignment_7 : ( ruleIdValues ) ;
-    public final void rule__BossType__BossIdAssignment_7() throws RecognitionException {
+    // $ANTLR start "rule__BossType__SuperBossAssignment_7"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1919:1: rule__BossType__SuperBossAssignment_7 : ( ( RULE_ID ) ) ;
+    public final void rule__BossType__SuperBossAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1613:1: ( ( ruleIdValues ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1614:1: ( ruleIdValues )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1923:1: ( ( ( RULE_ID ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1924:1: ( ( RULE_ID ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1614:1: ( ruleIdValues )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1615:1: ruleIdValues
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1924:1: ( ( RULE_ID ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1925:1: ( RULE_ID )
             {
-             before(grammarAccess.getBossTypeAccess().getBossIdIdValuesParserRuleCall_7_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleIdValues_in_rule__BossType__BossIdAssignment_73135);
+             before(grammarAccess.getBossTypeAccess().getSuperBossIdValuesCrossReference_7_0()); 
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1926:1: ( RULE_ID )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1927:1: RULE_ID
+            {
+             before(grammarAccess.getBossTypeAccess().getSuperBossIdValuesIDTerminalRuleCall_7_0_1()); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__BossType__SuperBossAssignment_73751); 
+             after(grammarAccess.getBossTypeAccess().getSuperBossIdValuesIDTerminalRuleCall_7_0_1()); 
+
+            }
+
+             after(grammarAccess.getBossTypeAccess().getSuperBossIdValuesCrossReference_7_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BossType__SuperBossAssignment_7"
+
+
+    // $ANTLR start "rule__BossType__BossIdAssignment_9"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1938:1: rule__BossType__BossIdAssignment_9 : ( ruleIdValues ) ;
+    public final void rule__BossType__BossIdAssignment_9() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1942:1: ( ( ruleIdValues ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1943:1: ( ruleIdValues )
+            {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1943:1: ( ruleIdValues )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1944:1: ruleIdValues
+            {
+             before(grammarAccess.getBossTypeAccess().getBossIdIdValuesParserRuleCall_9_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleIdValues_in_rule__BossType__BossIdAssignment_93786);
             ruleIdValues();
 
             state._fsp--;
 
-             after(grammarAccess.getBossTypeAccess().getBossIdIdValuesParserRuleCall_7_0()); 
+             after(grammarAccess.getBossTypeAccess().getBossIdIdValuesParserRuleCall_9_0()); 
 
             }
 
@@ -3980,24 +4790,24 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BossType__BossIdAssignment_7"
+    // $ANTLR end "rule__BossType__BossIdAssignment_9"
 
 
     // $ANTLR start "rule__EmployeeType__LastNameAssignment_3"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1624:1: rule__EmployeeType__LastNameAssignment_3 : ( ruleString0 ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1953:1: rule__EmployeeType__LastNameAssignment_3 : ( ruleString0 ) ;
     public final void rule__EmployeeType__LastNameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1628:1: ( ( ruleString0 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1629:1: ( ruleString0 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1957:1: ( ( ruleString0 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1958:1: ( ruleString0 )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1629:1: ( ruleString0 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1630:1: ruleString0
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1958:1: ( ruleString0 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1959:1: ruleString0
             {
              before(grammarAccess.getEmployeeTypeAccess().getLastNameString0ParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleString0_in_rule__EmployeeType__LastNameAssignment_33166);
+            pushFollow(FollowSets000.FOLLOW_ruleString0_in_rule__EmployeeType__LastNameAssignment_33817);
             ruleString0();
 
             state._fsp--;
@@ -4024,30 +4834,26 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__EmployeeType__LastNameAssignment_3"
 
 
-    // $ANTLR start "rule__EmployeeType__BossAssignment_5"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1639:1: rule__EmployeeType__BossAssignment_5 : ( ( RULE_ID ) ) ;
-    public final void rule__EmployeeType__BossAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__EmployeeType__BirthDateAssignment_5"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1968:1: rule__EmployeeType__BirthDateAssignment_5 : ( ruleDate ) ;
+    public final void rule__EmployeeType__BirthDateAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1643:1: ( ( ( RULE_ID ) ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1644:1: ( ( RULE_ID ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1972:1: ( ( ruleDate ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1973:1: ( ruleDate )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1644:1: ( ( RULE_ID ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1645:1: ( RULE_ID )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1973:1: ( ruleDate )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1974:1: ruleDate
             {
-             before(grammarAccess.getEmployeeTypeAccess().getBossIdValuesCrossReference_5_0()); 
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1646:1: ( RULE_ID )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1647:1: RULE_ID
-            {
-             before(grammarAccess.getEmployeeTypeAccess().getBossIdValuesIDTerminalRuleCall_5_0_1()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__EmployeeType__BossAssignment_53201); 
-             after(grammarAccess.getEmployeeTypeAccess().getBossIdValuesIDTerminalRuleCall_5_0_1()); 
+             before(grammarAccess.getEmployeeTypeAccess().getBirthDateDateParserRuleCall_5_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleDate_in_rule__EmployeeType__BirthDateAssignment_53848);
+            ruleDate();
 
-            }
+            state._fsp--;
 
-             after(grammarAccess.getEmployeeTypeAccess().getBossIdValuesCrossReference_5_0()); 
+             after(grammarAccess.getEmployeeTypeAccess().getBirthDateDateParserRuleCall_5_0()); 
 
             }
 
@@ -4066,29 +4872,74 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EmployeeType__BossAssignment_5"
+    // $ANTLR end "rule__EmployeeType__BirthDateAssignment_5"
 
 
-    // $ANTLR start "rule__EmployeeType__EmployeeIdAssignment_7"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1658:1: rule__EmployeeType__EmployeeIdAssignment_7 : ( ruleIdValues ) ;
-    public final void rule__EmployeeType__EmployeeIdAssignment_7() throws RecognitionException {
+    // $ANTLR start "rule__EmployeeType__BossAssignment_7"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1983:1: rule__EmployeeType__BossAssignment_7 : ( ( RULE_ID ) ) ;
+    public final void rule__EmployeeType__BossAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1662:1: ( ( ruleIdValues ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1663:1: ( ruleIdValues )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1987:1: ( ( ( RULE_ID ) ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1988:1: ( ( RULE_ID ) )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1663:1: ( ruleIdValues )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1664:1: ruleIdValues
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1988:1: ( ( RULE_ID ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1989:1: ( RULE_ID )
             {
-             before(grammarAccess.getEmployeeTypeAccess().getEmployeeIdIdValuesParserRuleCall_7_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleIdValues_in_rule__EmployeeType__EmployeeIdAssignment_73236);
+             before(grammarAccess.getEmployeeTypeAccess().getBossIdValuesCrossReference_7_0()); 
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1990:1: ( RULE_ID )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1991:1: RULE_ID
+            {
+             before(grammarAccess.getEmployeeTypeAccess().getBossIdValuesIDTerminalRuleCall_7_0_1()); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__EmployeeType__BossAssignment_73883); 
+             after(grammarAccess.getEmployeeTypeAccess().getBossIdValuesIDTerminalRuleCall_7_0_1()); 
+
+            }
+
+             after(grammarAccess.getEmployeeTypeAccess().getBossIdValuesCrossReference_7_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__EmployeeType__BossAssignment_7"
+
+
+    // $ANTLR start "rule__EmployeeType__EmployeeIdAssignment_9"
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:2002:1: rule__EmployeeType__EmployeeIdAssignment_9 : ( ruleIdValues ) ;
+    public final void rule__EmployeeType__EmployeeIdAssignment_9() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:2006:1: ( ( ruleIdValues ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:2007:1: ( ruleIdValues )
+            {
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:2007:1: ( ruleIdValues )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:2008:1: ruleIdValues
+            {
+             before(grammarAccess.getEmployeeTypeAccess().getEmployeeIdIdValuesParserRuleCall_9_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleIdValues_in_rule__EmployeeType__EmployeeIdAssignment_93918);
             ruleIdValues();
 
             state._fsp--;
 
-             after(grammarAccess.getEmployeeTypeAccess().getEmployeeIdIdValuesParserRuleCall_7_0()); 
+             after(grammarAccess.getEmployeeTypeAccess().getEmployeeIdIdValuesParserRuleCall_9_0()); 
 
             }
 
@@ -4107,24 +4958,24 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EmployeeType__EmployeeIdAssignment_7"
+    // $ANTLR end "rule__EmployeeType__EmployeeIdAssignment_9"
 
 
     // $ANTLR start "rule__IdValues__NameAssignment_1"
-    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1673:1: rule__IdValues__NameAssignment_1 : ( ruleID0 ) ;
+    // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:2017:1: rule__IdValues__NameAssignment_1 : ( ruleID0 ) ;
     public final void rule__IdValues__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1677:1: ( ( ruleID0 ) )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1678:1: ( ruleID0 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:2021:1: ( ( ruleID0 ) )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:2022:1: ( ruleID0 )
             {
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1678:1: ( ruleID0 )
-            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:1679:1: ruleID0
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:2022:1: ( ruleID0 )
+            // ../org.xtext.example.demo.ui/src-gen/at/ac/tuwien/big/xmltext/idIdref/ui/contentassist/antlr/internal/InternalIdIdref.g:2023:1: ruleID0
             {
              before(grammarAccess.getIdValuesAccess().getNameID0ParserRuleCall_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleID0_in_rule__IdValues__NameAssignment_13267);
+            pushFollow(FollowSets000.FOLLOW_ruleID0_in_rule__IdValues__NameAssignment_13949);
             ruleID0();
 
             state._fsp--;
@@ -4172,130 +5023,161 @@ public class InternalIdIdrefParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_ruleIdValues_in_entryRuleIdValues300 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleIdValues307 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__IdValues__Group__0_in_ruleIdValues333 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleID0_in_entryRuleID0360 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleID0367 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleID0393 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group__0__Impl_in_rule__EmployeeListType__Group__0428 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group__1_in_rule__EmployeeListType__Group__0431 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group__1__Impl_in_rule__EmployeeListType__Group__1489 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group__2_in_rule__EmployeeListType__Group__1492 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_11_in_rule__EmployeeListType__Group__1__Impl520 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group__2__Impl_in_rule__EmployeeListType__Group__2551 = new BitSet(new long[]{0x0000000000016000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group__3_in_rule__EmployeeListType__Group__2554 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__EmployeeListType__Group__2__Impl582 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group__3__Impl_in_rule__EmployeeListType__Group__3613 = new BitSet(new long[]{0x0000000000016000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group__4_in_rule__EmployeeListType__Group__3616 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__0_in_rule__EmployeeListType__Group__3__Impl643 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group__4__Impl_in_rule__EmployeeListType__Group__4674 = new BitSet(new long[]{0x0000000000016000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group__5_in_rule__EmployeeListType__Group__4677 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__0_in_rule__EmployeeListType__Group__4__Impl704 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group__5__Impl_in_rule__EmployeeListType__Group__5735 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__EmployeeListType__Group__5__Impl763 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__0__Impl_in_rule__EmployeeListType__Group_3__0806 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__1_in_rule__EmployeeListType__Group_3__0809 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_rule__EmployeeListType__Group_3__0__Impl837 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__1__Impl_in_rule__EmployeeListType__Group_3__1868 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__2_in_rule__EmployeeListType__Group_3__1871 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__EmployeeListType__Group_3__1__Impl899 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__2__Impl_in_rule__EmployeeListType__Group_3__2930 = new BitSet(new long[]{0x000000000000A000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__3_in_rule__EmployeeListType__Group_3__2933 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__BossAssignment_3_2_in_rule__EmployeeListType__Group_3__2__Impl960 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__3__Impl_in_rule__EmployeeListType__Group_3__3990 = new BitSet(new long[]{0x000000000000A000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__4_in_rule__EmployeeListType__Group_3__3993 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3_3__0_in_rule__EmployeeListType__Group_3__3__Impl1020 = new BitSet(new long[]{0x0000000000008002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__4__Impl_in_rule__EmployeeListType__Group_3__41051 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__EmployeeListType__Group_3__4__Impl1079 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3_3__0__Impl_in_rule__EmployeeListType__Group_3_3__01120 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3_3__1_in_rule__EmployeeListType__Group_3_3__01123 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_rule__EmployeeListType__Group_3_3__0__Impl1151 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3_3__1__Impl_in_rule__EmployeeListType__Group_3_3__11182 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__BossAssignment_3_3_1_in_rule__EmployeeListType__Group_3_3__1__Impl1209 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__0__Impl_in_rule__EmployeeListType__Group_4__01243 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__1_in_rule__EmployeeListType__Group_4__01246 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_rule__EmployeeListType__Group_4__0__Impl1274 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__1__Impl_in_rule__EmployeeListType__Group_4__11305 = new BitSet(new long[]{0x0000000000200000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__2_in_rule__EmployeeListType__Group_4__11308 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__EmployeeListType__Group_4__1__Impl1336 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__2__Impl_in_rule__EmployeeListType__Group_4__21367 = new BitSet(new long[]{0x000000000000A000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__3_in_rule__EmployeeListType__Group_4__21370 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__EmployeeAssignment_4_2_in_rule__EmployeeListType__Group_4__2__Impl1397 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__3__Impl_in_rule__EmployeeListType__Group_4__31427 = new BitSet(new long[]{0x000000000000A000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__4_in_rule__EmployeeListType__Group_4__31430 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4_3__0_in_rule__EmployeeListType__Group_4__3__Impl1457 = new BitSet(new long[]{0x0000000000008002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__4__Impl_in_rule__EmployeeListType__Group_4__41488 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__EmployeeListType__Group_4__4__Impl1516 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4_3__0__Impl_in_rule__EmployeeListType__Group_4_3__01557 = new BitSet(new long[]{0x0000000000200000L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4_3__1_in_rule__EmployeeListType__Group_4_3__01560 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_rule__EmployeeListType__Group_4_3__0__Impl1588 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4_3__1__Impl_in_rule__EmployeeListType__Group_4_3__11619 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeListType__EmployeeAssignment_4_3_1_in_rule__EmployeeListType__Group_4_3__1__Impl1646 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BossType__Group__0__Impl_in_rule__BossType__Group__01680 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__BossType__Group__1_in_rule__BossType__Group__01683 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__BossType__Group__0__Impl1711 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BossType__Group__1__Impl_in_rule__BossType__Group__11742 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_rule__BossType__Group__2_in_rule__BossType__Group__11745 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__BossType__Group__1__Impl1773 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BossType__Group__2__Impl_in_rule__BossType__Group__21804 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__BossType__Group__3_in_rule__BossType__Group__21807 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_rule__BossType__Group__2__Impl1835 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BossType__Group__3__Impl_in_rule__BossType__Group__31866 = new BitSet(new long[]{0x0000000000080000L});
-        public static final BitSet FOLLOW_rule__BossType__Group__4_in_rule__BossType__Group__31869 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BossType__LastNameAssignment_3_in_rule__BossType__Group__3__Impl1896 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BossType__Group__4__Impl_in_rule__BossType__Group__41926 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_rule__BossType__Group__5_in_rule__BossType__Group__41929 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_rule__BossType__Group__4__Impl1957 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BossType__Group__5__Impl_in_rule__BossType__Group__51988 = new BitSet(new long[]{0x0000000000100000L});
-        public static final BitSet FOLLOW_rule__BossType__Group__6_in_rule__BossType__Group__51991 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BossType__SuperBossAssignment_5_in_rule__BossType__Group__5__Impl2018 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BossType__Group__6__Impl_in_rule__BossType__Group__62048 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_rule__BossType__Group__7_in_rule__BossType__Group__62051 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_20_in_rule__BossType__Group__6__Impl2079 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BossType__Group__7__Impl_in_rule__BossType__Group__72110 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_rule__BossType__Group__8_in_rule__BossType__Group__72113 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BossType__BossIdAssignment_7_in_rule__BossType__Group__7__Impl2140 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BossType__Group__8__Impl_in_rule__BossType__Group__82170 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__BossType__Group__8__Impl2198 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__0__Impl_in_rule__EmployeeType__Group__02247 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__1_in_rule__EmployeeType__Group__02250 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__EmployeeType__Group__0__Impl2278 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__1__Impl_in_rule__EmployeeType__Group__12309 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__2_in_rule__EmployeeType__Group__12312 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__EmployeeType__Group__1__Impl2340 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__2__Impl_in_rule__EmployeeType__Group__22371 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__3_in_rule__EmployeeType__Group__22374 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_rule__EmployeeType__Group__2__Impl2402 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__3__Impl_in_rule__EmployeeType__Group__32433 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__4_in_rule__EmployeeType__Group__32436 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeType__LastNameAssignment_3_in_rule__EmployeeType__Group__3__Impl2463 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__4__Impl_in_rule__EmployeeType__Group__42493 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__5_in_rule__EmployeeType__Group__42496 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_rule__EmployeeType__Group__4__Impl2524 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__5__Impl_in_rule__EmployeeType__Group__52555 = new BitSet(new long[]{0x0000000000400000L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__6_in_rule__EmployeeType__Group__52558 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeType__BossAssignment_5_in_rule__EmployeeType__Group__5__Impl2585 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__6__Impl_in_rule__EmployeeType__Group__62615 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__7_in_rule__EmployeeType__Group__62618 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_22_in_rule__EmployeeType__Group__6__Impl2646 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__7__Impl_in_rule__EmployeeType__Group__72677 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__8_in_rule__EmployeeType__Group__72680 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeType__EmployeeIdAssignment_7_in_rule__EmployeeType__Group__7__Impl2707 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EmployeeType__Group__8__Impl_in_rule__EmployeeType__Group__82737 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__EmployeeType__Group__8__Impl2765 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__IdValues__Group__0__Impl_in_rule__IdValues__Group__02814 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_rule__IdValues__Group__1_in_rule__IdValues__Group__02817 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__IdValues__Group__1__Impl_in_rule__IdValues__Group__12875 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__IdValues__NameAssignment_1_in_rule__IdValues__Group__1__Impl2902 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleBossType_in_rule__EmployeeListType__BossAssignment_3_22941 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleBossType_in_rule__EmployeeListType__BossAssignment_3_3_12972 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEmployeeType_in_rule__EmployeeListType__EmployeeAssignment_4_23003 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEmployeeType_in_rule__EmployeeListType__EmployeeAssignment_4_3_13034 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleString0_in_rule__BossType__LastNameAssignment_33065 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__BossType__SuperBossAssignment_53100 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIdValues_in_rule__BossType__BossIdAssignment_73135 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleString0_in_rule__EmployeeType__LastNameAssignment_33166 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__EmployeeType__BossAssignment_53201 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIdValues_in_rule__EmployeeType__EmployeeIdAssignment_73236 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleID0_in_rule__IdValues__NameAssignment_13267 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDate_in_entryRuleDate360 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleDate367 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Date__Group__0_in_ruleDate393 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleID0_in_entryRuleID0420 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleID0427 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleID0453 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group__0__Impl_in_rule__EmployeeListType__Group__0488 = new BitSet(new long[]{0x0000000000000800L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group__1_in_rule__EmployeeListType__Group__0491 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group__1__Impl_in_rule__EmployeeListType__Group__1549 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group__2_in_rule__EmployeeListType__Group__1552 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_11_in_rule__EmployeeListType__Group__1__Impl580 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group__2__Impl_in_rule__EmployeeListType__Group__2611 = new BitSet(new long[]{0x0000000000016000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group__3_in_rule__EmployeeListType__Group__2614 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_12_in_rule__EmployeeListType__Group__2__Impl642 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group__3__Impl_in_rule__EmployeeListType__Group__3673 = new BitSet(new long[]{0x0000000000016000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group__4_in_rule__EmployeeListType__Group__3676 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__0_in_rule__EmployeeListType__Group__3__Impl703 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group__4__Impl_in_rule__EmployeeListType__Group__4734 = new BitSet(new long[]{0x0000000000016000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group__5_in_rule__EmployeeListType__Group__4737 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__0_in_rule__EmployeeListType__Group__4__Impl764 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group__5__Impl_in_rule__EmployeeListType__Group__5795 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_13_in_rule__EmployeeListType__Group__5__Impl823 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__0__Impl_in_rule__EmployeeListType__Group_3__0866 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__1_in_rule__EmployeeListType__Group_3__0869 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_rule__EmployeeListType__Group_3__0__Impl897 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__1__Impl_in_rule__EmployeeListType__Group_3__1928 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__2_in_rule__EmployeeListType__Group_3__1931 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_12_in_rule__EmployeeListType__Group_3__1__Impl959 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__2__Impl_in_rule__EmployeeListType__Group_3__2990 = new BitSet(new long[]{0x000000000000A000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__3_in_rule__EmployeeListType__Group_3__2993 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__BossAssignment_3_2_in_rule__EmployeeListType__Group_3__2__Impl1020 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__3__Impl_in_rule__EmployeeListType__Group_3__31050 = new BitSet(new long[]{0x000000000000A000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__4_in_rule__EmployeeListType__Group_3__31053 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3_3__0_in_rule__EmployeeListType__Group_3__3__Impl1080 = new BitSet(new long[]{0x0000000000008002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3__4__Impl_in_rule__EmployeeListType__Group_3__41111 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_13_in_rule__EmployeeListType__Group_3__4__Impl1139 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3_3__0__Impl_in_rule__EmployeeListType__Group_3_3__01180 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3_3__1_in_rule__EmployeeListType__Group_3_3__01183 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_rule__EmployeeListType__Group_3_3__0__Impl1211 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_3_3__1__Impl_in_rule__EmployeeListType__Group_3_3__11242 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__BossAssignment_3_3_1_in_rule__EmployeeListType__Group_3_3__1__Impl1269 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__0__Impl_in_rule__EmployeeListType__Group_4__01303 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__1_in_rule__EmployeeListType__Group_4__01306 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_16_in_rule__EmployeeListType__Group_4__0__Impl1334 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__1__Impl_in_rule__EmployeeListType__Group_4__11365 = new BitSet(new long[]{0x0000000000400000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__2_in_rule__EmployeeListType__Group_4__11368 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_12_in_rule__EmployeeListType__Group_4__1__Impl1396 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__2__Impl_in_rule__EmployeeListType__Group_4__21427 = new BitSet(new long[]{0x000000000000A000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__3_in_rule__EmployeeListType__Group_4__21430 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__EmployeeAssignment_4_2_in_rule__EmployeeListType__Group_4__2__Impl1457 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__3__Impl_in_rule__EmployeeListType__Group_4__31487 = new BitSet(new long[]{0x000000000000A000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__4_in_rule__EmployeeListType__Group_4__31490 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4_3__0_in_rule__EmployeeListType__Group_4__3__Impl1517 = new BitSet(new long[]{0x0000000000008002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4__4__Impl_in_rule__EmployeeListType__Group_4__41548 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_13_in_rule__EmployeeListType__Group_4__4__Impl1576 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4_3__0__Impl_in_rule__EmployeeListType__Group_4_3__01617 = new BitSet(new long[]{0x0000000000400000L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4_3__1_in_rule__EmployeeListType__Group_4_3__01620 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_rule__EmployeeListType__Group_4_3__0__Impl1648 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__Group_4_3__1__Impl_in_rule__EmployeeListType__Group_4_3__11679 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeListType__EmployeeAssignment_4_3_1_in_rule__EmployeeListType__Group_4_3__1__Impl1706 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__Group__0__Impl_in_rule__BossType__Group__01740 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_rule__BossType__Group__1_in_rule__BossType__Group__01743 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__BossType__Group__0__Impl1771 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__Group__1__Impl_in_rule__BossType__Group__11802 = new BitSet(new long[]{0x0000000000040000L});
+        public static final BitSet FOLLOW_rule__BossType__Group__2_in_rule__BossType__Group__11805 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_12_in_rule__BossType__Group__1__Impl1833 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__Group__2__Impl_in_rule__BossType__Group__21864 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__BossType__Group__3_in_rule__BossType__Group__21867 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_18_in_rule__BossType__Group__2__Impl1895 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__Group__3__Impl_in_rule__BossType__Group__31926 = new BitSet(new long[]{0x0000000000080000L});
+        public static final BitSet FOLLOW_rule__BossType__Group__4_in_rule__BossType__Group__31929 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__LastNameAssignment_3_in_rule__BossType__Group__3__Impl1956 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__Group__4__Impl_in_rule__BossType__Group__41986 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_rule__BossType__Group__5_in_rule__BossType__Group__41989 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_19_in_rule__BossType__Group__4__Impl2017 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__Group__5__Impl_in_rule__BossType__Group__52048 = new BitSet(new long[]{0x0000000000100000L});
+        public static final BitSet FOLLOW_rule__BossType__Group__6_in_rule__BossType__Group__52051 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__BirthDateAssignment_5_in_rule__BossType__Group__5__Impl2078 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__Group__6__Impl_in_rule__BossType__Group__62108 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_rule__BossType__Group__7_in_rule__BossType__Group__62111 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_20_in_rule__BossType__Group__6__Impl2139 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__Group__7__Impl_in_rule__BossType__Group__72170 = new BitSet(new long[]{0x0000000000200000L});
+        public static final BitSet FOLLOW_rule__BossType__Group__8_in_rule__BossType__Group__72173 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__SuperBossAssignment_7_in_rule__BossType__Group__7__Impl2200 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__Group__8__Impl_in_rule__BossType__Group__82230 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_rule__BossType__Group__9_in_rule__BossType__Group__82233 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_rule__BossType__Group__8__Impl2261 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__Group__9__Impl_in_rule__BossType__Group__92292 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_rule__BossType__Group__10_in_rule__BossType__Group__92295 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__BossIdAssignment_9_in_rule__BossType__Group__9__Impl2322 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BossType__Group__10__Impl_in_rule__BossType__Group__102352 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_13_in_rule__BossType__Group__10__Impl2380 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__0__Impl_in_rule__EmployeeType__Group__02433 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__1_in_rule__EmployeeType__Group__02436 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_22_in_rule__EmployeeType__Group__0__Impl2464 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__1__Impl_in_rule__EmployeeType__Group__12495 = new BitSet(new long[]{0x0000000000040000L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__2_in_rule__EmployeeType__Group__12498 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_12_in_rule__EmployeeType__Group__1__Impl2526 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__2__Impl_in_rule__EmployeeType__Group__22557 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__3_in_rule__EmployeeType__Group__22560 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_18_in_rule__EmployeeType__Group__2__Impl2588 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__3__Impl_in_rule__EmployeeType__Group__32619 = new BitSet(new long[]{0x0000000000080000L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__4_in_rule__EmployeeType__Group__32622 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__LastNameAssignment_3_in_rule__EmployeeType__Group__3__Impl2649 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__4__Impl_in_rule__EmployeeType__Group__42679 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__5_in_rule__EmployeeType__Group__42682 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_19_in_rule__EmployeeType__Group__4__Impl2710 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__5__Impl_in_rule__EmployeeType__Group__52741 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__6_in_rule__EmployeeType__Group__52744 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__BirthDateAssignment_5_in_rule__EmployeeType__Group__5__Impl2771 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__6__Impl_in_rule__EmployeeType__Group__62801 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__7_in_rule__EmployeeType__Group__62804 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_rule__EmployeeType__Group__6__Impl2832 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__7__Impl_in_rule__EmployeeType__Group__72863 = new BitSet(new long[]{0x0000000000800000L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__8_in_rule__EmployeeType__Group__72866 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__BossAssignment_7_in_rule__EmployeeType__Group__7__Impl2893 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__8__Impl_in_rule__EmployeeType__Group__82923 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__9_in_rule__EmployeeType__Group__82926 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_23_in_rule__EmployeeType__Group__8__Impl2954 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__9__Impl_in_rule__EmployeeType__Group__92985 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__10_in_rule__EmployeeType__Group__92988 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__EmployeeIdAssignment_9_in_rule__EmployeeType__Group__9__Impl3015 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EmployeeType__Group__10__Impl_in_rule__EmployeeType__Group__103045 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_13_in_rule__EmployeeType__Group__10__Impl3073 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__IdValues__Group__0__Impl_in_rule__IdValues__Group__03126 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_rule__IdValues__Group__1_in_rule__IdValues__Group__03129 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__IdValues__Group__1__Impl_in_rule__IdValues__Group__13187 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__IdValues__NameAssignment_1_in_rule__IdValues__Group__1__Impl3214 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Date__Group__0__Impl_in_rule__Date__Group__03248 = new BitSet(new long[]{0x0000000001000000L});
+        public static final BitSet FOLLOW_rule__Date__Group__1_in_rule__Date__Group__03251 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_rule__Date__Group__0__Impl3278 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Date__Group__1__Impl_in_rule__Date__Group__13307 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_rule__Date__Group__2_in_rule__Date__Group__13310 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_24_in_rule__Date__Group__1__Impl3338 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Date__Group__2__Impl_in_rule__Date__Group__23369 = new BitSet(new long[]{0x0000000001000000L});
+        public static final BitSet FOLLOW_rule__Date__Group__3_in_rule__Date__Group__23372 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_rule__Date__Group__2__Impl3399 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Date__Group__3__Impl_in_rule__Date__Group__33428 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_rule__Date__Group__4_in_rule__Date__Group__33431 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_24_in_rule__Date__Group__3__Impl3459 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Date__Group__4__Impl_in_rule__Date__Group__43490 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_rule__Date__Group__4__Impl3517 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleBossType_in_rule__EmployeeListType__BossAssignment_3_23561 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleBossType_in_rule__EmployeeListType__BossAssignment_3_3_13592 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEmployeeType_in_rule__EmployeeListType__EmployeeAssignment_4_23623 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEmployeeType_in_rule__EmployeeListType__EmployeeAssignment_4_3_13654 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleString0_in_rule__BossType__LastNameAssignment_33685 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDate_in_rule__BossType__BirthDateAssignment_53716 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__BossType__SuperBossAssignment_73751 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIdValues_in_rule__BossType__BossIdAssignment_93786 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleString0_in_rule__EmployeeType__LastNameAssignment_33817 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDate_in_rule__EmployeeType__BirthDateAssignment_53848 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__EmployeeType__BossAssignment_73883 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIdValues_in_rule__EmployeeType__EmployeeIdAssignment_93918 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleID0_in_rule__IdValues__NameAssignment_13949 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

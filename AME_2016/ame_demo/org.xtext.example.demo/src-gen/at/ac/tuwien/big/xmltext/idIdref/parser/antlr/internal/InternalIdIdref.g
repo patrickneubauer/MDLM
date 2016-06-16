@@ -250,9 +250,31 @@ ruleBossType returns [EObject current=null]
 	    }
 
 )
-)	otherlv_4='superBoss' 
+)	otherlv_4='birthDate' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getBossTypeAccess().getSuperBossKeyword_4());
+    	newLeafNode(otherlv_4, grammarAccess.getBossTypeAccess().getBirthDateKeyword_4());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBossTypeAccess().getBirthDateDateParserRuleCall_5_0()); 
+	    }
+		lv_birthDate_5_0=ruleDate		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBossTypeRule());
+	        }
+       		set(
+       			$current, 
+       			"birthDate",
+        		lv_birthDate_5_0, 
+        		"Date");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_6='superBoss' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getBossTypeAccess().getSuperBossKeyword_6());
     }
 (
 (
@@ -261,37 +283,37 @@ ruleBossType returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getBossTypeRule());
 	        }
         }
-	otherlv_5=RULE_ID
+	otherlv_7=RULE_ID
 	{
-		newLeafNode(otherlv_5, grammarAccess.getBossTypeAccess().getSuperBossIdValuesCrossReference_5_0()); 
+		newLeafNode(otherlv_7, grammarAccess.getBossTypeAccess().getSuperBossIdValuesCrossReference_7_0()); 
 	}
 
 )
-)	otherlv_6='bossId' 
+)	otherlv_8='bossId' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getBossTypeAccess().getBossIdKeyword_6());
+    	newLeafNode(otherlv_8, grammarAccess.getBossTypeAccess().getBossIdKeyword_8());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBossTypeAccess().getBossIdIdValuesParserRuleCall_7_0()); 
+	        newCompositeNode(grammarAccess.getBossTypeAccess().getBossIdIdValuesParserRuleCall_9_0()); 
 	    }
-		lv_bossId_7_0=ruleIdValues		{
+		lv_bossId_9_0=ruleIdValues		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getBossTypeRule());
 	        }
        		set(
        			$current, 
        			"bossId",
-        		lv_bossId_7_0, 
+        		lv_bossId_9_0, 
         		"IdValues");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_8=']' 
+)	otherlv_10=']' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getBossTypeAccess().getRightSquareBracketKeyword_8());
+    	newLeafNode(otherlv_10, grammarAccess.getBossTypeAccess().getRightSquareBracketKeyword_10());
     }
 )
 ;
@@ -344,9 +366,31 @@ ruleEmployeeType returns [EObject current=null]
 	    }
 
 )
-)	otherlv_4='boss' 
+)	otherlv_4='birthDate' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getEmployeeTypeAccess().getBossKeyword_4());
+    	newLeafNode(otherlv_4, grammarAccess.getEmployeeTypeAccess().getBirthDateKeyword_4());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEmployeeTypeAccess().getBirthDateDateParserRuleCall_5_0()); 
+	    }
+		lv_birthDate_5_0=ruleDate		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEmployeeTypeRule());
+	        }
+       		set(
+       			$current, 
+       			"birthDate",
+        		lv_birthDate_5_0, 
+        		"Date");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_6='boss' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getEmployeeTypeAccess().getBossKeyword_6());
     }
 (
 (
@@ -355,37 +399,37 @@ ruleEmployeeType returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getEmployeeTypeRule());
 	        }
         }
-	otherlv_5=RULE_ID
+	otherlv_7=RULE_ID
 	{
-		newLeafNode(otherlv_5, grammarAccess.getEmployeeTypeAccess().getBossIdValuesCrossReference_5_0()); 
+		newLeafNode(otherlv_7, grammarAccess.getEmployeeTypeAccess().getBossIdValuesCrossReference_7_0()); 
 	}
 
 )
-)	otherlv_6='employeeId' 
+)	otherlv_8='employeeId' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getEmployeeTypeAccess().getEmployeeIdKeyword_6());
+    	newLeafNode(otherlv_8, grammarAccess.getEmployeeTypeAccess().getEmployeeIdKeyword_8());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEmployeeTypeAccess().getEmployeeIdIdValuesParserRuleCall_7_0()); 
+	        newCompositeNode(grammarAccess.getEmployeeTypeAccess().getEmployeeIdIdValuesParserRuleCall_9_0()); 
 	    }
-		lv_employeeId_7_0=ruleIdValues		{
+		lv_employeeId_9_0=ruleIdValues		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEmployeeTypeRule());
 	        }
        		set(
        			$current, 
        			"employeeId",
-        		lv_employeeId_7_0, 
+        		lv_employeeId_9_0, 
         		"IdValues");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_8=']' 
+)	otherlv_10=']' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getEmployeeTypeAccess().getRightSquareBracketKeyword_8());
+    	newLeafNode(otherlv_10, grammarAccess.getEmployeeTypeAccess().getRightSquareBracketKeyword_10());
     }
 )
 ;
@@ -462,6 +506,60 @@ ruleIdValues returns [EObject current=null]
 )
 ))
 ;
+
+
+
+
+
+// Entry rule entryRuleDate
+entryRuleDate returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDateRule()); } 
+	 iv_ruleDate=ruleDate 
+	 { $current=$iv_ruleDate.current.getText(); }  
+	 EOF 
+;
+
+// Rule Date
+ruleDate returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_INT_0=RULE_INT    {
+		$current.merge(this_INT_0);
+    }
+
+    { 
+    newLeafNode(this_INT_0, grammarAccess.getDateAccess().getINTTerminalRuleCall_0()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getDateAccess().getHyphenMinusKeyword_1()); 
+    }
+    this_INT_2=RULE_INT    {
+		$current.merge(this_INT_2);
+    }
+
+    { 
+    newLeafNode(this_INT_2, grammarAccess.getDateAccess().getINTTerminalRuleCall_2()); 
+    }
+
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getDateAccess().getHyphenMinusKeyword_3()); 
+    }
+    this_INT_4=RULE_INT    {
+		$current.merge(this_INT_4);
+    }
+
+    { 
+    newLeafNode(this_INT_4, grammarAccess.getDateAccess().getINTTerminalRuleCall_4()); 
+    }
+)
+    ;
 
 
 

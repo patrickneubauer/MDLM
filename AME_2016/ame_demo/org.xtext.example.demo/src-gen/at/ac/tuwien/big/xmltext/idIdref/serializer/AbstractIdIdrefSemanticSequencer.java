@@ -50,7 +50,7 @@ public abstract class AbstractIdIdrefSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (lastName=String0 superBoss=[IdValues|ID] bossId=IdValues)
+	 *     (lastName=String0 birthDate=Date superBoss=[IdValues|ID] bossId=IdValues)
 	 */
 	protected void sequence_BossType(EObject context, BossType semanticObject) {
 		if(errorAcceptor != null) {
@@ -60,12 +60,15 @@ public abstract class AbstractIdIdrefSemanticSequencer extends AbstractDelegatin
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IdIdrefPackage.Literals.BOSS_TYPE__BOSS_ID));
 			if(transientValues.isValueTransient(semanticObject, IdIdrefPackage.Literals.BOSS_TYPE__SUPER_BOSS) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IdIdrefPackage.Literals.BOSS_TYPE__SUPER_BOSS));
+			if(transientValues.isValueTransient(semanticObject, IdIdrefPackage.Literals.BOSS_TYPE__BIRTH_DATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IdIdrefPackage.Literals.BOSS_TYPE__BIRTH_DATE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getBossTypeAccess().getLastNameString0ParserRuleCall_3_0(), semanticObject.getLastName());
-		feeder.accept(grammarAccess.getBossTypeAccess().getSuperBossIdValuesIDTerminalRuleCall_5_0_1(), semanticObject.getSuperBoss());
-		feeder.accept(grammarAccess.getBossTypeAccess().getBossIdIdValuesParserRuleCall_7_0(), semanticObject.getBossId());
+		feeder.accept(grammarAccess.getBossTypeAccess().getBirthDateDateParserRuleCall_5_0(), semanticObject.getBirthDate());
+		feeder.accept(grammarAccess.getBossTypeAccess().getSuperBossIdValuesIDTerminalRuleCall_7_0_1(), semanticObject.getSuperBoss());
+		feeder.accept(grammarAccess.getBossTypeAccess().getBossIdIdValuesParserRuleCall_9_0(), semanticObject.getBossId());
 		feeder.finish();
 	}
 	
@@ -81,7 +84,7 @@ public abstract class AbstractIdIdrefSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (lastName=String0 boss=[IdValues|ID] employeeId=IdValues)
+	 *     (lastName=String0 birthDate=Date boss=[IdValues|ID] employeeId=IdValues)
 	 */
 	protected void sequence_EmployeeType(EObject context, EmployeeType semanticObject) {
 		if(errorAcceptor != null) {
@@ -91,12 +94,15 @@ public abstract class AbstractIdIdrefSemanticSequencer extends AbstractDelegatin
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IdIdrefPackage.Literals.EMPLOYEE_TYPE__EMPLOYEE_ID));
 			if(transientValues.isValueTransient(semanticObject, IdIdrefPackage.Literals.EMPLOYEE_TYPE__BOSS) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IdIdrefPackage.Literals.EMPLOYEE_TYPE__BOSS));
+			if(transientValues.isValueTransient(semanticObject, IdIdrefPackage.Literals.EMPLOYEE_TYPE__BIRTH_DATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IdIdrefPackage.Literals.EMPLOYEE_TYPE__BIRTH_DATE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getEmployeeTypeAccess().getLastNameString0ParserRuleCall_3_0(), semanticObject.getLastName());
-		feeder.accept(grammarAccess.getEmployeeTypeAccess().getBossIdValuesIDTerminalRuleCall_5_0_1(), semanticObject.getBoss());
-		feeder.accept(grammarAccess.getEmployeeTypeAccess().getEmployeeIdIdValuesParserRuleCall_7_0(), semanticObject.getEmployeeId());
+		feeder.accept(grammarAccess.getEmployeeTypeAccess().getBirthDateDateParserRuleCall_5_0(), semanticObject.getBirthDate());
+		feeder.accept(grammarAccess.getEmployeeTypeAccess().getBossIdValuesIDTerminalRuleCall_7_0_1(), semanticObject.getBoss());
+		feeder.accept(grammarAccess.getEmployeeTypeAccess().getEmployeeIdIdValuesParserRuleCall_9_0(), semanticObject.getEmployeeId());
 		feeder.finish();
 	}
 	

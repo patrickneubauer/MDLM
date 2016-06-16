@@ -45,16 +45,19 @@ public class IdIdrefParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBossTypeAccess().getGroup(), "rule__BossType__Group__0");
 					put(grammarAccess.getEmployeeTypeAccess().getGroup(), "rule__EmployeeType__Group__0");
 					put(grammarAccess.getIdValuesAccess().getGroup(), "rule__IdValues__Group__0");
+					put(grammarAccess.getDateAccess().getGroup(), "rule__Date__Group__0");
 					put(grammarAccess.getEmployeeListTypeAccess().getBossAssignment_3_2(), "rule__EmployeeListType__BossAssignment_3_2");
 					put(grammarAccess.getEmployeeListTypeAccess().getBossAssignment_3_3_1(), "rule__EmployeeListType__BossAssignment_3_3_1");
 					put(grammarAccess.getEmployeeListTypeAccess().getEmployeeAssignment_4_2(), "rule__EmployeeListType__EmployeeAssignment_4_2");
 					put(grammarAccess.getEmployeeListTypeAccess().getEmployeeAssignment_4_3_1(), "rule__EmployeeListType__EmployeeAssignment_4_3_1");
 					put(grammarAccess.getBossTypeAccess().getLastNameAssignment_3(), "rule__BossType__LastNameAssignment_3");
-					put(grammarAccess.getBossTypeAccess().getSuperBossAssignment_5(), "rule__BossType__SuperBossAssignment_5");
-					put(grammarAccess.getBossTypeAccess().getBossIdAssignment_7(), "rule__BossType__BossIdAssignment_7");
+					put(grammarAccess.getBossTypeAccess().getBirthDateAssignment_5(), "rule__BossType__BirthDateAssignment_5");
+					put(grammarAccess.getBossTypeAccess().getSuperBossAssignment_7(), "rule__BossType__SuperBossAssignment_7");
+					put(grammarAccess.getBossTypeAccess().getBossIdAssignment_9(), "rule__BossType__BossIdAssignment_9");
 					put(grammarAccess.getEmployeeTypeAccess().getLastNameAssignment_3(), "rule__EmployeeType__LastNameAssignment_3");
-					put(grammarAccess.getEmployeeTypeAccess().getBossAssignment_5(), "rule__EmployeeType__BossAssignment_5");
-					put(grammarAccess.getEmployeeTypeAccess().getEmployeeIdAssignment_7(), "rule__EmployeeType__EmployeeIdAssignment_7");
+					put(grammarAccess.getEmployeeTypeAccess().getBirthDateAssignment_5(), "rule__EmployeeType__BirthDateAssignment_5");
+					put(grammarAccess.getEmployeeTypeAccess().getBossAssignment_7(), "rule__EmployeeType__BossAssignment_7");
+					put(grammarAccess.getEmployeeTypeAccess().getEmployeeIdAssignment_9(), "rule__EmployeeType__EmployeeIdAssignment_9");
 					put(grammarAccess.getIdValuesAccess().getNameAssignment_1(), "rule__IdValues__NameAssignment_1");
 				}
 			};

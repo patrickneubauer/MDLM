@@ -136,20 +136,25 @@ public class IdIdrefGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLastNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cLastNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cLastNameString0ParserRuleCall_3_0 = (RuleCall)cLastNameAssignment_3.eContents().get(0);
-		private final Keyword cSuperBossKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSuperBossAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cSuperBossIdValuesCrossReference_5_0 = (CrossReference)cSuperBossAssignment_5.eContents().get(0);
-		private final RuleCall cSuperBossIdValuesIDTerminalRuleCall_5_0_1 = (RuleCall)cSuperBossIdValuesCrossReference_5_0.eContents().get(1);
-		private final Keyword cBossIdKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cBossIdAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cBossIdIdValuesParserRuleCall_7_0 = (RuleCall)cBossIdAssignment_7.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cBirthDateKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cBirthDateAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cBirthDateDateParserRuleCall_5_0 = (RuleCall)cBirthDateAssignment_5.eContents().get(0);
+		private final Keyword cSuperBossKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cSuperBossAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cSuperBossIdValuesCrossReference_7_0 = (CrossReference)cSuperBossAssignment_7.eContents().get(0);
+		private final RuleCall cSuperBossIdValuesIDTerminalRuleCall_7_0_1 = (RuleCall)cSuperBossIdValuesCrossReference_7_0.eContents().get(1);
+		private final Keyword cBossIdKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cBossIdAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cBossIdIdValuesParserRuleCall_9_0 = (RuleCall)cBossIdAssignment_9.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//BossType:
-		//	"BossType" "[" "lastName" lastName=String0 "superBoss" superBoss=[IdValues] "bossId" bossId=IdValues "]";
+		//	"BossType" "[" "lastName" lastName=String0 "birthDate" birthDate=Date "superBoss" superBoss=[IdValues] "bossId"
+		//	bossId=IdValues "]";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"BossType" "[" "lastName" lastName=String0 "superBoss" superBoss=[IdValues] "bossId" bossId=IdValues "]"
+		//"BossType" "[" "lastName" lastName=String0 "birthDate" birthDate=Date "superBoss" superBoss=[IdValues] "bossId"
+		//bossId=IdValues "]"
 		public Group getGroup() { return cGroup; }
 
 		//"BossType"
@@ -167,29 +172,38 @@ public class IdIdrefGrammarAccess extends AbstractGrammarElementFinder {
 		//String0
 		public RuleCall getLastNameString0ParserRuleCall_3_0() { return cLastNameString0ParserRuleCall_3_0; }
 
+		//"birthDate"
+		public Keyword getBirthDateKeyword_4() { return cBirthDateKeyword_4; }
+
+		//birthDate=Date
+		public Assignment getBirthDateAssignment_5() { return cBirthDateAssignment_5; }
+
+		//Date
+		public RuleCall getBirthDateDateParserRuleCall_5_0() { return cBirthDateDateParserRuleCall_5_0; }
+
 		//"superBoss"
-		public Keyword getSuperBossKeyword_4() { return cSuperBossKeyword_4; }
+		public Keyword getSuperBossKeyword_6() { return cSuperBossKeyword_6; }
 
 		//superBoss=[IdValues]
-		public Assignment getSuperBossAssignment_5() { return cSuperBossAssignment_5; }
+		public Assignment getSuperBossAssignment_7() { return cSuperBossAssignment_7; }
 
 		//[IdValues]
-		public CrossReference getSuperBossIdValuesCrossReference_5_0() { return cSuperBossIdValuesCrossReference_5_0; }
+		public CrossReference getSuperBossIdValuesCrossReference_7_0() { return cSuperBossIdValuesCrossReference_7_0; }
 
 		//ID
-		public RuleCall getSuperBossIdValuesIDTerminalRuleCall_5_0_1() { return cSuperBossIdValuesIDTerminalRuleCall_5_0_1; }
+		public RuleCall getSuperBossIdValuesIDTerminalRuleCall_7_0_1() { return cSuperBossIdValuesIDTerminalRuleCall_7_0_1; }
 
 		//"bossId"
-		public Keyword getBossIdKeyword_6() { return cBossIdKeyword_6; }
+		public Keyword getBossIdKeyword_8() { return cBossIdKeyword_8; }
 
 		//bossId=IdValues
-		public Assignment getBossIdAssignment_7() { return cBossIdAssignment_7; }
+		public Assignment getBossIdAssignment_9() { return cBossIdAssignment_9; }
 
 		//IdValues
-		public RuleCall getBossIdIdValuesParserRuleCall_7_0() { return cBossIdIdValuesParserRuleCall_7_0; }
+		public RuleCall getBossIdIdValuesParserRuleCall_9_0() { return cBossIdIdValuesParserRuleCall_9_0; }
 
 		//"]"
-		public Keyword getRightSquareBracketKeyword_8() { return cRightSquareBracketKeyword_8; }
+		public Keyword getRightSquareBracketKeyword_10() { return cRightSquareBracketKeyword_10; }
 	}
 
 	public class EmployeeTypeElements extends AbstractParserRuleElementFinder {
@@ -200,20 +214,25 @@ public class IdIdrefGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLastNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cLastNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cLastNameString0ParserRuleCall_3_0 = (RuleCall)cLastNameAssignment_3.eContents().get(0);
-		private final Keyword cBossKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cBossAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cBossIdValuesCrossReference_5_0 = (CrossReference)cBossAssignment_5.eContents().get(0);
-		private final RuleCall cBossIdValuesIDTerminalRuleCall_5_0_1 = (RuleCall)cBossIdValuesCrossReference_5_0.eContents().get(1);
-		private final Keyword cEmployeeIdKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cEmployeeIdAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cEmployeeIdIdValuesParserRuleCall_7_0 = (RuleCall)cEmployeeIdAssignment_7.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cBirthDateKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cBirthDateAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cBirthDateDateParserRuleCall_5_0 = (RuleCall)cBirthDateAssignment_5.eContents().get(0);
+		private final Keyword cBossKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cBossAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cBossIdValuesCrossReference_7_0 = (CrossReference)cBossAssignment_7.eContents().get(0);
+		private final RuleCall cBossIdValuesIDTerminalRuleCall_7_0_1 = (RuleCall)cBossIdValuesCrossReference_7_0.eContents().get(1);
+		private final Keyword cEmployeeIdKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cEmployeeIdAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cEmployeeIdIdValuesParserRuleCall_9_0 = (RuleCall)cEmployeeIdAssignment_9.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//EmployeeType:
-		//	"EmployeeType" "[" "lastName" lastName=String0 "boss" boss=[IdValues] "employeeId" employeeId=IdValues "]";
+		//	"EmployeeType" "[" "lastName" lastName=String0 "birthDate" birthDate=Date "boss" boss=[IdValues] "employeeId"
+		//	employeeId=IdValues "]";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"EmployeeType" "[" "lastName" lastName=String0 "boss" boss=[IdValues] "employeeId" employeeId=IdValues "]"
+		//"EmployeeType" "[" "lastName" lastName=String0 "birthDate" birthDate=Date "boss" boss=[IdValues] "employeeId"
+		//employeeId=IdValues "]"
 		public Group getGroup() { return cGroup; }
 
 		//"EmployeeType"
@@ -231,29 +250,38 @@ public class IdIdrefGrammarAccess extends AbstractGrammarElementFinder {
 		//String0
 		public RuleCall getLastNameString0ParserRuleCall_3_0() { return cLastNameString0ParserRuleCall_3_0; }
 
+		//"birthDate"
+		public Keyword getBirthDateKeyword_4() { return cBirthDateKeyword_4; }
+
+		//birthDate=Date
+		public Assignment getBirthDateAssignment_5() { return cBirthDateAssignment_5; }
+
+		//Date
+		public RuleCall getBirthDateDateParserRuleCall_5_0() { return cBirthDateDateParserRuleCall_5_0; }
+
 		//"boss"
-		public Keyword getBossKeyword_4() { return cBossKeyword_4; }
+		public Keyword getBossKeyword_6() { return cBossKeyword_6; }
 
 		//boss=[IdValues]
-		public Assignment getBossAssignment_5() { return cBossAssignment_5; }
+		public Assignment getBossAssignment_7() { return cBossAssignment_7; }
 
 		//[IdValues]
-		public CrossReference getBossIdValuesCrossReference_5_0() { return cBossIdValuesCrossReference_5_0; }
+		public CrossReference getBossIdValuesCrossReference_7_0() { return cBossIdValuesCrossReference_7_0; }
 
 		//ID
-		public RuleCall getBossIdValuesIDTerminalRuleCall_5_0_1() { return cBossIdValuesIDTerminalRuleCall_5_0_1; }
+		public RuleCall getBossIdValuesIDTerminalRuleCall_7_0_1() { return cBossIdValuesIDTerminalRuleCall_7_0_1; }
 
 		//"employeeId"
-		public Keyword getEmployeeIdKeyword_6() { return cEmployeeIdKeyword_6; }
+		public Keyword getEmployeeIdKeyword_8() { return cEmployeeIdKeyword_8; }
 
 		//employeeId=IdValues
-		public Assignment getEmployeeIdAssignment_7() { return cEmployeeIdAssignment_7; }
+		public Assignment getEmployeeIdAssignment_9() { return cEmployeeIdAssignment_9; }
 
 		//IdValues
-		public RuleCall getEmployeeIdIdValuesParserRuleCall_7_0() { return cEmployeeIdIdValuesParserRuleCall_7_0; }
+		public RuleCall getEmployeeIdIdValuesParserRuleCall_9_0() { return cEmployeeIdIdValuesParserRuleCall_9_0; }
 
 		//"]"
-		public Keyword getRightSquareBracketKeyword_8() { return cRightSquareBracketKeyword_8; }
+		public Keyword getRightSquareBracketKeyword_10() { return cRightSquareBracketKeyword_10; }
 	}
 
 	public class String0Elements extends AbstractParserRuleElementFinder {
@@ -291,6 +319,37 @@ public class IdIdrefGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getNameID0ParserRuleCall_1_0() { return cNameID0ParserRuleCall_1_0; }
 	}
 
+	public class DateElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Date");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cINTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		
+		//Date returns type::Date: / * TODO: implement this rule and an appropriate IValueConverter * / INT "-" INT "-" INT;
+		@Override public ParserRule getRule() { return rule; }
+
+		/// * TODO: implement this rule and an appropriate IValueConverter * / INT "-" INT "-" INT
+		public Group getGroup() { return cGroup; }
+
+		/// * TODO: implement this rule and an appropriate IValueConverter * / INT
+		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_1() { return cHyphenMinusKeyword_1; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_3() { return cHyphenMinusKeyword_3; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_4() { return cINTTerminalRuleCall_4; }
+	}
+
 	public class ID0Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ID0");
 		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
@@ -320,6 +379,7 @@ public class IdIdrefGrammarAccess extends AbstractGrammarElementFinder {
 	private final EmployeeTypeElements pEmployeeType;
 	private final String0Elements pString0;
 	private final IdValuesElements pIdValues;
+	private final DateElements pDate;
 	private final ID0Elements pID0;
 	private final EStringElements pEString;
 	
@@ -337,6 +397,7 @@ public class IdIdrefGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEmployeeType = new EmployeeTypeElements();
 		this.pString0 = new String0Elements();
 		this.pIdValues = new IdValuesElements();
+		this.pDate = new DateElements();
 		this.pID0 = new ID0Elements();
 		this.pEString = new EStringElements();
 	}
@@ -380,7 +441,8 @@ public class IdIdrefGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BossType:
-	//	"BossType" "[" "lastName" lastName=String0 "superBoss" superBoss=[IdValues] "bossId" bossId=IdValues "]";
+	//	"BossType" "[" "lastName" lastName=String0 "birthDate" birthDate=Date "superBoss" superBoss=[IdValues] "bossId"
+	//	bossId=IdValues "]";
 	public BossTypeElements getBossTypeAccess() {
 		return pBossType;
 	}
@@ -390,7 +452,8 @@ public class IdIdrefGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//EmployeeType:
-	//	"EmployeeType" "[" "lastName" lastName=String0 "boss" boss=[IdValues] "employeeId" employeeId=IdValues "]";
+	//	"EmployeeType" "[" "lastName" lastName=String0 "birthDate" birthDate=Date "boss" boss=[IdValues] "employeeId"
+	//	employeeId=IdValues "]";
 	public EmployeeTypeElements getEmployeeTypeAccess() {
 		return pEmployeeType;
 	}
@@ -416,6 +479,15 @@ public class IdIdrefGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getIdValuesRule() {
 		return getIdValuesAccess().getRule();
+	}
+
+	//Date returns type::Date: / * TODO: implement this rule and an appropriate IValueConverter * / INT "-" INT "-" INT;
+	public DateElements getDateAccess() {
+		return pDate;
+	}
+	
+	public ParserRule getDateRule() {
+		return getDateAccess().getRule();
 	}
 
 	//ID0 returns type::ID: / * TODO: implement this rule and an appropriate IValueConverter * / ID;

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EmployeeListType'", "'['", "'boss'", "','", "']'", "'employee'", "'BossType'", "'lastName'", "'superBoss'", "'bossId'", "'EmployeeType'", "'employeeId'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EmployeeListType'", "'['", "'boss'", "','", "']'", "'employee'", "'BossType'", "'lastName'", "'birthDate'", "'superBoss'", "'bossId'", "'EmployeeType'", "'employeeId'", "'-'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -41,6 +41,8 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
     public static final int RULE_INT=6;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -470,7 +472,7 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBossType"
-    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:219:1: ruleBossType returns [EObject current=null] : (otherlv_0= 'BossType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'superBoss' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'bossId' ( (lv_bossId_7_0= ruleIdValues ) ) otherlv_8= ']' ) ;
+    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:219:1: ruleBossType returns [EObject current=null] : (otherlv_0= 'BossType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'birthDate' ( (lv_birthDate_5_0= ruleDate ) ) otherlv_6= 'superBoss' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'bossId' ( (lv_bossId_9_0= ruleIdValues ) ) otherlv_10= ']' ) ;
     public final EObject ruleBossType() throws RecognitionException {
         EObject current = null;
 
@@ -478,22 +480,25 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
-        Token otherlv_5=null;
         Token otherlv_6=null;
+        Token otherlv_7=null;
         Token otherlv_8=null;
+        Token otherlv_10=null;
         AntlrDatatypeRuleToken lv_lastName_3_0 = null;
 
-        EObject lv_bossId_7_0 = null;
+        AntlrDatatypeRuleToken lv_birthDate_5_0 = null;
+
+        EObject lv_bossId_9_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:222:28: ( (otherlv_0= 'BossType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'superBoss' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'bossId' ( (lv_bossId_7_0= ruleIdValues ) ) otherlv_8= ']' ) )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:223:1: (otherlv_0= 'BossType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'superBoss' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'bossId' ( (lv_bossId_7_0= ruleIdValues ) ) otherlv_8= ']' )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:222:28: ( (otherlv_0= 'BossType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'birthDate' ( (lv_birthDate_5_0= ruleDate ) ) otherlv_6= 'superBoss' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'bossId' ( (lv_bossId_9_0= ruleIdValues ) ) otherlv_10= ']' ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:223:1: (otherlv_0= 'BossType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'birthDate' ( (lv_birthDate_5_0= ruleDate ) ) otherlv_6= 'superBoss' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'bossId' ( (lv_bossId_9_0= ruleIdValues ) ) otherlv_10= ']' )
             {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:223:1: (otherlv_0= 'BossType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'superBoss' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'bossId' ( (lv_bossId_7_0= ruleIdValues ) ) otherlv_8= ']' )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:223:3: otherlv_0= 'BossType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'superBoss' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'bossId' ( (lv_bossId_7_0= ruleIdValues ) ) otherlv_8= ']'
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:223:1: (otherlv_0= 'BossType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'birthDate' ( (lv_birthDate_5_0= ruleDate ) ) otherlv_6= 'superBoss' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'bossId' ( (lv_bossId_9_0= ruleIdValues ) ) otherlv_10= ']' )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:223:3: otherlv_0= 'BossType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'birthDate' ( (lv_birthDate_5_0= ruleDate ) ) otherlv_6= 'superBoss' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'bossId' ( (lv_bossId_9_0= ruleIdValues ) ) otherlv_10= ']'
             {
             otherlv_0=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleBossType430); 
 
@@ -540,22 +545,57 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
             otherlv_4=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleBossType487); 
 
-                	newLeafNode(otherlv_4, grammarAccess.getBossTypeAccess().getSuperBossKeyword_4());
+                	newLeafNode(otherlv_4, grammarAccess.getBossTypeAccess().getBirthDateKeyword_4());
                 
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:257:1: ( (otherlv_5= RULE_ID ) )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:258:1: (otherlv_5= RULE_ID )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:257:1: ( (lv_birthDate_5_0= ruleDate ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:258:1: (lv_birthDate_5_0= ruleDate )
             {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:258:1: (otherlv_5= RULE_ID )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:259:3: otherlv_5= RULE_ID
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:258:1: (lv_birthDate_5_0= ruleDate )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:259:3: lv_birthDate_5_0= ruleDate
+            {
+             
+            	        newCompositeNode(grammarAccess.getBossTypeAccess().getBirthDateDateParserRuleCall_5_0()); 
+            	    
+            pushFollow(FollowSets000.FOLLOW_ruleDate_in_ruleBossType508);
+            lv_birthDate_5_0=ruleDate();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getBossTypeRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"birthDate",
+                    		lv_birthDate_5_0, 
+                    		"Date");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_6=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleBossType520); 
+
+                	newLeafNode(otherlv_6, grammarAccess.getBossTypeAccess().getSuperBossKeyword_6());
+                
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:279:1: ( (otherlv_7= RULE_ID ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:280:1: (otherlv_7= RULE_ID )
+            {
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:280:1: (otherlv_7= RULE_ID )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:281:3: otherlv_7= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getBossTypeRule());
             	        }
                     
-            otherlv_5=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleBossType507); 
+            otherlv_7=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleBossType540); 
 
-            		newLeafNode(otherlv_5, grammarAccess.getBossTypeAccess().getSuperBossIdValuesCrossReference_5_0()); 
+            		newLeafNode(otherlv_7, grammarAccess.getBossTypeAccess().getSuperBossIdValuesCrossReference_7_0()); 
             	
 
             }
@@ -563,21 +603,21 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleBossType519); 
+            otherlv_8=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleBossType552); 
 
-                	newLeafNode(otherlv_6, grammarAccess.getBossTypeAccess().getBossIdKeyword_6());
+                	newLeafNode(otherlv_8, grammarAccess.getBossTypeAccess().getBossIdKeyword_8());
                 
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:274:1: ( (lv_bossId_7_0= ruleIdValues ) )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:275:1: (lv_bossId_7_0= ruleIdValues )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:296:1: ( (lv_bossId_9_0= ruleIdValues ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:297:1: (lv_bossId_9_0= ruleIdValues )
             {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:275:1: (lv_bossId_7_0= ruleIdValues )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:276:3: lv_bossId_7_0= ruleIdValues
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:297:1: (lv_bossId_9_0= ruleIdValues )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:298:3: lv_bossId_9_0= ruleIdValues
             {
              
-            	        newCompositeNode(grammarAccess.getBossTypeAccess().getBossIdIdValuesParserRuleCall_7_0()); 
+            	        newCompositeNode(grammarAccess.getBossTypeAccess().getBossIdIdValuesParserRuleCall_9_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleIdValues_in_ruleBossType540);
-            lv_bossId_7_0=ruleIdValues();
+            pushFollow(FollowSets000.FOLLOW_ruleIdValues_in_ruleBossType573);
+            lv_bossId_9_0=ruleIdValues();
 
             state._fsp--;
 
@@ -588,7 +628,7 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
                    		set(
                    			current, 
                    			"bossId",
-                    		lv_bossId_7_0, 
+                    		lv_bossId_9_0, 
                     		"IdValues");
             	        afterParserOrEnumRuleCall();
             	    
@@ -598,9 +638,9 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleBossType552); 
+            otherlv_10=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleBossType585); 
 
-                	newLeafNode(otherlv_8, grammarAccess.getBossTypeAccess().getRightSquareBracketKeyword_8());
+                	newLeafNode(otherlv_10, grammarAccess.getBossTypeAccess().getRightSquareBracketKeyword_10());
                 
 
             }
@@ -623,7 +663,7 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEmployeeType"
-    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:304:1: entryRuleEmployeeType returns [EObject current=null] : iv_ruleEmployeeType= ruleEmployeeType EOF ;
+    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:326:1: entryRuleEmployeeType returns [EObject current=null] : iv_ruleEmployeeType= ruleEmployeeType EOF ;
     public final EObject entryRuleEmployeeType() throws RecognitionException {
         EObject current = null;
 
@@ -631,17 +671,17 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:305:2: (iv_ruleEmployeeType= ruleEmployeeType EOF )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:306:2: iv_ruleEmployeeType= ruleEmployeeType EOF
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:327:2: (iv_ruleEmployeeType= ruleEmployeeType EOF )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:328:2: iv_ruleEmployeeType= ruleEmployeeType EOF
             {
              newCompositeNode(grammarAccess.getEmployeeTypeRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEmployeeType_in_entryRuleEmployeeType588);
+            pushFollow(FollowSets000.FOLLOW_ruleEmployeeType_in_entryRuleEmployeeType621);
             iv_ruleEmployeeType=ruleEmployeeType();
 
             state._fsp--;
 
              current =iv_ruleEmployeeType; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEmployeeType598); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEmployeeType631); 
 
             }
 
@@ -659,7 +699,7 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEmployeeType"
-    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:313:1: ruleEmployeeType returns [EObject current=null] : (otherlv_0= 'EmployeeType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'boss' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'employeeId' ( (lv_employeeId_7_0= ruleIdValues ) ) otherlv_8= ']' ) ;
+    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:335:1: ruleEmployeeType returns [EObject current=null] : (otherlv_0= 'EmployeeType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'birthDate' ( (lv_birthDate_5_0= ruleDate ) ) otherlv_6= 'boss' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'employeeId' ( (lv_employeeId_9_0= ruleIdValues ) ) otherlv_10= ']' ) ;
     public final EObject ruleEmployeeType() throws RecognitionException {
         EObject current = null;
 
@@ -667,45 +707,48 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
-        Token otherlv_5=null;
         Token otherlv_6=null;
+        Token otherlv_7=null;
         Token otherlv_8=null;
+        Token otherlv_10=null;
         AntlrDatatypeRuleToken lv_lastName_3_0 = null;
 
-        EObject lv_employeeId_7_0 = null;
+        AntlrDatatypeRuleToken lv_birthDate_5_0 = null;
+
+        EObject lv_employeeId_9_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:316:28: ( (otherlv_0= 'EmployeeType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'boss' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'employeeId' ( (lv_employeeId_7_0= ruleIdValues ) ) otherlv_8= ']' ) )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:317:1: (otherlv_0= 'EmployeeType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'boss' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'employeeId' ( (lv_employeeId_7_0= ruleIdValues ) ) otherlv_8= ']' )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:338:28: ( (otherlv_0= 'EmployeeType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'birthDate' ( (lv_birthDate_5_0= ruleDate ) ) otherlv_6= 'boss' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'employeeId' ( (lv_employeeId_9_0= ruleIdValues ) ) otherlv_10= ']' ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:339:1: (otherlv_0= 'EmployeeType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'birthDate' ( (lv_birthDate_5_0= ruleDate ) ) otherlv_6= 'boss' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'employeeId' ( (lv_employeeId_9_0= ruleIdValues ) ) otherlv_10= ']' )
             {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:317:1: (otherlv_0= 'EmployeeType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'boss' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'employeeId' ( (lv_employeeId_7_0= ruleIdValues ) ) otherlv_8= ']' )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:317:3: otherlv_0= 'EmployeeType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'boss' ( (otherlv_5= RULE_ID ) ) otherlv_6= 'employeeId' ( (lv_employeeId_7_0= ruleIdValues ) ) otherlv_8= ']'
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:339:1: (otherlv_0= 'EmployeeType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'birthDate' ( (lv_birthDate_5_0= ruleDate ) ) otherlv_6= 'boss' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'employeeId' ( (lv_employeeId_9_0= ruleIdValues ) ) otherlv_10= ']' )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:339:3: otherlv_0= 'EmployeeType' otherlv_1= '[' otherlv_2= 'lastName' ( (lv_lastName_3_0= ruleString0 ) ) otherlv_4= 'birthDate' ( (lv_birthDate_5_0= ruleDate ) ) otherlv_6= 'boss' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'employeeId' ( (lv_employeeId_9_0= ruleIdValues ) ) otherlv_10= ']'
             {
-            otherlv_0=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleEmployeeType635); 
+            otherlv_0=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleEmployeeType668); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getEmployeeTypeAccess().getEmployeeTypeKeyword_0());
                 
-            otherlv_1=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleEmployeeType647); 
+            otherlv_1=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleEmployeeType680); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getEmployeeTypeAccess().getLeftSquareBracketKeyword_1());
                 
-            otherlv_2=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleEmployeeType659); 
+            otherlv_2=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleEmployeeType692); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getEmployeeTypeAccess().getLastNameKeyword_2());
                 
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:329:1: ( (lv_lastName_3_0= ruleString0 ) )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:330:1: (lv_lastName_3_0= ruleString0 )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:351:1: ( (lv_lastName_3_0= ruleString0 ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:352:1: (lv_lastName_3_0= ruleString0 )
             {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:330:1: (lv_lastName_3_0= ruleString0 )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:331:3: lv_lastName_3_0= ruleString0
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:352:1: (lv_lastName_3_0= ruleString0 )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:353:3: lv_lastName_3_0= ruleString0
             {
              
             	        newCompositeNode(grammarAccess.getEmployeeTypeAccess().getLastNameString0ParserRuleCall_3_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleString0_in_ruleEmployeeType680);
+            pushFollow(FollowSets000.FOLLOW_ruleString0_in_ruleEmployeeType713);
             lv_lastName_3_0=ruleString0();
 
             state._fsp--;
@@ -727,24 +770,59 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleEmployeeType692); 
+            otherlv_4=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleEmployeeType725); 
 
-                	newLeafNode(otherlv_4, grammarAccess.getEmployeeTypeAccess().getBossKeyword_4());
+                	newLeafNode(otherlv_4, grammarAccess.getEmployeeTypeAccess().getBirthDateKeyword_4());
                 
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:351:1: ( (otherlv_5= RULE_ID ) )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:352:1: (otherlv_5= RULE_ID )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:373:1: ( (lv_birthDate_5_0= ruleDate ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:374:1: (lv_birthDate_5_0= ruleDate )
             {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:352:1: (otherlv_5= RULE_ID )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:353:3: otherlv_5= RULE_ID
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:374:1: (lv_birthDate_5_0= ruleDate )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:375:3: lv_birthDate_5_0= ruleDate
+            {
+             
+            	        newCompositeNode(grammarAccess.getEmployeeTypeAccess().getBirthDateDateParserRuleCall_5_0()); 
+            	    
+            pushFollow(FollowSets000.FOLLOW_ruleDate_in_ruleEmployeeType746);
+            lv_birthDate_5_0=ruleDate();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getEmployeeTypeRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"birthDate",
+                    		lv_birthDate_5_0, 
+                    		"Date");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleEmployeeType758); 
+
+                	newLeafNode(otherlv_6, grammarAccess.getEmployeeTypeAccess().getBossKeyword_6());
+                
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:395:1: ( (otherlv_7= RULE_ID ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:396:1: (otherlv_7= RULE_ID )
+            {
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:396:1: (otherlv_7= RULE_ID )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:397:3: otherlv_7= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getEmployeeTypeRule());
             	        }
                     
-            otherlv_5=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleEmployeeType712); 
+            otherlv_7=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleEmployeeType778); 
 
-            		newLeafNode(otherlv_5, grammarAccess.getEmployeeTypeAccess().getBossIdValuesCrossReference_5_0()); 
+            		newLeafNode(otherlv_7, grammarAccess.getEmployeeTypeAccess().getBossIdValuesCrossReference_7_0()); 
             	
 
             }
@@ -752,21 +830,21 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleEmployeeType724); 
+            otherlv_8=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleEmployeeType790); 
 
-                	newLeafNode(otherlv_6, grammarAccess.getEmployeeTypeAccess().getEmployeeIdKeyword_6());
+                	newLeafNode(otherlv_8, grammarAccess.getEmployeeTypeAccess().getEmployeeIdKeyword_8());
                 
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:368:1: ( (lv_employeeId_7_0= ruleIdValues ) )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:369:1: (lv_employeeId_7_0= ruleIdValues )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:412:1: ( (lv_employeeId_9_0= ruleIdValues ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:413:1: (lv_employeeId_9_0= ruleIdValues )
             {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:369:1: (lv_employeeId_7_0= ruleIdValues )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:370:3: lv_employeeId_7_0= ruleIdValues
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:413:1: (lv_employeeId_9_0= ruleIdValues )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:414:3: lv_employeeId_9_0= ruleIdValues
             {
              
-            	        newCompositeNode(grammarAccess.getEmployeeTypeAccess().getEmployeeIdIdValuesParserRuleCall_7_0()); 
+            	        newCompositeNode(grammarAccess.getEmployeeTypeAccess().getEmployeeIdIdValuesParserRuleCall_9_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleIdValues_in_ruleEmployeeType745);
-            lv_employeeId_7_0=ruleIdValues();
+            pushFollow(FollowSets000.FOLLOW_ruleIdValues_in_ruleEmployeeType811);
+            lv_employeeId_9_0=ruleIdValues();
 
             state._fsp--;
 
@@ -777,7 +855,7 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
                    		set(
                    			current, 
                    			"employeeId",
-                    		lv_employeeId_7_0, 
+                    		lv_employeeId_9_0, 
                     		"IdValues");
             	        afterParserOrEnumRuleCall();
             	    
@@ -787,9 +865,9 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleEmployeeType757); 
+            otherlv_10=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleEmployeeType823); 
 
-                	newLeafNode(otherlv_8, grammarAccess.getEmployeeTypeAccess().getRightSquareBracketKeyword_8());
+                	newLeafNode(otherlv_10, grammarAccess.getEmployeeTypeAccess().getRightSquareBracketKeyword_10());
                 
 
             }
@@ -812,7 +890,7 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleString0"
-    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:398:1: entryRuleString0 returns [String current=null] : iv_ruleString0= ruleString0 EOF ;
+    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:442:1: entryRuleString0 returns [String current=null] : iv_ruleString0= ruleString0 EOF ;
     public final String entryRuleString0() throws RecognitionException {
         String current = null;
 
@@ -820,17 +898,17 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:399:2: (iv_ruleString0= ruleString0 EOF )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:400:2: iv_ruleString0= ruleString0 EOF
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:443:2: (iv_ruleString0= ruleString0 EOF )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:444:2: iv_ruleString0= ruleString0 EOF
             {
              newCompositeNode(grammarAccess.getString0Rule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleString0_in_entryRuleString0794);
+            pushFollow(FollowSets000.FOLLOW_ruleString0_in_entryRuleString0860);
             iv_ruleString0=ruleString0();
 
             state._fsp--;
 
              current =iv_ruleString0.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleString0805); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleString0871); 
 
             }
 
@@ -848,7 +926,7 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleString0"
-    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:407:1: ruleString0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:451:1: ruleString0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleString0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -857,10 +935,10 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:410:28: (this_STRING_0= RULE_STRING )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:411:5: this_STRING_0= RULE_STRING
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:454:28: (this_STRING_0= RULE_STRING )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:455:5: this_STRING_0= RULE_STRING
             {
-            this_STRING_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleString0844); 
+            this_STRING_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleString0910); 
 
             		current.merge(this_STRING_0);
                 
@@ -885,7 +963,7 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIdValues"
-    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:426:1: entryRuleIdValues returns [EObject current=null] : iv_ruleIdValues= ruleIdValues EOF ;
+    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:470:1: entryRuleIdValues returns [EObject current=null] : iv_ruleIdValues= ruleIdValues EOF ;
     public final EObject entryRuleIdValues() throws RecognitionException {
         EObject current = null;
 
@@ -893,17 +971,17 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:427:2: (iv_ruleIdValues= ruleIdValues EOF )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:428:2: iv_ruleIdValues= ruleIdValues EOF
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:471:2: (iv_ruleIdValues= ruleIdValues EOF )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:472:2: iv_ruleIdValues= ruleIdValues EOF
             {
              newCompositeNode(grammarAccess.getIdValuesRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleIdValues_in_entryRuleIdValues888);
+            pushFollow(FollowSets000.FOLLOW_ruleIdValues_in_entryRuleIdValues954);
             iv_ruleIdValues=ruleIdValues();
 
             state._fsp--;
 
              current =iv_ruleIdValues; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIdValues898); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIdValues964); 
 
             }
 
@@ -921,7 +999,7 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIdValues"
-    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:435:1: ruleIdValues returns [EObject current=null] : ( () ( (lv_name_1_0= ruleID0 ) ) ) ;
+    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:479:1: ruleIdValues returns [EObject current=null] : ( () ( (lv_name_1_0= ruleID0 ) ) ) ;
     public final EObject ruleIdValues() throws RecognitionException {
         EObject current = null;
 
@@ -931,14 +1009,14 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:438:28: ( ( () ( (lv_name_1_0= ruleID0 ) ) ) )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:439:1: ( () ( (lv_name_1_0= ruleID0 ) ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:482:28: ( ( () ( (lv_name_1_0= ruleID0 ) ) ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:483:1: ( () ( (lv_name_1_0= ruleID0 ) ) )
             {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:439:1: ( () ( (lv_name_1_0= ruleID0 ) ) )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:439:2: () ( (lv_name_1_0= ruleID0 ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:483:1: ( () ( (lv_name_1_0= ruleID0 ) ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:483:2: () ( (lv_name_1_0= ruleID0 ) )
             {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:439:2: ()
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:440:5: 
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:483:2: ()
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:484:5: 
             {
 
                     current = forceCreateModelElement(
@@ -948,16 +1026,16 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:445:2: ( (lv_name_1_0= ruleID0 ) )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:446:1: (lv_name_1_0= ruleID0 )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:489:2: ( (lv_name_1_0= ruleID0 ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:490:1: (lv_name_1_0= ruleID0 )
             {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:446:1: (lv_name_1_0= ruleID0 )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:447:3: lv_name_1_0= ruleID0
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:490:1: (lv_name_1_0= ruleID0 )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:491:3: lv_name_1_0= ruleID0
             {
              
             	        newCompositeNode(grammarAccess.getIdValuesAccess().getNameID0ParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleID0_in_ruleIdValues953);
+            pushFollow(FollowSets000.FOLLOW_ruleID0_in_ruleIdValues1019);
             lv_name_1_0=ruleID0();
 
             state._fsp--;
@@ -999,8 +1077,114 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleIdValues"
 
 
+    // $ANTLR start "entryRuleDate"
+    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:515:1: entryRuleDate returns [String current=null] : iv_ruleDate= ruleDate EOF ;
+    public final String entryRuleDate() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleDate = null;
+
+
+        try {
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:516:2: (iv_ruleDate= ruleDate EOF )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:517:2: iv_ruleDate= ruleDate EOF
+            {
+             newCompositeNode(grammarAccess.getDateRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleDate_in_entryRuleDate1056);
+            iv_ruleDate=ruleDate();
+
+            state._fsp--;
+
+             current =iv_ruleDate.getText(); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDate1067); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDate"
+
+
+    // $ANTLR start "ruleDate"
+    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:524:1: ruleDate returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '-' this_INT_2= RULE_INT kw= '-' this_INT_4= RULE_INT ) ;
+    public final AntlrDatatypeRuleToken ruleDate() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_INT_0=null;
+        Token kw=null;
+        Token this_INT_2=null;
+        Token this_INT_4=null;
+
+         enterRule(); 
+            
+        try {
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:527:28: ( (this_INT_0= RULE_INT kw= '-' this_INT_2= RULE_INT kw= '-' this_INT_4= RULE_INT ) )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:528:1: (this_INT_0= RULE_INT kw= '-' this_INT_2= RULE_INT kw= '-' this_INT_4= RULE_INT )
+            {
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:528:1: (this_INT_0= RULE_INT kw= '-' this_INT_2= RULE_INT kw= '-' this_INT_4= RULE_INT )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:528:6: this_INT_0= RULE_INT kw= '-' this_INT_2= RULE_INT kw= '-' this_INT_4= RULE_INT
+            {
+            this_INT_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleDate1107); 
+
+            		current.merge(this_INT_0);
+                
+             
+                newLeafNode(this_INT_0, grammarAccess.getDateAccess().getINTTerminalRuleCall_0()); 
+                
+            kw=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleDate1125); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getDateAccess().getHyphenMinusKeyword_1()); 
+                
+            this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleDate1140); 
+
+            		current.merge(this_INT_2);
+                
+             
+                newLeafNode(this_INT_2, grammarAccess.getDateAccess().getINTTerminalRuleCall_2()); 
+                
+            kw=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleDate1158); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getDateAccess().getHyphenMinusKeyword_3()); 
+                
+            this_INT_4=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleDate1173); 
+
+            		current.merge(this_INT_4);
+                
+             
+                newLeafNode(this_INT_4, grammarAccess.getDateAccess().getINTTerminalRuleCall_4()); 
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDate"
+
+
     // $ANTLR start "entryRuleID0"
-    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:471:1: entryRuleID0 returns [String current=null] : iv_ruleID0= ruleID0 EOF ;
+    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:569:1: entryRuleID0 returns [String current=null] : iv_ruleID0= ruleID0 EOF ;
     public final String entryRuleID0() throws RecognitionException {
         String current = null;
 
@@ -1008,17 +1192,17 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:472:2: (iv_ruleID0= ruleID0 EOF )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:473:2: iv_ruleID0= ruleID0 EOF
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:570:2: (iv_ruleID0= ruleID0 EOF )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:571:2: iv_ruleID0= ruleID0 EOF
             {
              newCompositeNode(grammarAccess.getID0Rule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleID0_in_entryRuleID0990);
+            pushFollow(FollowSets000.FOLLOW_ruleID0_in_entryRuleID01219);
             iv_ruleID0=ruleID0();
 
             state._fsp--;
 
              current =iv_ruleID0.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleID01001); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleID01230); 
 
             }
 
@@ -1036,7 +1220,7 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleID0"
-    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:480:1: ruleID0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
+    // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:578:1: ruleID0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
     public final AntlrDatatypeRuleToken ruleID0() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1045,10 +1229,10 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:483:28: (this_ID_0= RULE_ID )
-            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:484:5: this_ID_0= RULE_ID
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:581:28: (this_ID_0= RULE_ID )
+            // ../org.xtext.example.demo/src-gen/at/ac/tuwien/big/xmltext/idIdref/parser/antlr/internal/InternalIdIdref.g:582:5: this_ID_0= RULE_ID
             {
-            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleID01040); 
+            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleID01269); 
 
             		current.merge(this_ID_0);
                 
@@ -1089,9 +1273,9 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleBossType_in_ruleEmployeeListType223 = new BitSet(new long[]{0x000000000000C000L});
         public static final BitSet FOLLOW_15_in_ruleEmployeeListType237 = new BitSet(new long[]{0x0000000000018000L});
         public static final BitSet FOLLOW_16_in_ruleEmployeeListType252 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleEmployeeListType264 = new BitSet(new long[]{0x0000000000200000L});
+        public static final BitSet FOLLOW_12_in_ruleEmployeeListType264 = new BitSet(new long[]{0x0000000000400000L});
         public static final BitSet FOLLOW_ruleEmployeeType_in_ruleEmployeeListType285 = new BitSet(new long[]{0x000000000000C000L});
-        public static final BitSet FOLLOW_14_in_ruleEmployeeListType298 = new BitSet(new long[]{0x0000000000200000L});
+        public static final BitSet FOLLOW_14_in_ruleEmployeeListType298 = new BitSet(new long[]{0x0000000000400000L});
         public static final BitSet FOLLOW_ruleEmployeeType_in_ruleEmployeeListType319 = new BitSet(new long[]{0x000000000000C000L});
         public static final BitSet FOLLOW_15_in_ruleEmployeeListType333 = new BitSet(new long[]{0x0000000000008000L});
         public static final BitSet FOLLOW_15_in_ruleEmployeeListType347 = new BitSet(new long[]{0x0000000000000002L});
@@ -1101,31 +1285,42 @@ public class InternalIdIdrefParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_12_in_ruleBossType442 = new BitSet(new long[]{0x0000000000040000L});
         public static final BitSet FOLLOW_18_in_ruleBossType454 = new BitSet(new long[]{0x0000000000000020L});
         public static final BitSet FOLLOW_ruleString0_in_ruleBossType475 = new BitSet(new long[]{0x0000000000080000L});
-        public static final BitSet FOLLOW_19_in_ruleBossType487 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleBossType507 = new BitSet(new long[]{0x0000000000100000L});
-        public static final BitSet FOLLOW_20_in_ruleBossType519 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleIdValues_in_ruleBossType540 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleBossType552 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEmployeeType_in_entryRuleEmployeeType588 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEmployeeType598 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_ruleEmployeeType635 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleEmployeeType647 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_18_in_ruleEmployeeType659 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_ruleString0_in_ruleEmployeeType680 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleEmployeeType692 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleEmployeeType712 = new BitSet(new long[]{0x0000000000400000L});
-        public static final BitSet FOLLOW_22_in_ruleEmployeeType724 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleIdValues_in_ruleEmployeeType745 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleEmployeeType757 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleString0_in_entryRuleString0794 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleString0805 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleString0844 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIdValues_in_entryRuleIdValues888 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleIdValues898 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleID0_in_ruleIdValues953 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleID0_in_entryRuleID0990 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleID01001 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleID01040 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_19_in_ruleBossType487 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleDate_in_ruleBossType508 = new BitSet(new long[]{0x0000000000100000L});
+        public static final BitSet FOLLOW_20_in_ruleBossType520 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleBossType540 = new BitSet(new long[]{0x0000000000200000L});
+        public static final BitSet FOLLOW_21_in_ruleBossType552 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleIdValues_in_ruleBossType573 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleBossType585 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEmployeeType_in_entryRuleEmployeeType621 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEmployeeType631 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_22_in_ruleEmployeeType668 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleEmployeeType680 = new BitSet(new long[]{0x0000000000040000L});
+        public static final BitSet FOLLOW_18_in_ruleEmployeeType692 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_ruleString0_in_ruleEmployeeType713 = new BitSet(new long[]{0x0000000000080000L});
+        public static final BitSet FOLLOW_19_in_ruleEmployeeType725 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleDate_in_ruleEmployeeType746 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleEmployeeType758 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleEmployeeType778 = new BitSet(new long[]{0x0000000000800000L});
+        public static final BitSet FOLLOW_23_in_ruleEmployeeType790 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleIdValues_in_ruleEmployeeType811 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleEmployeeType823 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleString0_in_entryRuleString0860 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleString0871 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_ruleString0910 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIdValues_in_entryRuleIdValues954 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleIdValues964 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleID0_in_ruleIdValues1019 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDate_in_entryRuleDate1056 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleDate1067 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleDate1107 = new BitSet(new long[]{0x0000000001000000L});
+        public static final BitSet FOLLOW_24_in_ruleDate1125 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleDate1140 = new BitSet(new long[]{0x0000000001000000L});
+        public static final BitSet FOLLOW_24_in_ruleDate1158 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleDate1173 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleID0_in_entryRuleID01219 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleID01230 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleID01269 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

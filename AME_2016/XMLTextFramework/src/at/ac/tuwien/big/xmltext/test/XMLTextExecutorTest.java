@@ -1,13 +1,17 @@
 package at.ac.tuwien.big.xmltext.test;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.xtext.xtext.ui.wizard.ecore2xtext.Ecore2XtextProjectInfo;
 import org.junit.Test;
 
 import at.ac.tuwien.big.xmltext.AMEGroupEnhance;
+import at.ac.tuwien.big.xmltext.AMEGroupSerializer;
 import at.ac.tuwien.big.xmltext.Settings;
 import at.ac.tuwien.big.xmltext.XMLTextExecutor;
 
@@ -177,5 +181,12 @@ public class XMLTextExecutorTest {
 		Ecore2XtextProjectInfo ecore2XtextProjectInfo = xmlTextExecutor.generateXtextGrammarAndWorkflow(Settings.GENMODEL_FILE_NAME, Settings.ECORE_FILE_NAME);
 	}
 
+	@Test
+	public void runMyDslToXML() throws IOException {
+		URI inputModelResourceURI = URI.createFileURI(new File("dsl-examples/test.mydsl").getAbsolutePath());
+		URI outputModelResourceURI = URI.createFileURI(new File("dsl-examples/test.xml").getAbsolutePath());
+		AMEGroupSerializer serializer = new AMEGroupSerializer();
+		serializer.writeOutput(inputModelResourceURI, outputModelResourceURI, XMLResource.OPTION_EXTENDED_META_DATA);
+	}
 	
 }

@@ -22,4 +22,32 @@
             class="Library3.util.Library3ResourceFactoryImpl"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated idIdref -->
+      <package
+            uri="platform:/plugin/idIdref.xsd"
+            class="IdIdref.IdIdrefPackage"
+            genModel="idIdref.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated idIdref -->
+      <parser
+            type="ididref"
+            class="IdIdref.util.IdIdrefResourceFactoryImpl"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mixedContent2 -->
+      <package
+            uri="platform:/plugin/mixedContent2.xsd"
+            class="MixedContent2.MixedContent2Package"
+            genModel="mixedContent2.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated mixedContent2 -->
+      <parser
+            type="mixedcontent2"
+            class="MixedContent2.util.MixedContent2ResourceFactoryImpl"/>
+   </extension>
 </plugin>

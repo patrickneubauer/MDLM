@@ -10,7 +10,13 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: Library3,
  Library3.impl,
- Library3.util
+ Library3.util,
+ IdIdref,
+ IdIdref.impl,
+ IdIdref.util,
+ MixedContent2,
+ MixedContent2.impl,
+ MixedContent2.util
 Require-Bundle: org.eclipse.xsd,
  org.eclipse.emf.codegen.ecore,
  org.eclipse.core.runtime,

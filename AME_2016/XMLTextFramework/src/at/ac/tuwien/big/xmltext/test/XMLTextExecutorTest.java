@@ -11,7 +11,6 @@ import org.eclipse.xtext.xtext.ui.wizard.ecore2xtext.Ecore2XtextProjectInfo;
 import org.junit.Test;
 
 import at.ac.tuwien.big.xmltext.AMEGroupEnhance;
-import at.ac.tuwien.big.xmltext.AMEGroupSerializer;
 import at.ac.tuwien.big.xmltext.Settings;
 import at.ac.tuwien.big.xmltext.XMLTextExecutor;
 
@@ -179,14 +178,6 @@ public class XMLTextExecutorTest {
 		}
 		//xmlTextExecutor.generateJavaCode(Settings.REFACTORED_GENMODEL_FILE_NAME, Settings.REFACTORED_ECORE_FILE_NAME);
 		Ecore2XtextProjectInfo ecore2XtextProjectInfo = xmlTextExecutor.generateXtextGrammarAndWorkflow(Settings.GENMODEL_FILE_NAME, Settings.ECORE_FILE_NAME);
-	}
-
-	@Test
-	public void runMyDslToXML() throws IOException {
-		URI inputModelResourceURI = URI.createFileURI(new File("dsl-examples/test.mydsl").getAbsolutePath());
-		URI outputModelResourceURI = URI.createFileURI(new File("dsl-examples/test.xml").getAbsolutePath());
-		AMEGroupSerializer serializer = new AMEGroupSerializer();
-		serializer.writeOutput(inputModelResourceURI, outputModelResourceURI, XMLResource.OPTION_EXTENDED_META_DATA);
 	}
 	
 }

@@ -130,7 +130,7 @@ public class XMLTextExecutorTest {
 	
 	@Test
 	public void runDatatypeAME() {
-		setSettings("library3_Datatype", "LibraryType");
+		setSettings("Datatype", "LibraryType");
 		
 		Resource ecoreResource = xmlTextExecutor.createEcoreFromXSD(Settings.XSD_FILE_NAME, Settings.ECORE_FILE_NAME);
 		xmlTextExecutor.createGenModelFromEcore(Settings.ECORE_FILE_NAME, Settings.GENMODEL_FILE_NAME);

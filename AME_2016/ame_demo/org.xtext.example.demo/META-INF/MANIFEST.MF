@@ -20,11 +20,12 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.ui.editor.utils
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: at.ac.tuwien.big.xmltext.idIdref,
- at.ac.tuwien.big.xmltext.idIdref.services,
- at.ac.tuwien.big.xmltext.idIdref.serializer,
+ at.ac.tuwien.big.xmltext.idIdref.formatting,
+ at.ac.tuwien.big.xmltext.idIdref.generator,
  at.ac.tuwien.big.xmltext.idIdref.parser.antlr,
  at.ac.tuwien.big.xmltext.idIdref.parser.antlr.internal,
- at.ac.tuwien.big.xmltext.idIdref.validation,
  at.ac.tuwien.big.xmltext.idIdref.scoping,
- at.ac.tuwien.big.xmltext.idIdref.generator,
- at.ac.tuwien.big.xmltext.idIdref.formatting
+ at.ac.tuwien.big.xmltext.idIdref.serializer,
+ at.ac.tuwien.big.xmltext.idIdref.services,
+ at.ac.tuwien.big.xmltext.idIdref.validation,
+ org.xtext.example.demo.serializer

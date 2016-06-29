@@ -6,8 +6,7 @@ import java.io.IOException;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.junit.Test;
-
-import at.ac.tuwien.big.xmltext.serializer.AMEGroupSerializer;
+import org.xtext.example.demo.serializer.AMEGroupMyDslSerializer;
 
 public class AMEGroupTests {
 
@@ -15,7 +14,7 @@ public class AMEGroupTests {
 	public void runMyDslToXML() throws IOException {
 		URI inputModelResourceURI = URI.createFileURI(new File("dsl-examples/test.mydsl").getAbsolutePath());
 		URI outputModelResourceURI = URI.createFileURI(new File("dsl-examples/test.xml").getAbsolutePath());
-		AMEGroupSerializer serializer = new AMEGroupSerializer();
+		AMEGroupMyDslSerializer serializer = new AMEGroupMyDslSerializer();
 		serializer.writeOutput(inputModelResourceURI, outputModelResourceURI, XMLResource.OPTION_EXTENDED_META_DATA);
 	}
 }

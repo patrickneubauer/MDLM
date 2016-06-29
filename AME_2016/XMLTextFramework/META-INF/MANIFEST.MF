@@ -13,10 +13,7 @@ Export-Package: Library3,
  Library3.util,
  IdIdref,
  IdIdref.impl,
- IdIdref.util,
- MixedContent2,
- MixedContent2.impl,
- MixedContent2.util
+ IdIdref.util
 Require-Bundle: org.eclipse.xsd,
  org.eclipse.emf.codegen.ecore,
  org.eclipse.core.runtime,

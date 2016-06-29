@@ -15,8 +15,9 @@ import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 
 import IdIdref.IdIdrefPackage;
 import at.ac.tuwien.big.xmltext.idIdref.IdIdrefStandaloneSetup;
+import at.ac.tuwien.big.xmltext.idIdref.IdIdrefStandaloneSetupGenerated;
 
-public class MyDslSerializer {
+public class AMEGroupMyDslSerializer {
 
 	public void writeOutput(URI inputModelURI, URI outputModelURI, String... writeOptions) throws IOException {
 		// TOSCA ML Standalone Setup if used in non-plugin project

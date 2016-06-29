@@ -29,6 +29,11 @@
 			<xs:element name="firstName" type="xs:string" />
 			<xs:element name="lastName" type="xs:string" />
 			<xs:element name="birthDate" type="xs:date" />
+			<xs:element name="birthTime" type="xs:time" />
+			<xs:element name="dateTime" type="xs:dateTime" />
+			<xs:element name="age" type="xs:integer" />
+			<xs:element name="prize" type="xs:decimal"/>
+			<xs:element name="disabled" type="xs:boolean"/>
 		</xs:sequence>
 	<!-- <xs:attribute name="password1" type="password1Type" use="required" />
 		<xs:attribute name="password2" type="password2Type" use="required" />

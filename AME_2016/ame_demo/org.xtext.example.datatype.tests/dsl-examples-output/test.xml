@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<libraryType>
+  <customer>
+    <firstName>&quot;Max&quot;</firstName>
+    <lastName>&quot;Mustermann&quot;</lastName>
+    <birthDate>1980-12-12</birthDate>
+    <birthTime>12:12:00</birthTime>
+    <age>20</age>
+    <prize>12.2</prize>
+    <disabled>false</disabled>
+  </customer>
+</libraryType>

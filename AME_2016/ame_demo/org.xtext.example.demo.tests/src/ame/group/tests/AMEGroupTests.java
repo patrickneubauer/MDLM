@@ -5,7 +5,6 @@ import java.io.IOException;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
 import org.junit.Test;
 import org.xtext.example.demo.serializer.AMEGroupMyDslSerializer;
 

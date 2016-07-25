@@ -13,9 +13,9 @@
 	</xs:complexType>
 	<xs:complexType name="bookType" mixed="true">
 		<xs:sequence>
-			<xs:element name="name" type="xs:ID" />
+			<xs:element name="name" type="xs:string" />
 			<xs:element name="title" type="xs:string" />
-			<xs:element name="pages" type="xs:int" />
+			<xs:element name="pages" type="xs:integer" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="anyBookType" mixed="true">

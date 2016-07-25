@@ -1,11 +1,11 @@
-LibraryType {
-    book {
-        BookType XML {
-            "text"
-            title "XML in a Nutshell"
-            "text"
-            pages 200
-            "text"
-        }
-    }
-}
+LibraryType [
+    anyBook [
+        AnyBookType [
+            properties Property [
+                "test" : "sadf",
+                "attr1": "value1",
+                "attr2": "value2"
+            ]
+        ]
+    ]
+]

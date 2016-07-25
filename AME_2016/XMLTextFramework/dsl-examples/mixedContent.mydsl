@@ -1,0 +1,11 @@
+LibraryType {
+    book {
+        BookType XML {
+            "text"
+            title "XML in a Nutshell"
+            "text"
+            pages 200
+            "text"
+        }
+    }
+}

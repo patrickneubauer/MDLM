@@ -1,0 +1,11 @@
+LibraryType {
+    anyBook {
+        AnyBookType {
+            properties Property {
+                "test" : "sadf",
+                "attr1": "value1",
+                "attr2": "value2"
+            }
+        }
+    }
+}

@@ -30,7 +30,6 @@
 			<xs:element name="lastName" type="xs:string" />
 			<xs:element name="birthDate" type="xs:date" />
 			<xs:element name="birthTime" type="xs:time" />
-			<xs:element name="dateTime" type="xs:dateTime" />
 			<xs:element name="age" type="xs:integer" />
 			<xs:element name="prize" type="xs:decimal"/>
 			<xs:element name="disabled" type="xs:boolean"/>

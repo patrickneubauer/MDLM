@@ -76,6 +76,12 @@ public class AMEGroupMixedContent {
 					AMEGroupUtil.createAnyGenericStructure(pack);
 					System.out.println("found mixed");
 
+					// remove "any"
+					EStructuralFeature anyElm = eclass.getEStructuralFeature("any");
+					if(anyElm != null){
+						eclass.getEStructuralFeatures().remove(anyElm);
+					}
+					
 					// remove mixed feature
 					EStructuralFeature foundMixed = eclass.getEStructuralFeature("mixed");
 					eclass.getEStructuralFeatures().remove(foundMixed);

@@ -11,6 +11,8 @@ import org.eclipse.xtext.xtext.ui.wizard.ecore2xtext.Ecore2XtextProjectInfo;
 import org.junit.Test;
 
 import at.ac.tuwien.big.xmltext.AMEGroupEnhance;
+import at.ac.tuwien.big.xmltext.AMEGroupMixedContent;
+import at.ac.tuwien.big.xmltext.AMEGroupMixedContent.MixedContentSolution;
 import at.ac.tuwien.big.xmltext.Settings;
 import at.ac.tuwien.big.xmltext.XMLTextExecutor;
 
@@ -109,11 +111,30 @@ public class XMLTextExecutorTest {
 		Settings.REFACTORED_GENMODEL_FILE_NAME = Settings.GENMODEL_FILE_NAME.substring(0, Settings.GENMODEL_FILE_NAME.lastIndexOf(".")) + "-refactored.genmodel";
 	}
 	
-	
+	@Test
+	public void runMixedContent1AME() {
+		setSettings("mixedContent1", "LibraryType");
+		
+		AMEGroupMixedContent.solutionMethod = MixedContentSolution.ANY_GENERIC_CONSTRUCT;
+		
+		Resource ecoreResource = xmlTextExecutor.createEcoreFromXSD(Settings.XSD_FILE_NAME, Settings.ECORE_FILE_NAME);
+		xmlTextExecutor.createGenModelFromEcore(Settings.ECORE_FILE_NAME, Settings.GENMODEL_FILE_NAME);
+		AMEGroupEnhance.refractorEcore(ecoreResource, xmlTextExecutor.getMapper());
+		try {
+			ecoreResource.save(new FileOutputStream(Settings.ECORE_FILE_NAME),null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//xmlTextExecutor.generateJavaCode(Settings.REFACTORED_GENMODEL_FILE_NAME, Settings.REFACTORED_ECORE_FILE_NAME);
+		Ecore2XtextProjectInfo ecore2XtextProjectInfo = xmlTextExecutor.generateXtextGrammarAndWorkflow(Settings.GENMODEL_FILE_NAME, Settings.ECORE_FILE_NAME);
+	}
 
 	@Test
-	public void runMixedContentAME() {
-		setSettings("mixedContent", "LibraryType");
+	public void runMixedContent2AME() {
+		setSettings("mixedContent2", "LibraryType");
+		
+		AMEGroupMixedContent.solutionMethod = MixedContentSolution.INSERTING_TEXTCONTENT;
 		
 		Resource ecoreResource = xmlTextExecutor.createEcoreFromXSD(Settings.XSD_FILE_NAME, Settings.ECORE_FILE_NAME);
 		xmlTextExecutor.createGenModelFromEcore(Settings.ECORE_FILE_NAME, Settings.GENMODEL_FILE_NAME);

@@ -42,12 +42,12 @@ import org.eclipse.xtext.impl.ParserRuleImpl;
 public class AMEGroupMixedContent {
 
 	private static final String TEXT_CONTENT = "textContent";
+	private final static String ANY_GENERIC_ELEMENT = "anyGenericElement";
 
 	public static Map<String, EClass> storage = new HashMap<>();
 
-	private final static String ANY_GENERIC_ELEMENT = "anyGenericElement";
 
-	private static MixedContentSolution solutionMethod = MixedContentSolution.ANY_GENERIC_CONSTRUCT;
+	public static MixedContentSolution solutionMethod = MixedContentSolution.INSERTING_TEXTCONTENT;
 	// private static MixedContentSolution solutionMethod =
 	// MixedContentSolution.INSERTING_TEXTCONTENT;
 
@@ -438,7 +438,7 @@ public class AMEGroupMixedContent {
 			group.getElements().remove(keyProperty);
 	}
 
-	private enum MixedContentSolution {
+	public enum MixedContentSolution {
 		INSERTING_TEXTCONTENT, ANY_GENERIC_CONSTRUCT
 	}
 }

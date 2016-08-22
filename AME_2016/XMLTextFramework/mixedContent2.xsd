@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!-- definition of simple types -->
+	<!-- definition of complex types -->
+	<xs:complexType name="libraryType">
+		<xs:sequence>
+			<xs:element name="book" type="bookType" maxOccurs="unbounded"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="bookType" mixed="true">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="title" type="xs:string" />
+			<xs:element name="pages" type="xs:integer" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- root element -->
+	<xs:element name="library" type="libraryType"></xs:element>
+
+</xs:schema>

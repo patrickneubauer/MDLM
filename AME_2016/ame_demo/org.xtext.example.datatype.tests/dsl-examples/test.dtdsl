@@ -1,0 +1,13 @@
+LibraryType [
+	customer [
+		CustomerType [
+			firstName "Max"
+			lastName "Mustermann"
+			birthDate 1980-12-12
+			birthTime 12:12:00
+			age 20
+			prize 12.2
+			disabled false 
+		]
+	]
+]

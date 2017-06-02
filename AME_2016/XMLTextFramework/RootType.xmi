@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<W3schoolsRestriction:RootType
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:W3schoolsRestriction="platform:/plugin/w3schoolsRestriction.xsd"
+    xsi:schemaLocation="platform:/plugin/w3schoolsRestriction.xsd w3schoolsRestriction.ecore">
+  <object age="1"
+      car="BMW"
+      initials="aaa"
+      choice="x"
+      prodid="12345"
+      letter="aA"
+      gender="male"
+      password="01234567"
+      address="1"
+      addressRep="1"
+      addressCol="1"/>
+</W3schoolsRestriction:RootType>

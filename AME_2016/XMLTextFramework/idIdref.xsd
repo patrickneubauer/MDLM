@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="company" type="employeeListType"></xs:element>
+  <xs:complexType name="employeeListType">
+    <xs:sequence>
+      <xs:element name="boss" type="bossType" 
+          maxOccurs="unbounded" minOccurs="0"></xs:element>
+      <xs:element name="employee" type="employeeType" 
+          maxOccurs="unbounded" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="employeeType">
+    <xs:sequence>
+      <xs:element name="lastName" type="xs:string"></xs:element>
+      <xs:element name="employeeId" type="xs:ID"></xs:element>
+      <xs:element name="boss" type="xs:IDREF"></xs:element>
+      <xs:element name="birthDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="bossType">
+  	<xs:sequence>
+      <xs:element name="lastName" type="xs:string"></xs:element>
+      <xs:element name="bossId" type="xs:ID"></xs:element>
+      <xs:element name="superBoss" type="xs:IDREF"></xs:element>
+      <xs:element name="birthDate" type="xs:date" />
+   	</xs:sequence>
+  </xs:complexType>
+</xs:schema>

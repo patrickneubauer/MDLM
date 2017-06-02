@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- examples are copies from http://www.w3schools.com/xml/schema_facets.asp -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+	<!-- definition of simple types -->
+	<xs:simpleType name="carType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Audi" />
+			<xs:enumeration value="Golf" />
+			<xs:enumeration value="BMW" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ageType">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="120" />
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- definition of complex types -->
+	<xs:complexType name="rootType">
+		<xs:sequence>
+			<xs:element name="object" type="myObject" maxOccurs="unbounded"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="myObject">
+		<xs:sequence>
+			<xs:element name="age" type="ageType" minOccurs="0">
+			</xs:element>
+			<xs:element name="car" type="carType" minOccurs="0"></xs:element>
+			<xs:element name="initials" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[a-zA-Z][a-zA-Z][a-zA-Z]" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="choice" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[xyz]" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="prodid" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:pattern value="[0-9][0-9][0-9][0-9][0-9]" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="letter" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="([a-z][A-Z])+" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="gender" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="male|female" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="password" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[a-zA-Z0-9]{8}" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="address" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:whiteSpace value="preserve" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="addressRep" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:whiteSpace value="replace" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="addressCol" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:whiteSpace value="collapse" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- root element -->
+	<xs:element name="root" type="rootType"></xs:element>
+
+</xs:schema>

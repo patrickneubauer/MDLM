@@ -1,0 +1,22 @@
+LibraryType [ 
+	customer [
+		CustomerType [
+			firstName "Hansi"
+			lastName "Huber"
+			birthDate 1980-12-12
+			birthTime 02:30:20
+			age 34
+			prize 23.30
+			disabled false
+		],
+		CustomerType [
+			firstName "Hubert"
+			lastName "Konz"
+			birthDate 1983-10-09
+			birthTime 12:30:20
+			age 31
+			prize 33.39
+			disabled false
+		]
+	]
+]

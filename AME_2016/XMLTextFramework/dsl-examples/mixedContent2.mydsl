@@ -1,0 +1,12 @@
+LibraryType [
+    book [
+        BookType [
+        	name "XML"
+            "text"
+            title "XML in a Nutshell"
+            "text"
+            pages 200
+            "text"
+        ]
+    ]
+]
